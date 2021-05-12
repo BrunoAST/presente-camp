@@ -1,0 +1,14 @@
+.cardContainer {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #adb5bd;
+}
+
+.priceContainer {
+    color: #333533;
+}
+
+.titleContainer {
+    font-weight: lighter;
+    color: #4c5c68;
+}
