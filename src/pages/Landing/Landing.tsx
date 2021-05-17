@@ -1,10 +1,11 @@
 import React from 'react';
 
-const Landing: React.FC<any> = () => {
+const Landing = () => {
     console.log('OLA');
 
     return (
         <>
+            <h1>OLA</h1>
             {/*  CHAMAR NAVBAR  */}
             {/* COMPONENTE PARA 'MÁQUINA DE DIGITAR' */}
         </>

@@ -8,8 +8,8 @@ export default function RoutesContainer() {
     return (
         <Suspense fallback={<></>}>
             <Routes>
-                <Route path={BrowserRoutes.LANDING} element={<Default/>}/>
-                <Route path="*" element={<></>}/>
+                <Route path={BrowserRoutes.DEFAULT} element={<Default/>}/>
+                <Route path={BrowserRoutes.NOT_FOUND} element={<></>}/>
             </Routes>
         </Suspense>
     );

@@ -3,13 +3,16 @@ import {Route, Routes} from 'react-router-dom';
 
 const Landing = lazy(() => import('pages/Landing/Landing'));
 
-const Default: React.FC<any> = () => {
+const Default = () => {
     return (
-        <Suspense fallback={<></>}>
-            <Routes>
-                <Route path="/" element={<Landing />} />
-            </Routes>
-        </Suspense>
+        // DEVERÁ POSSUIR A NAVBAR
+        // <div className={}>
+            <Suspense fallback={<></>}>
+                <Routes>
+                    <Route path="/" element={<Landing/>}/>
+                </Routes>
+            </Suspense>
+        // </div>
     );
 }
 
