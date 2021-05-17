@@ -1,17 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-import IPokemonBase from 'shared/interfaces/pokemon-base.interface';
 import ListHttpService from 'shared/services/ListHttpService';
 
 const useListPokemon = (baseApiUrl: any) => {
-    const [pokemonBase, setPokemonBase] = useState<IPokemonBase[]>();
-
     useEffect(() => {
         function listPokemon() {
             ListHttpService.listPokemonByType(baseApiUrl)
                 .then(res => {
-                    setPokemonBase([]);
-                    setPokemonBase(res.data.pokemon);
                 });
         }
 
@@ -20,7 +15,7 @@ const useListPokemon = (baseApiUrl: any) => {
         return () => { }
     }, [baseApiUrl]);
 
-    return { pokemonBase, setPokemonBase }
+    return {  }
 }
 
 export default useListPokemon;

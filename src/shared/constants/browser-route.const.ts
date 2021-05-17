@@ -1,4 +1,3 @@
-export const BrowserRoute = {
-    HOME: '/',
-    HOME_FILTER: ':filter'
+export const BrowserRoutes = {
+    LANDING: '/',
 };

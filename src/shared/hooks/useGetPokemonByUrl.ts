@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react';
 
-import IPokemonInformations from 'shared/interfaces/pokemon-informations.interface';
 import ListHttpService from 'shared/services/ListHttpService';
 
 const useGetPokemonByUrl = (url: any) => {
-    const [pokemonInformations, setPokemonInformations] = useState<IPokemonInformations>();
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect(() => {
         function getPokemonByUrl() {
             ListHttpService.getPokemonByUrl(url)
                 .then(res => {
-                    setPokemonInformations({ name: '', id: -1, sprites: { front_default: '' } });
-                    setPokemonInformations(res.data);
+                    // setPokemonInformations({ name: '', id: -1, sprites: { front_default: '' } });
+                    // setPokemonInformations(res.data);
                 })
                 .finally(() => setIsLoading(false));
         }
@@ -22,7 +20,7 @@ const useGetPokemonByUrl = (url: any) => {
         return () => { }
     }, [url]);
 
-    return { pokemonInformations, isLoading }
+    return { isLoading }
 }
 
 export default useGetPokemonByUrl;

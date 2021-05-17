@@ -2,47 +2,42 @@ import React, { memo, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import style from './navbar.module.css';
-import { BrowserRoute } from '../../constants/browser-route.const';
-import ProvideTheme from '../../provider/ThemeProvider';
+import { BrowserRoutes } from '../../constants/browser-route.const';
 import Button from '../Button/Button';
-import Cart from '../Cart/Cart';
-import { useCartItem } from 'context/cart/CartContext';
 
 const Navbar: React.FC = () => {
     const [filter, setFilter] = useState<string>('');
     const [isCartOpened, setIsCartOpened] = useState<boolean>(false);
-    const { cartItem } = useCartItem();
-    const theme = ProvideTheme();
     const navigate = useNavigate();
 
     function handleSubmit(event: React.FormEvent<HTMLFormElement>): void {
         event.preventDefault();
 
         if (!filter || !filter?.trim()) {
-            navigate(`${BrowserRoute.HOME}`);
+            navigate(`${BrowserRoutes.HOME}`);
             return;
         }
 
-        navigate(`${BrowserRoute.HOME}/${filter}`);
+        navigate(`${BrowserRoutes.HOME}/${filter}`);
     }
 
     return (
-        <header className={`${style.header} ${theme?.colors.primaryBg}`}>
+        <header className={`${style.header}`}>
             <nav className={`${style.nav}`}>
                 <Link
                     className={`${style.linkHome}`}
-                    to={BrowserRoute.HOME}
+                    to={BrowserRoutes.HOME}
                     onClick={() => setFilter('')}
                     aria-label="Voltar para a página principal"
                 >
-                    <img
-                        className={`${style.icon} ${style.iconMobile}`}
-                        src={theme?.images.logoIcon}
-                        alt="Logo"
-                        width="150px"
-                        height="50px"
-                    />
-                    <img className={`${style.icon} ${style.iconDesktop}`} src={theme?.images.logoFull} alt="Logo" />
+                    {/*<img*/}
+                    {/*    className={`${style.icon} ${style.iconMobile}`}*/}
+                    {/*    src={theme?.images.logoIcon}*/}
+                    {/*    alt="Logo"*/}
+                    {/*    width="150px"*/}
+                    {/*    height="50px"*/}
+                    {/*/>*/}
+                    {/*<img className={`${style.icon} ${style.iconDesktop}`} src={theme?.images.logoFull} alt="Logo" />*/}
                 </Link>
 
                 <div className={`${style.searchWrapper}`}>
@@ -51,7 +46,7 @@ const Navbar: React.FC = () => {
                             className={style.input}
                             type="text"
                             data-cy="searchBar"
-                            placeholder={theme?.searchInputText}
+                            placeholder="Placeholder"
                             onChange={(event) => setFilter(event.target.value)}
                             value={filter}
                         />
@@ -68,13 +63,13 @@ const Navbar: React.FC = () => {
                             right: '0'
                         }}
                     >
-                        <img
-                            className={`${style.searchIcon}`}
-                            src={theme?.images.icons.searchIco}
-                            alt="Ícone de pesquisa"
-                            width="20px"
-                            height="20px"
-                        />
+                        {/*<img*/}
+                        {/*    className={`${style.searchIcon}`}*/}
+                        {/*    src={theme?.images.icons.searchIco}*/}
+                        {/*    alt="Ícone de pesquisa"*/}
+                        {/*    width="20px"*/}
+                        {/*    height="20px"*/}
+                        {/*/>*/}
                     </Button>
                 </div>
 
@@ -91,23 +86,18 @@ const Navbar: React.FC = () => {
                         }}
                         click={() => setIsCartOpened(true)}
                     >
-                        <img
-                            width="25px"
-                            height="25px"
-                            src={theme?.images.icons.cartIcon}
-                            alt="Ícone do carrinho"
-                        />
+                        {/*<img*/}
+                        {/*    width="25px"*/}
+                        {/*    height="25px"*/}
+                        {/*    src={theme?.images.icons.cartIcon}*/}
+                        {/*    alt="Ícone do carrinho"*/}
+                        {/*/>*/}
 
                         <span data-cy="cartItemsCounter">
-                            {cartItem.reduce((acc, current) => acc + current.quantity, 0)}
+                            {/*{cartItem.reduce((acc, current) => acc + current.quantity, 0)}*/}
                         </span>
                     </Button>
                 </div>
-
-                <Cart
-                    show={isCartOpened}
-                    onClose={() => setIsCartOpened(false)}
-                />
             </nav>
         </header>
     );

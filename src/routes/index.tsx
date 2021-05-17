@@ -1,13 +1,15 @@
-import React, { lazy, Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React, {lazy, Suspense} from 'react';
+import {Route, Routes} from 'react-router-dom';
+import { BrowserRoutes } from 'shared/constants/browser-route.const';
 
-// const Home = lazy(() => import('pages/Home/Home'));
+const Default = lazy(() => import('pages/Default/Default'));
 
 export default function RoutesContainer() {
     return (
         <Suspense fallback={<></>}>
             <Routes>
-                <Route path="*" element={<NotFound />} />
+                <Route path={BrowserRoutes.LANDING} element={<Default/>}/>
+                <Route path="*" element={<></>}/>
             </Routes>
         </Suspense>
     );

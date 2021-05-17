@@ -1,8 +1,0 @@
-@import './theme/global/reset.css';
-@import './theme/global/variables.css';
-@import './theme/global/color.css';
-@import './theme/global/input.css';
-@import './theme/global/screen.css';
-@import './theme/global/button.css';
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
