@@ -1,5 +1,5 @@
 {
-  "name": "pokemon-store",
+  "name": "presente",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -22,6 +22,8 @@
     "react-facebook-login": "^4.1.1",
     "react-router-dom": "^6.0.0-beta.0",
     "react-scripts": "4.0.3",
+    "react-toastify": "^7.0.4",
+    "rxjs": "^7.0.1",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1"
   },
