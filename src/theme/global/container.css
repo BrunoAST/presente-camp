@@ -1,0 +1,15 @@
+:root {
+    --gt-xs: 1250px;
+}
+
+.container {
+    max-width: var(--gt-xs);
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+@media(max-width: 599px) {
+    .container {
+        padding: 1rem;
+    }
+}

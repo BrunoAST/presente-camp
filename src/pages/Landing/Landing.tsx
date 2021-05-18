@@ -7,8 +7,8 @@ const Landing = () => {
         <>
             {/* COMPONENTE PARA 'MÁQUINA DE DIGITAR' */}
             {/* Apenas para testes */}
-            <FacebookLoginButton/>
-            <GoogleLoginButton/>
+            {/*<FacebookLoginButton/>*/}
+            {/*<GoogleLoginButton/>*/}
         </>
     );
 }

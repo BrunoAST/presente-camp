@@ -1,0 +1,35 @@
+.pink-bg {
+    background-color: var(--pink);
+}
+
+.orange-bg {
+    background-color: var(--orange);
+}
+
+.purple {
+    background-color: var(--purple);
+}
+
+.green-accent {
+    background-color: var(--green-accent);
+}
+
+.green {
+    background-color: var(--green);
+}
+
+.font-1 {
+    color: var(--gray-1);
+}
+
+.font-2 {
+    color: var(--gray-2);
+}
+
+.font-3 {
+    color: var(--gray-3);
+}
+
+.font-4 {
+    color: var(--white);
+}

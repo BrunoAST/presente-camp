@@ -1,3 +1,19 @@
+@import './theme/global/reset.css';
+@import './theme/global/container.css';
+@import './theme/global/color.css';
+
+:root {
+    --white: #fff;
+    --green-accent: #287F42;
+    --purple: #614F91;
+    --green: #89C8A5;
+    --orange: #EB5C2C;
+    --pink: #F193B7;
+    --gray-1: #3b3b3b;
+    --gray-2: #555;
+    --gray-3: #999;
+}
+
 * {
     font-family: 'Roboto', sans-serif;
 }
