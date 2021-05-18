@@ -13,10 +13,10 @@ const Navbar = () => {
     return (
         <header className={`${style.header}`}>
             <nav className={`${style.nav}`}>
-                <>
+                <Link to={BrowserRoutes.LANDING}>
                     {!isMobile && <img src={desktopLogo} alt="Logo"/>}
                     {isMobile && <img src={mobileLogo} alt="Logo"/>}
-                </>
+                </Link>
 
                 {!isMobile && <ul>
                     <li className={style.links}>
