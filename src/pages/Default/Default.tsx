@@ -1,6 +1,7 @@
 import React, {lazy, Suspense} from 'react';
 import {Route, Routes} from 'react-router-dom';
 import FacebookLoginButton from 'shared/components/FacebookLoginButton/FacebookLoginButton';
+import GoogleLoginButton from '../../shared/components/GoogleLoginButton/GoogleLoginButton';
 
 const Landing = lazy(() => import('pages/Landing/Landing'));
 
@@ -8,7 +9,8 @@ const Default = () => {
     return (
         // DEVERÁ POSSUIR A NAVBAR
         <>
-            <FacebookLoginButton />
+            <FacebookLoginButton/>
+            <GoogleLoginButton/>
 
             <Suspense fallback={<></>}>
                 <Routes>
@@ -17,6 +19,6 @@ const Default = () => {
             </Suspense>
         </>
     );
-}
+};
 
 export default Default;
