@@ -5,7 +5,6 @@ const Landing = () => {
 
     return (
         <>
-            <h1>OLA</h1>
             {/*  CHAMAR NAVBAR  */}
             {/* COMPONENTE PARA 'MÁQUINA DE DIGITAR' */}
         </>
