@@ -42,6 +42,6 @@ const Navbar = () => {
             </nav>
         </header>
     );
-}
+};
 
 export default memo(Navbar);
