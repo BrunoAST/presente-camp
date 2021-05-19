@@ -1,7 +1,7 @@
 export const BrowserRoutes = {
-    DEFAULT: '//*',
+    DEFAULT: '/',
     LANDING: '/',
-    SIGN_IN: '/login',
+    SIGN_IN: '/acessar',
     SIGN_UP: '/cadastrar',
     NOT_FOUND: '*'
 };
