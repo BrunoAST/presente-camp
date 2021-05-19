@@ -1,9 +1,8 @@
 import React, {lazy, Suspense} from 'react';
 import {Route, Routes} from 'react-router-dom';
 import {BrowserRoutes} from 'shared/constants/browser-route.const';
-import Navbar from '../shared/components/Navbar/Navbar';
 
-const Landing = lazy(() => import('pages/Landing/Landing'));
+const Default = lazy(() => import('pages/Default/Default'));
 const SignIn = lazy(() => import('pages/SignIn/SignIn'));
 const SignUp = lazy(() => import('pages/SignUp/SignUp'));
 
@@ -11,8 +10,7 @@ export default function RoutesContainer() {
     return (
         <Suspense fallback={<></>}>
             <Routes>
-                <Navbar/>
-                <Route path={BrowserRoutes.LANDING} element={<Landing/>}/>
+                <Route path={BrowserRoutes.DEFAULT} element={<Default/>}/>
                 <Route path={BrowserRoutes.NOT_FOUND} element={<></>}/>
             </Routes>
             <Routes>

@@ -1,15 +1,15 @@
 import React from 'react';
-import FacebookLoginButton from 'shared/components/FacebookLoginButton/FacebookLoginButton';
-import GoogleLoginButton from 'shared/components/GoogleLoginButton/GoogleLoginButton';
+
+import Typewriter from './components/Typewriter/Typewriter';
 
 const Landing = () => {
     return (
-        <>
-            {/* COMPONENTE PARA 'MÁQUINA DE DIGITAR' */}
+        <div className="container">
+            <Typewriter />
             {/* Apenas para testes */}
             {/*<FacebookLoginButton/>*/}
             {/*<GoogleLoginButton/>*/}
-        </>
+        </div>
     );
 }
 
