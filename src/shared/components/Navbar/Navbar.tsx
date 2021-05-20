@@ -25,6 +25,17 @@ const Navbar = () => {
                         </Link>
                     </li>
                 </ul>}
+
+                {isMobile && <ul className={style.listMobile}>
+                    <li className={style.linksMobile}>
+                        <Link data-cy="nab-sign-in-link" className={style.linksText} to={BrowserRoutes.SIGN_IN}>
+                            Acessar
+                        </Link>
+                        <Link data-cy="nab-sign-up-link" className={style.linksText} to={BrowserRoutes.SIGN_UP_TYPE}>
+                            Cadastre-se
+                        </Link>
+                    </li>
+                </ul>}
             </nav>
         </header>
     );
