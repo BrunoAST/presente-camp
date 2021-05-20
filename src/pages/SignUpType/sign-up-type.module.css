@@ -12,7 +12,7 @@
 .contentList {
     display: flex;
     padding: 4rem 0;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
     gap: 2rem;
@@ -33,6 +33,7 @@
 
 .contentImageNotSelected {
     opacity: .3;
+    transform: scale(.7);
 }
 
 @media (max-width: 959px) {
