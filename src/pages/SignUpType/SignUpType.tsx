@@ -13,9 +13,7 @@ const SignUpType = () => {
         const items = Array.from(element.children);
 
         items.forEach((item, i) => {
-            if (item.classList.contains(style.contentImageNotSelected)) {
-                item.classList.remove(style.contentImageNotSelected)
-            }
+            item.classList.remove(style.contentImageNotSelected)
 
             if (index === i) return;
 
