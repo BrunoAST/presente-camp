@@ -9,13 +9,18 @@
     --green: #89C8A5;
     --orange: #EB5C2C;
     --pink: #F193B7;
-    --gray-1: #3b3b3b;
-    --gray-2: #555;
-    --gray-3: #999;
+    --gray-1: #c4c4c4;
+    --gray-2: #999;
+    --gray-3: #555;
+    --gray-4: #3B3B3B;
 }
 
 * {
     font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-family: 'Roboto', sans-serif
 }
 
 h1, h2, h3, h4,h5, h6 {

@@ -6,6 +6,7 @@ const Default = lazy(() => import('pages/Default/Default'));
 const Landing = lazy(() => import('pages/Landing/Landing'));
 const SignIn = lazy(() => import('pages/SignIn/SignIn'));
 const SignUp = lazy(() => import('pages/SignUp/SignUp'));
+const SignUpType = lazy(() => import('pages/SignUpType/SignUpType'));
 
 export default function RoutesContainer() {
     return (
@@ -16,8 +17,9 @@ export default function RoutesContainer() {
                     {/*<Route path={BrowserRoutes.NOT_FOUND} element={<div/>}/>*/}
                 </Route>
                 <Routes>
+                    <Route path={BrowserRoutes.SIGN_UP_TYPE} element={<SignUpType/>}/>
                     <Route path={BrowserRoutes.SIGN_IN} element={<SignIn/>}/>
-                    <Route path={BrowserRoutes.SIGN_UP} element={<SignUp/>}/>
+                    {/*<Route path={BrowserRoutes.SIGN_UP} element={<SignUp/>}/>*/}
                 </Routes>
             </Routes>
         </Suspense>
