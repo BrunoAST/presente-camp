@@ -1,0 +1,37 @@
+.slideTopToCenter {
+    animation: slideTopToCenter 1s ease;
+}
+
+@keyframes slideTopToCenter {
+    0% {
+        opacity: 0;
+        transform: translateY(-1000px);
+    }
+    50% {
+        opacity: .5;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slideCenterToTopFade {
+    animation: slideCenterToTopFade 1s ease forwards;
+}
+
+@keyframes slideCenterToTopFade {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: .5;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-1000px);
+    }
+}

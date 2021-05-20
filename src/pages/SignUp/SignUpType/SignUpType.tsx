@@ -7,7 +7,7 @@ import SignUpStepAction from '../SignUpStepAction/SignUpStepAction';
 import ICurrentStep from '../interface/current.step.interface';
 import EStep from '../enum/step.enum';
 
-const SignUpType: React.FC<ICurrentStep> = ({ currentStep }) => {
+const SignUpType: React.FC<ICurrentStep> = ({currentStep}) => {
     const [types] = useState<SignUpTypes[]>(SignUpTypesConst);
     const [selectedType, setSelectedType] = useState<SignUpTypes>();
 
@@ -26,35 +26,37 @@ const SignUpType: React.FC<ICurrentStep> = ({ currentStep }) => {
 
     return (
         <RegisterContainer>
-            <h1 className={style.contentTitle}>Olá</h1>
-            <p className={style.contentDescription}>Selecione a categoria que melhor te descreve</p>
+            <div data-cy="content-container" className="slideTopToCenter">
+                <h1 className={style.contentTitle}>Olá</h1>
+                <p className={style.contentDescription}>Selecione a categoria que melhor te descreve</p>
 
-            <ul id="items" className={style.contentList}>
-                {
-                    types.map((type, index) =>
-                        <li className={style.contentListItems} key={index}>
-                            <img
-                                draggable={false}
-                                id={`item-${index}`}
-                                className={style.contentImage}
-                                src={type.image}
-                                alt="Tipo de cadastro"
-                                onClick={() => {
-                                    setSelectedType(type);
-                                    highlightSelectedType(index);
-                                }}
-                            />
-                        </li>
-                    )
-                }
-            </ul>
+                <ul id="items" className={style.contentList}>
+                    {
+                        types.map((type, index) =>
+                            <li className={style.contentListItems} key={index}>
+                                <img
+                                    draggable={false}
+                                    id={`item-${index}`}
+                                    className={style.contentImage}
+                                    src={type.image}
+                                    alt="Tipo de cadastro"
+                                    onClick={() => {
+                                        setSelectedType(type);
+                                        highlightSelectedType(index);
+                                    }}
+                                />
+                            </li>
+                        )
+                    }
+                </ul>
 
-            <SignUpStepAction
-                next={() => currentStep(EStep.LOGIN)}
-                previous={() => currentStep(EStep.LOGIN)}
-                isNextDisabled={!selectedType}
-                nextButtonLabel="Continuar"
-            />
+                <SignUpStepAction
+                    next={() => currentStep(EStep.LOGIN)}
+                    previous={() => currentStep(EStep.LOGIN)}
+                    isNextDisabled={!selectedType}
+                    nextButtonLabel="Continuar"
+                />
+            </div>
         </RegisterContainer>
     );
 };

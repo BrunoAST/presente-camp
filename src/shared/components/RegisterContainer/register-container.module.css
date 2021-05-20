@@ -33,6 +33,7 @@
     border-radius: 1rem;
     height: auto;
     width: 800px;
+    overflow-x: hidden;
     max-width: 800px;
     box-shadow: 0 8px 32px 12px rgba(31 38 135 .6);
 }
