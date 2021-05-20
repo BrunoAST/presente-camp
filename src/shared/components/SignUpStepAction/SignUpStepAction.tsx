@@ -3,7 +3,13 @@ import {ContainedButton, DefaultButton} from '@material/Button';
 
 import ISignUpStepAction from './interface/sign-up-step-action.interface';
 
-const SignUpStepAction: React.FC<ISignUpStepAction> = ({ previous, next, isNextDisabled, nextButtonLabel }) => {
+const SignUpStepAction: React.FC<ISignUpStepAction> = ({
+   previous,
+   hasPreviousButton,
+   next,
+   isNextDisabled,
+   nextButtonLabel
+}) => {
     return (
         <>
             <ContainedButton
@@ -16,9 +22,12 @@ const SignUpStepAction: React.FC<ISignUpStepAction> = ({ previous, next, isNextD
                 {nextButtonLabel}
             </ContainedButton>
 
-            <DefaultButton type="button" onClick={previous}>
-                Voltar
-            </DefaultButton>
+            {
+                hasPreviousButton &&
+                <DefaultButton type="button" onClick={previous}>
+                    Voltar
+                </DefaultButton>
+            }
         </>
     );
 };

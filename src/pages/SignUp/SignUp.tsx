@@ -1,17 +1,30 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 
-import SignUpType from './SignUpType/SignUpType';
-import EStep from './enum/step.enum';
+import SignUpType from './components/SignUpType/SignUpType';
+import {BrowserRoutes} from 'shared/constants/browser-route.const';
+import ESignUpType from './components/SignUpType/enum/sign-up.enum';
 
-const SignUp = () => {
-    const [currentStep, setCurrentStep] = useState<EStep>(EStep.TYPE);
+const SignUp: React.FC = () => {
+    const navigate = useNavigate();
+    const [type, setType] = useState<ESignUpType>();
 
-    return (
-        <>
-            {currentStep === EStep.TYPE && <SignUpType currentStep={(step) => setCurrentStep(step)}/>}
-            {currentStep === EStep.LOGIN && <div>LOGIN</div>}
-        </>
+    useEffect(
+        () => {
+            function navigateToRegistration(): void {
+                switch (type) {
+                    case ESignUpType.STUDENT:
+                        navigate(BrowserRoutes.SIGN_UP_STUDENT);
+                        break;
+                }
+            }
+
+            navigateToRegistration();
+        },
+        [type]
     );
-}
+
+    return <SignUpType selectedType={(type) => setType(type)}/>;
+};
 
 export default SignUp;

@@ -17,6 +17,10 @@ export const ContainedButton = withStyles(() => ({
         borderRadius: '8px',
         width: '100%',
         textTransform: 'none',
-        fontSize: '16px'
+        fontSize: '16px',
+        '&:hover': {
+            backgroundColor: '#89C8A5',
+            filter: 'brightness(90%)'
+        }
     },
 }))(Button);

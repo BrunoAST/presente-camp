@@ -3,13 +3,13 @@ import React, {useState} from 'react';
 import style from './sign-up-type.module.css';
 import RegisterContainer from 'shared/components/RegisterContainer/RegisterContainer';
 import SignUpTypesConst, {SignUpTypes} from './constants/sign-up-types.const';
-import SignUpStepAction from '../SignUpStepAction/SignUpStepAction';
-import ICurrentStep from '../interface/current.step.interface';
-import EStep from '../enum/step.enum';
+import SignUpStepAction from 'shared/components/SignUpStepAction/SignUpStepAction';
+import ISelectedType from './interface/selected-type.interface';
+import ESignUpType from './enum/sign-up.enum';
 
-const SignUpType: React.FC<ICurrentStep> = ({currentStep}) => {
+const SignUpType: React.FC<ISelectedType> = ({selectedType}) => {
     const [types] = useState<SignUpTypes[]>(SignUpTypesConst);
-    const [selectedType, setSelectedType] = useState<SignUpTypes>();
+    const [typeSelected, setTypeSelected] = useState<ESignUpType>(ESignUpType.COMPANY);
 
     function highlightSelectedType(index: number): void {
         const element = document.getElementById('items') as HTMLElement;
@@ -41,7 +41,7 @@ const SignUpType: React.FC<ICurrentStep> = ({currentStep}) => {
                                     src={type.image}
                                     alt="Tipo de cadastro"
                                     onClick={() => {
-                                        setSelectedType(type);
+                                        setTypeSelected(type.type);
                                         highlightSelectedType(index);
                                     }}
                                 />
@@ -51,9 +51,8 @@ const SignUpType: React.FC<ICurrentStep> = ({currentStep}) => {
                 </ul>
 
                 <SignUpStepAction
-                    next={() => currentStep(EStep.LOGIN)}
-                    previous={() => currentStep(EStep.LOGIN)}
-                    isNextDisabled={!selectedType}
+                    next={() => selectedType(typeSelected)}
+                    isNextDisabled={!typeSelected}
                     nextButtonLabel="Continuar"
                 />
             </div>
