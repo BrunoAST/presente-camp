@@ -1,5 +1,5 @@
 export const BrowserRoutes = {
-    DEFAULT: '/',
+    DEFAULT: '//*',
     LANDING: '/',
     SIGN_IN: '/acessar',
     SIGN_UP_TYPE: '/tipo-de-cadastro',
