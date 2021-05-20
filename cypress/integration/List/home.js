@@ -9,7 +9,7 @@ describe('List', () => {
         cy.get('form > input[placeholder]').should('have.attr', 'placeholder', 'Qual pokémon está procurando?'.trim());
     });
 
-    it('Should filter the list when type (BLAS)', () => {
+    it('Should filter the list when enum (BLAS)', () => {
         cy.get('[data-cy=searchBar]').type('BLAS');
         cy.get('[data-cy=searchButton]').click();
 

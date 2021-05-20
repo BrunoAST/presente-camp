@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
-import {ContainedButton, DefaultButton} from '@material/Button';
 
 import style from './sign-up-type.module.css';
-import RegisterContainer from '../../shared/components/RegisterContainer/RegisterContainer';
+import RegisterContainer from 'shared/components/RegisterContainer/RegisterContainer';
 import SignUpTypesConst, {SignUpTypes} from './constants/sign-up-types.const';
+import SignUpStepAction from '../SignUpStepAction/SignUpStepAction';
+import ICurrentStep from '../interface/current.step.interface';
+import EStep from '../enum/step.enum';
 
-const SignUpType = () => {
+const SignUpType: React.FC<ICurrentStep> = ({ currentStep }) => {
     const [types] = useState<SignUpTypes[]>(SignUpTypesConst);
     const [selectedType, setSelectedType] = useState<SignUpTypes>();
 
@@ -32,6 +34,7 @@ const SignUpType = () => {
                     types.map((type, index) =>
                         <li className={style.contentListItems} key={index}>
                             <img
+                                draggable={false}
                                 id={`item-${index}`}
                                 className={style.contentImage}
                                 src={type.image}
@@ -46,19 +49,12 @@ const SignUpType = () => {
                 }
             </ul>
 
-            {/*ACTIONS*/}
-            <ContainedButton
-                variant="contained"
-                type="button"
-                className="mb-12"
-                disabled={!selectedType}
-            >
-                Selecionar e continuar
-            </ContainedButton>
-
-            <DefaultButton type="button">
-                Voltar
-            </DefaultButton>
+            <SignUpStepAction
+                next={() => currentStep(EStep.LOGIN)}
+                previous={() => currentStep(EStep.LOGIN)}
+                isNextDisabled={!selectedType}
+                nextButtonLabel="Continuar"
+            />
         </RegisterContainer>
     );
 };

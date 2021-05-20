@@ -20,7 +20,7 @@ const Navbar = () => {
                         <Link data-cy="nab-sign-in-link" className={style.linksText} to={BrowserRoutes.SIGN_IN}>
                             Acessar
                         </Link>
-                        <Link data-cy="nab-sign-up-link" className={style.linksText} to={BrowserRoutes.SIGN_UP_TYPE}>
+                        <Link data-cy="nab-sign-up-link" className={style.linksText} to={BrowserRoutes.SIGN_UP}>
                             Cadastre-se
                         </Link>
                     </li>
@@ -31,7 +31,7 @@ const Navbar = () => {
                         <Link data-cy="nab-sign-in-link" className={style.linksText} to={BrowserRoutes.SIGN_IN}>
                             Acessar
                         </Link>
-                        <Link data-cy="nab-sign-up-link" className={style.linksText} to={BrowserRoutes.SIGN_UP_TYPE}>
+                        <Link data-cy="nab-sign-up-link" className={style.linksText} to={BrowserRoutes.SIGN_UP}>
                             Cadastre-se
                         </Link>
                     </li>
