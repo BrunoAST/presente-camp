@@ -10,16 +10,16 @@ export type SignUpTypes = {
 
 const SignUpTypesConst: SignUpTypes[] = [
     {
+        image: tutor,
+        url: BrowserRoutes.SIGN_UP_TUTOR
+    },
+    {
         image: company,
         url: BrowserRoutes.SIGN_UP_COMPANY
     },
     {
         image: student,
         url: BrowserRoutes.SIGN_UP_STUDENT
-    },
-    {
-        image: tutor,
-        url: BrowserRoutes.SIGN_UP_TUTOR
     },
 ];
 

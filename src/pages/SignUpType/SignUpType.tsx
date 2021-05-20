@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {ContainedButton, DefaultButton} from '@material/Button';
 
 import style from './sign-up-type.module.css';
 import RegisterContainer from '../../shared/components/RegisterContainer/RegisterContainer';
@@ -44,6 +45,20 @@ const SignUpType = () => {
                     )
                 }
             </ul>
+
+            {/*ACTIONS*/}
+            <ContainedButton
+                variant="contained"
+                type="button"
+                className="mb-12"
+                disabled={!selectedType}
+            >
+                Selecionar e continuar
+            </ContainedButton>
+
+            <DefaultButton type="button">
+                Voltar
+            </DefaultButton>
         </RegisterContainer>
     );
 };

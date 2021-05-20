@@ -1,6 +1,7 @@
 @import './theme/global/reset.css';
 @import './theme/global/container.css';
 @import './theme/global/color.css';
+@import './theme/global/margin.css';
 
 :root {
     --white: #fff;
