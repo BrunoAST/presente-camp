@@ -2,7 +2,9 @@
 @import './theme/global/container.css';
 @import './theme/global/color.css';
 @import './theme/global/margin.css';
+@import './theme/global/padding.css';
 @import './theme/global/animation.css';
+@import './theme/SignUp/text.css';
 
 :root {
     --white: #fff;

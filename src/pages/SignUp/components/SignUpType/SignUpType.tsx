@@ -27,8 +27,8 @@ const SignUpType: React.FC<ISelectedType> = ({selectedType}) => {
     return (
         <RegisterContainer>
             <div data-cy="content-container" className="slideTopToCenter">
-                <h1 className={style.contentTitle}>Olá</h1>
-                <p className={style.contentDescription}>Selecione a categoria que melhor te descreve</p>
+                <h1 className="signUpTitle">Olá</h1>
+                <p className="font-4">Selecione a categoria que melhor te descreve</p>
 
                 <ul id="items" className={style.contentList}>
                     {

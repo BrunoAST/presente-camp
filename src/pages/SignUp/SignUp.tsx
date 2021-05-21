@@ -21,7 +21,7 @@ const SignUp: React.FC = () => {
 
             navigateToRegistration();
         },
-        [type]
+        [type, navigate]
     );
 
     return <SignUpType selectedType={(type) => setType(type)}/>;
