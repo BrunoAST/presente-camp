@@ -1,0 +1,9 @@
+.buttonContainer {
+    background-color: var(--white);
+    border: 1px solid var(--gray-3);
+    color: var(--gray-3);
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 12px 30px;
+    cursor: pointer;
+}
