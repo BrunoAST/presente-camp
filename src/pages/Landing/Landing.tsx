@@ -38,7 +38,7 @@ const Landing = () => {
 
                 <div className={style.introductionKnownMore}>
                     <Button
-                        style={{padding: '12px 30px', color: 'var(--white)', background: 'var(--purple)'}}
+                        style={{padding: '12px 30px'}}
                         onClick={() => {
                         }}>
                         Saiba mais

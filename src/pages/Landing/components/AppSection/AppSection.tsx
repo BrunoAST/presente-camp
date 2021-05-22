@@ -15,7 +15,7 @@ const AppSection: React.FC = () => {
 
             <article className={style.cardContainerDetail}>
                 <h3 className={style.cardContainerDetailTitle}>
-                    Estude quando e onde quiser, <br/> Baixe já em seu dispositivo móvel
+                    Estude quando e onde quiser, baixe já em seu dispositivo móvel
                 </h3>
 
                 <AppButton/>
