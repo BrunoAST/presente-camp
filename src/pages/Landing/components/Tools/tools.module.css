@@ -1,0 +1,22 @@
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 3.75rem;
+    width: 0;
+}
+
+.listContainer {
+    display: flex;
+    gap: 0.875rem;
+    overflow-x: scroll;
+}
+
+.imageFilter {
+    filter: grayscale(100%);
+    transition: 200ms ease;
+}
+
+.imageFilter:hover {
+    filter: grayscale(0%);
+}

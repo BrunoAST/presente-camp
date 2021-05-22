@@ -10,12 +10,13 @@ import useIsMobile from 'shared/hooks/useIsMobile';
 import Button from 'shared/components/Button/Button';
 import AppSection from './components/AppSection/AppSection';
 import AppSectionMobile from './components/AppSectionMobile/AppSectionMobile';
+import ToolsSection from './components/ToolsSection/ToolsSection';
 
 const Landing = () => {
     const {isMobile} = useIsMobile()
 
     return (
-        <div style={{minHeight: '100vh', overflowY: 'auto'}}>
+        <section className={style.landingOverflow}>
             {!isMobile && <img className={style.orangePattern} src={orangePattern} alt="Pattern"/>}
             {isMobile && <img className={style.orangePattern} src={orangePatternMobile} alt="Pattern"/>}
             {!isMobile && <img className={style.pinkPattern} src={pinkPattern} alt="Pattern"/>}
@@ -48,8 +49,10 @@ const Landing = () => {
 
             {!isMobile && <AppSection/>}
             {isMobile && <AppSectionMobile/>}
-        </div>
+
+            <ToolsSection/>
+        </section>
     );
-}
+};
 
 export default Landing;

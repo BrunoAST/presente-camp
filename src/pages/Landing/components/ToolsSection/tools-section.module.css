@@ -1,0 +1,47 @@
+.toolsContainer {
+    margin: 4rem .75rem 0 .75rem;
+    padding: .7rem 1rem;
+}
+
+.toolsTitle {
+    color: var(--gray-4);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.toolsParagraph {
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: var(--gray-3);
+    line-height: 1rem;
+}
+
+.toolsDescription {
+    font-size: 0.875rem;
+    color: var(--gray-2);
+    line-height: 1.2rem;
+}
+
+@media(min-width: 970px) {
+    .toolsContainer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 120px;
+        padding: 230px 130px;
+    }
+
+    .toolsTitle {
+        display: none;
+    }
+
+    .toolsParagraph {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+
+    .toolsDescription {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+        font-weight: 300;
+    }
+}

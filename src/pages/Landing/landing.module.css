@@ -1,3 +1,9 @@
+.landingOverflow {
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 .landingContainer {
     padding: 0 160px;
 }
@@ -42,8 +48,7 @@
     right: -5rem;
     top: 20rem;
     height: 45rem;
-    /*top: 40%;*/
-    /*height: 70%;*/
+    z-index: -1;
 }
 
 @media (max-width: 1300px) {
@@ -58,6 +63,10 @@
 }
 
 @media (max-width: 959px) {
+    .landingOverflow {
+        position: relative;
+    }
+
     .typewriter {
         padding-bottom: 7.5rem;
     }
@@ -73,6 +82,7 @@
     }
 
     .landingContainer {
+        margin: 0 .75rem;
         padding: .7rem 1rem;
     }
 
