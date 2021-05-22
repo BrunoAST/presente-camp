@@ -2,7 +2,7 @@ import React from 'react';
 
 import style from './app-section.module.css';
 import AppButton from '../AppButton/AppButton';
-import appBanner from 'assets/Background/Landing/AppBannerDesktop.png';
+import appBanner from 'assets/Background/Landing/AppBanner.png';
 
 const AppSection: React.FC = () => {
     return (
@@ -18,7 +18,7 @@ const AppSection: React.FC = () => {
                     Estude quando e onde quiser, baixe já em seu dispositivo móvel
                 </h3>
 
-                <AppButton/>
+                <AppButton direction="row"/>
             </article>
         </section>
     );

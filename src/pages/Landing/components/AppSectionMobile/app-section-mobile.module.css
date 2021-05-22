@@ -4,7 +4,9 @@
     border-radius: 8px;
     background-color: var(--white);
     margin: 2.5rem .75rem 0 .75rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 300px;
 }
 
 .bannerContainer {
@@ -18,4 +20,16 @@
     line-height: 1.2rem;
     font-weight: bold;
     padding: 1rem;
+}
+
+.appBanner {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.appButtonContainer {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

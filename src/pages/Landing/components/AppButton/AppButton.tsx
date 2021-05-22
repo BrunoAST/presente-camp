@@ -5,9 +5,9 @@ import Button from 'shared/components/Button/Button';
 import appStore from 'assets/Background/Landing/Apple.svg';
 import googlePlay from 'assets/Background/Landing/GoolePlay.svg';
 
-const AppButton: React.FC = () => {
+const AppButton: React.FC<any> = ({direction}) => {
     return (
-        <div className={style.cardContainerButtons}>
+        <div style={{flexDirection: direction}} className={style.cardContainerButtons}>
             <Button
                 style={{
                     padding: '.6rem 0',
