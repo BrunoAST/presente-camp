@@ -32,18 +32,26 @@
 
 .orangePattern {
     position: absolute;
-    top: 5rem;
+    top: 3rem;
     right: 0;
+    z-index: -1;
 }
 
 .pinkPattern {
     position: absolute;
     right: -5rem;
-    top: 40%;
-    height: 70%;
+    top: 20rem;
+    height: 45rem;
+    /*top: 40%;*/
+    /*height: 70%;*/
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
+    .pinkPattern {
+        top: 22rem;
+        height: 45rem;
+    }
+
     .typewriter {
         padding-bottom: 9rem;
     }
@@ -52,6 +60,16 @@
 @media (max-width: 959px) {
     .typewriter {
         padding-bottom: 7.5rem;
+    }
+
+    .orangePattern {
+        top: 1rem;
+        right: -.5rem;
+    }
+
+    .pinkPattern {
+        top: 15rem;
+        height: 30rem;
     }
 
     .landingContainer {

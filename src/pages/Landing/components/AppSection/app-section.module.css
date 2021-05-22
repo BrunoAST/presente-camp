@@ -40,7 +40,7 @@
 
 .cardContainerBannerImg {
     z-index: 2;
-    width: 50%;
+    width: 70%;
 }
 
 .cardContainerDetail {
@@ -67,7 +67,7 @@
     }
 
     .cardContainerBannerImg {
-        width: 80%;
+        width: 100%;
     }
 
     .cardContainerDetail {
