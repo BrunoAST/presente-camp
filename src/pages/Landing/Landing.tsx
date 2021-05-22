@@ -14,7 +14,7 @@ const Landing = () => {
     const {isMobile} = useIsMobile()
 
     return (
-        <div style={{ minHeight: '100vh', overflowY: 'auto' }}>
+        <div style={{minHeight: '100vh', overflowY: 'auto'}}>
             {!isMobile && <img className={style.orangePattern} src={orangePattern} alt="Pattern"/>}
             {isMobile && <img className={style.orangePattern} src={orangePatternMobile} alt="Pattern"/>}
             {!isMobile && <img className={style.pinkPattern} src={pinkPattern} alt="Pattern"/>}
@@ -36,15 +36,16 @@ const Landing = () => {
                 </p>
 
                 <div className={style.introductionKnownMore}>
-                    <Button onClick={() => {}}>
+                    <Button
+                        style={{padding: '12px 30px', color: 'var(--white)', background: 'var(--purple)'}}
+                        onClick={() => {
+                        }}>
                         Saiba mais
                     </Button>
                 </div>
             </section>
 
-            <>
-                {/*<AppSection/>*/}
-            </>
+            <AppSection/>
         </div>
     );
 }

@@ -11,6 +11,7 @@
 }
 
 .introductionParagraph {
+    margin-top: 1.5rem;
     position: relative;
     max-width: 500px;
     line-height: 1.5rem;
@@ -42,7 +43,13 @@
     height: 70%;
 }
 
-@media(max-width: 959px) {
+@media (max-width: 1200px) {
+    .typewriter {
+        padding-bottom: 9rem;
+    }
+}
+
+@media (max-width: 959px) {
     .typewriter {
         padding-bottom: 7.5rem;
     }

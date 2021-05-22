@@ -1,13 +1,14 @@
 import React from 'react';
 
-import style from './button.module.css';
+import classes from './button.module.css';
 import IButton from './interface/button.interface';
 
-const Button: React.FC<IButton> = ({onClick, children}) => {
+const Button: React.FC<IButton> = ({onClick, style, children}) => {
     return (
         <button
-            className={style.buttonContainer}
+            className={classes.buttonContainer}
             onClick={onClick}
+            style={style}
         >
             {children}
         </button>

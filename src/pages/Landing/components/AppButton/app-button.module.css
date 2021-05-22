@@ -1,0 +1,26 @@
+.cardContainerButtons {
+    padding-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.cardContainerAppButton {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.cardContainerAppButtonDescription {
+    display: flex;
+    flex-direction: column;
+}
+
+.cardContainerAppButtonAvailableOn {
+    font-size: .8rem;
+    color: var(--gray-2);
+}
+
+.cardContainerAppButtonStore {
+    font-weight: normal;
+    font-size: 1rem;
+}

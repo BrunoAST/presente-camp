@@ -18,14 +18,14 @@ const Typewriter = () => {
         () => {
             const titleElement = document.querySelector('h1') as HTMLHeadingElement;
             if (!titleElement) return;
-            const words = titles.current[index.current].split('');
+            const letters = titles.current[index.current].split('');
             titleElement.innerText = '';
 
-            const delay = words.map((_, index: number) => index * 75)[words.length - 1];
+            const delay = letters.map((_, index: number) => index * 75)[letters.length - 1];
 
-            words.forEach((word: string, i: number) => {
+            letters.forEach((letter: string, i: number) => {
                 timerOutWords.current = setTimeout(() => {
-                    titleElement.innerHTML += word;
+                    titleElement.innerHTML += letter;
                 }, i * 75);
             });
 
