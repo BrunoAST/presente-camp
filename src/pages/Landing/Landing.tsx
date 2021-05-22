@@ -9,6 +9,7 @@ import Typewriter from './components/Typewriter/Typewriter';
 import useIsMobile from 'shared/hooks/useIsMobile';
 import Button from 'shared/components/Button/Button';
 import AppSection from './components/AppSection/AppSection';
+import AppSectionMobile from './components/AppSectionMobile/AppSectionMobile';
 
 const Landing = () => {
     const {isMobile} = useIsMobile()
@@ -45,7 +46,8 @@ const Landing = () => {
                 </div>
             </section>
 
-            <AppSection/>
+            {!isMobile && <AppSection/>}
+            {isMobile && <AppSectionMobile/>}
         </div>
     );
 }

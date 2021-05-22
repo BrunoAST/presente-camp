@@ -31,10 +31,14 @@
     height: 180px;
     width: 320px;
     border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cardContainerBannerImg {
     z-index: 2;
+    width: 60%;
 }
 
 .cardContainerDetail {
@@ -55,9 +59,13 @@
     padding-top: 27px;
 }
 
-@media(max-width: 1200px) {
+@media(max-width: 1250px) {
     .shape3 {
         width: 170px;
+    }
+
+    .cardContainerBannerImg {
+        width: 80%;
     }
 
     .cardContainerDetail {
