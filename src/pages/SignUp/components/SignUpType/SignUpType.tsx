@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 
 import style from './sign-up-type.module.css';
+import logo from 'assets/Logo/Normal/ReduzidaColorida.svg';
 import RegisterContainer from 'shared/components/RegisterContainer/RegisterContainer';
 import SignUpTypesConst, {SignUpTypes} from './constants/sign-up-types.const';
 import SignUpStepAction from 'shared/components/SignUpStepAction/SignUpStepAction';
 import ISelectedType from './interface/selected-type.interface';
 import ESignUpType from './enum/sign-up.enum';
+import RegisterHeader from 'shared/components/RegisterHeader/RegisterHeader';
 
 const SignUpType: React.FC<ISelectedType> = ({selectedType}) => {
     const [types] = useState<SignUpTypes[]>(SignUpTypesConst);
@@ -27,8 +29,7 @@ const SignUpType: React.FC<ISelectedType> = ({selectedType}) => {
     return (
         <RegisterContainer>
             <div data-cy="content-container" className="slideTopToCenter">
-                <h1 className="signUpTitle">Olá</h1>
-                <p className="font-4">Selecione a categoria que melhor te descreve</p>
+                <RegisterHeader title="Opa, prazer" description="Selecione a categoria que melhor te descreve"/>
 
                 <ul id="items" className={style.contentList}>
                     {
