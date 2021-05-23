@@ -10,7 +10,7 @@ const ToolsSection: React.FC = () => {
                 <h1 className={style.toolsTitle}>Aqui você pode</h1>
 
                 <p className={`${style.toolsParagraph} mt-24 mb-32`}>
-                    Graças a <span className="purple-fg">empresas incríveis</span>
+                    Graças a <span className="purple-fg">empresas incríveis </span>
                     nos tornamos uma comunidade cada vez maior e autosuficiente
                 </p>
 

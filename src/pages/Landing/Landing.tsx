@@ -4,6 +4,8 @@ import orangePattern from 'assets/Background/Landing/OrangeVector.svg';
 import orangePatternMobile from 'assets/Background/Landing/OrangeVectorMobile.svg';
 import pinkPattern from 'assets/Background/Landing/PinkVector.svg';
 import pinkPatternMobile from 'assets/Background/Landing/PinkVectorMobile.svg';
+import greenPattern from 'assets/Background/Landing/GreenVector.svg';
+import greenPatternMobile from 'assets/Background/Landing/GreenVectorMobile.svg';
 import style from './landing.module.css';
 import Typewriter from './components/Typewriter/Typewriter';
 import useIsMobile from 'shared/hooks/useIsMobile';
@@ -11,6 +13,7 @@ import Button from 'shared/components/Button/Button';
 import AppSection from './components/AppSection/AppSection';
 import AppSectionMobile from './components/AppSectionMobile/AppSectionMobile';
 import ToolsSection from './components/ToolsSection/ToolsSection';
+import ContentSection from './components/ContentSection/ContentSection';
 
 const Landing = () => {
     const {isMobile} = useIsMobile()
@@ -50,7 +53,12 @@ const Landing = () => {
             {!isMobile && <AppSection/>}
             {isMobile && <AppSectionMobile/>}
 
+            {!isMobile && <img className={style.greenPattern} src={greenPattern} alt="Pattern"/>}
+            {isMobile && <img className={style.greenPattern} src={greenPatternMobile} alt="Pattern"/>}
+
             <ToolsSection/>
+
+            <ContentSection/>
         </section>
     );
 };

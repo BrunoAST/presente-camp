@@ -51,6 +51,12 @@
     z-index: -1;
 }
 
+.greenPattern {
+    position: absolute;
+    top: 60rem;
+    z-index: -1;
+}
+
 @media (max-width: 1300px) {
     .pinkPattern {
         top: 22rem;
@@ -79,6 +85,11 @@
     .pinkPattern {
         top: 15rem;
         height: 30rem;
+    }
+
+    .greenPattern {
+        right: 0;
+        top: 50rem;
     }
 
     .landingContainer {
