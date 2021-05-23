@@ -9,4 +9,5 @@ export default interface IStudent {
     locationState: string;
     locationCity: string;
     email: string;
+    id: string;
 }

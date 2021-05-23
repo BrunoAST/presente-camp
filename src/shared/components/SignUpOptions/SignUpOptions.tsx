@@ -21,10 +21,15 @@ const SignUpOptions: React.FC<ISignUpOptions> = ({onSelected}) => {
 
                 <ul className={style.listContainer}>
                     <li>
-                        <img className="socialButton" src={email} alt="Email"/>
+                        <img
+                            className="socialButton"
+                            src={email}
+                            alt="Email"
+                            onClick={() => onSelected()}
+                        />
                     </li>
                     <li>
-                        <FacebookLoginButton/>
+                        <FacebookLoginButton onUserSelected={(data) => onSelected(data)}/>
                     </li>
                     <li>
                         <GoogleLoginButton onUserSelected={(data) => onSelected(data)}/>

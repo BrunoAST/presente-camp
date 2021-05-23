@@ -1,5 +1,4 @@
 import React from 'react';
-import {useNavigate} from 'react-router-dom';
 
 import RegisterContainer from 'shared/components/RegisterContainer/RegisterContainer';
 import SignUpStepAction from 'shared/components/SignUpStepAction/SignUpStepAction';
@@ -10,11 +9,23 @@ import Input from 'shared/components/Input/Input';
 import RegisterHeader from 'shared/components/RegisterHeader/RegisterHeader';
 import emailValidators from 'shared/validators/inputs/email-validator';
 import passwordValidators from 'shared/validators/inputs/password-validator';
-import IStudentBasicInformation from './interface/student-basic-information-interface';
+import {useUserDataProvider} from 'shared/constants/student-sign-up.context';
+import EStudentSignUpSteps from '../../enum/student-sign-up-steps.enum';
 
-const StudentBasicInformation: React.FC<{onSelected: (data: IStudentBasicInformation) => void}> = ({onSelected}) => {
-    const navigate = useNavigate();
+const StudentBasicInformation: React.FC = () => {
+    const {userData, setUserData, setStep} = useUserDataProvider();
     const {values, handleInputChange} = useForm(StudentBasicInformationForm.initialValues());
+
+    function onBasicInformationFilled(): void {
+        setUserData({
+            ...userData,
+            email: values.email,
+            password: values.password,
+            name: values.name
+        });
+
+        setStep(EStudentSignUpSteps.ABOUT);
+    }
 
     return (
         <RegisterContainer>
@@ -57,9 +68,8 @@ const StudentBasicInformation: React.FC<{onSelected: (data: IStudentBasicInforma
             </div>
 
             <SignUpStepAction
-                next={() => onSelected(values)}
-                previous={() => {
-                }}
+                next={() => onBasicInformationFilled()}
+                previous={() => setStep(EStudentSignUpSteps.REGISTER_TYPE)}
                 isNextDisabled={false}
                 hasPreviousButton={true}
                 nextButtonLabel="Continuar"

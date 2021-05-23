@@ -1,15 +1,17 @@
-import React, {useState} from 'react';
+import React from 'react';
 import FacebookLogin, {ReactFacebookFailureResponse, ReactFacebookLoginInfo} from 'react-facebook-login';
 
 import facebook from 'assets/Icons/Facebook.svg';
 import {environment} from 'environment/environment';
+import IFacebookLoginButton from './interface/facebook-login-button.interface';
 
-const FacebookLoginButton = () => {
-    const [data, setData] = useState<any>();
-
+const FacebookLoginButton: React.FC<IFacebookLoginButton> = ({onUserSelected}) => {
     const successResponse = (response: ReactFacebookLoginInfo) => {
-        setData({name: response.name, email: response.email, photo: response.picture?.data.url});
-        console.log(response)
+        onUserSelected({
+            name: response.name as string,
+            email: response.email as string,
+            id: response.id
+        });
     }
 
     const errorResponse = (response: ReactFacebookFailureResponse) => {

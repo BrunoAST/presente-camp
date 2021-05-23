@@ -1,28 +1,41 @@
-import React, {useState} from 'react';
+import React from 'react';
 
 import StudentBasicInformation from './components/StudentBasicInformation/StudentBasicInformation';
 import SignUpOptions from 'shared/components/SignUpOptions/SignUpOptions';
 import EStudentSignUpSteps from './enum/student-sign-up-steps.enum';
-import IStudent from './interface/student.interface';
+import {useUserDataProvider} from 'shared/constants/student-sign-up.context';
+import ISocialsUserData from 'shared/interfaces/socials-user-data.interface';
+import StudentAbout from './components/StudentAbout/StudentAbout';
 
 const StudentSignUp: React.FC = () => {
-    const [data, setData] = useState<IStudent>();
-    const [step, setStep] = useState<EStudentSignUpSteps>(EStudentSignUpSteps.REGISTER_TYPE);
+    const {userData, setUserData, step, setStep} = useUserDataProvider();
 
-    //TODO: CRIAR CONTEXT PARA COMPARTILHAR INFORMAÇÕES ENTRE OS COMPONENTES DE CADA SESSÃO
+    function onSignUpTypeSelected(data: ISocialsUserData): void {
+        setUserData({
+            ...userData,
+            name: data?.name as string,
+            email: data?.email as string,
+            id: data?.id as string
+        });
+
+        if (!data?.id) {
+            setStep(EStudentSignUpSteps.LOGIN);
+            return;
+        }
+
+        setStep(EStudentSignUpSteps.ABOUT);
+    }
 
     return (
         <>
             {step === EStudentSignUpSteps.REGISTER_TYPE && <SignUpOptions onSelected={(data) => {
-                console.log(data);
-                // Pular etapa de login se Google/Facebook foram selecionados
-                setStep(EStudentSignUpSteps.LOGIN);
+                onSignUpTypeSelected(data as ISocialsUserData);
             }}/>}
-            {step === EStudentSignUpSteps.LOGIN && <StudentBasicInformation onSelected={(data) => {
-                setStep(EStudentSignUpSteps.ABOUT);
-            }}/>}
+
+            {step === EStudentSignUpSteps.LOGIN && <StudentBasicInformation/>}
+            {step === EStudentSignUpSteps.ABOUT && <StudentAbout/>}
         </>
     );
-};
+}
 
 export default StudentSignUp;
