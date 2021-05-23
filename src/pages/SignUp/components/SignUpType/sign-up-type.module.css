@@ -16,6 +16,10 @@
     cursor: pointer;
 }
 
+.contentImage {
+    width: 8rem;
+}
+
 .contentImage:hover {
     filter: brightness(60%);
 }

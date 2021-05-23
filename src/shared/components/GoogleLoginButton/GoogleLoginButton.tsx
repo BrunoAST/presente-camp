@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
+
 import GoogleLogin from 'react-google-login';
+import google from 'assets/Icons/Google.svg';
 import {environment} from 'environment/environment';
 
 const GoogleLoginButton = () => {
@@ -23,16 +25,20 @@ const GoogleLoginButton = () => {
         <>
             <GoogleLogin
                 clientId={environment.GOOGLE_CLIENT_ID}
-                buttonText="Continuar com o Google"
+                render={renderProps => (
+                    <button
+                        className="socialButton"
+                        onClick={renderProps.onClick}
+                        disabled={renderProps.disabled}
+                    >
+                        <img src={google} alt="Facebook"/>
+                    </button>
+                )}
+                buttonText=""
                 onSuccess={successResponse}
                 onFailure={errorResponse}
+                cookiePolicy="single_host_origin"
             />
-
-            <section>
-                <h4>Nome: {data?.name}</h4>
-                <p>Email: {data?.email}</p>
-                <img src={data?.photo} alt="Photo"/>
-            </section>
         </>
     );
 };

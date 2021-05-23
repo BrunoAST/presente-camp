@@ -6,6 +6,7 @@
 @import './theme/global/animation.css';
 @import './theme/SignUp/text.css';
 @import './theme/global/background.css';
+@import './theme/Social/social.css';
 
 :root {
     --white: #fff;

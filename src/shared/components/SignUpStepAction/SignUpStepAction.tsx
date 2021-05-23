@@ -5,14 +5,15 @@ import ISignUpStepAction from './interface/sign-up-step-action.interface';
 
 const SignUpStepAction: React.FC<ISignUpStepAction> = ({
    previous,
-   hasPreviousButton,
+   hasPreviousButton = true,
    next,
+   hasNextButton = true,
    isNextDisabled,
    nextButtonLabel
 }) => {
     return (
         <>
-            <ContainedButton
+            {hasNextButton && <ContainedButton
                 variant="contained"
                 type="button"
                 className="mb-12"
@@ -20,7 +21,7 @@ const SignUpStepAction: React.FC<ISignUpStepAction> = ({
                 disabled={isNextDisabled}
             >
                 {nextButtonLabel}
-            </ContainedButton>
+            </ContainedButton>}
 
             {
                 hasPreviousButton &&

@@ -1,0 +1,7 @@
+.listContainer {
+    margin-top: 100px;
+    margin-bottom: 140px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}

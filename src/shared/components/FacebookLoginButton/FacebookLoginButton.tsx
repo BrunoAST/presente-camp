@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import FacebookLogin, {ReactFacebookFailureResponse, ReactFacebookLoginInfo} from 'react-facebook-login';
+
+import facebook from 'assets/Icons/Facebook.svg';
 import {environment} from 'environment/environment';
-import style from './facebook-login-button.module.css';
 
 const FacebookLoginButton = () => {
     const [data, setData] = useState<any>();
@@ -21,18 +22,12 @@ const FacebookLoginButton = () => {
                 fields="name,email,picture"
                 callback={successResponse}
                 onFailure={errorResponse}
-                icon="fa-facebook-square"
-                cssClass={style.button}
+                icon={<img src={facebook} alt="Facebook" />}
+                cssClass="socialButton"
                 language="pt-Br"
-                textButton="Continuar com o Facebook"
+                textButton=""
                 size="small"
             />
-
-            <section>
-                <h4>Nome: {data?.name}</h4>
-                <p>Email: {data?.email}</p>
-                <img src={data?.photo} alt="Photo"/>
-            </section>
         </>
     );
 };

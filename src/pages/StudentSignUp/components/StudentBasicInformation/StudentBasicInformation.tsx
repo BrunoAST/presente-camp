@@ -9,6 +9,7 @@ import useForm from 'shared/hooks/useForm';
 import Form from 'shared/components/Form/Form';
 import StudentBasicInformationForm from './form/student-basic-information-form';
 import Input from 'shared/components/Input/Input';
+import RegisterHeader from 'shared/components/RegisterHeader/RegisterHeader';
 
 const StudentBasicInformation: React.FC = () => {
     const navigate = useNavigate();
@@ -17,10 +18,7 @@ const StudentBasicInformation: React.FC = () => {
     return (
         <RegisterContainer>
             <div className="slideTopToCenter">
-                <h1 className="signUpTitle">Informações básicas</h1>
-                <p className="font-4">
-                    Primeiro vamos preencher as informações para que você possa acessar a plataforma
-                </p>
+                <RegisterHeader title="Informações básicas" />
 
                 <Form>
                     <div className={`${style.formContainer}`}>
