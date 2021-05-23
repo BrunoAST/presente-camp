@@ -27,7 +27,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 120px;
-        padding: 230px 130px;
+        padding: 140px 130px;
     }
 
     .toolsTitle {
