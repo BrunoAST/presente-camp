@@ -15,13 +15,4 @@ export default class StudentBasicInformationForm {
 
         if (hasRequiredErrorMessage) return hasRequiredErrorMessage;
     }
-
-    public static emailValidators(email: string) {
-        console.log(email)
-        const hasRequiredErrorMessage = required(email);
-        const hasPatternErrorMessage = emailPattern(email);
-
-        if (hasRequiredErrorMessage) return hasRequiredErrorMessage;
-        if (hasPatternErrorMessage) return hasPatternErrorMessage;
-    }
 }

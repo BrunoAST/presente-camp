@@ -9,26 +9,29 @@ import FacebookLoginButton from '../FacebookLoginButton/FacebookLoginButton';
 import GoogleLoginButton from '../GoogleLoginButton/GoogleLoginButton';
 import SignUpStepAction from '../SignUpStepAction/SignUpStepAction';
 import {BrowserRoutes} from 'shared/constants/browser-route.const';
+import ISignUpOptions from './interface/sign-up-options.interface';
 
-const SignUpOptions: React.FC = () => {
+const SignUpOptions: React.FC<ISignUpOptions> = ({onSelected}) => {
     const navigate = useNavigate();
 
     return (
         <RegisterContainer>
-            <RegisterHeader title="Como prefere entrar?"/>
+            <div className="slideTopToCenter">
+                <RegisterHeader title="Como prefere entrar?"/>
 
-            <ul className={style.listContainer}>
-                <li>
-                    <img className="socialButton" src={email} alt="Email"/>
-                </li>
-                <li>
-                    <FacebookLoginButton/>
-                </li>
-                <li>
-                    <GoogleLoginButton/>
-                </li>
-            </ul>
-            <SignUpStepAction hasNextButton={false} previous={() => navigate(BrowserRoutes.SIGN_UP)}/>
+                <ul className={style.listContainer}>
+                    <li>
+                        <img className="socialButton" src={email} alt="Email"/>
+                    </li>
+                    <li>
+                        <FacebookLoginButton/>
+                    </li>
+                    <li>
+                        <GoogleLoginButton onUserSelected={(data) => onSelected(data)}/>
+                    </li>
+                </ul>
+                <SignUpStepAction hasNextButton={false} previous={() => navigate(BrowserRoutes.SIGN_UP)}/>
+            </div>
         </RegisterContainer>
     );
 };

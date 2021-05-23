@@ -1,45 +1,42 @@
-import React, {useState} from 'react';
+import React from 'react';
 
-import GoogleLogin from 'react-google-login';
+import GoogleLogin, {GoogleLoginProps, GoogleLoginResponse} from 'react-google-login';
 import google from 'assets/Icons/Google.svg';
 import {environment} from 'environment/environment';
+import IGoogleLoginButton from './interface/google-login-button.interface';
 
-const GoogleLoginButton = () => {
-    const [data, setData] = useState<any>();
-
-    const successResponse = (response: any) => {
+const GoogleLoginButton: React.FC<IGoogleLoginButton> = ({onUserSelected}) => {
+    function successResponse(response: GoogleLoginResponse): void {
         const profile = response.getBasicProfile();
-        const id = response.getId();
-        const token = response.accessToken;
 
-        console.log({profile, id, token});
-
-        setData({name: profile.getName(), email: profile.getEmail(), photo: profile.getImageUrl()})
+        onUserSelected({
+            name: profile.getName(),
+            email: profile.getEmail(),
+            id: profile.getId()
+        });
     }
 
-    const errorResponse = (response: any) => {
-        console.log(response);
+    function errorResponse({onFailure}: GoogleLoginProps): void {
+        console.error(onFailure);
     }
 
     return (
-        <>
-            <GoogleLogin
-                clientId={environment.GOOGLE_CLIENT_ID}
-                render={renderProps => (
-                    <button
-                        className="socialButton"
-                        onClick={renderProps.onClick}
-                        disabled={renderProps.disabled}
-                    >
-                        <img src={google} alt="Facebook"/>
-                    </button>
-                )}
-                buttonText=""
-                onSuccess={successResponse}
-                onFailure={errorResponse}
-                cookiePolicy="single_host_origin"
-            />
-        </>
+        <GoogleLogin
+            clientId={environment.GOOGLE_CLIENT_ID}
+            render={renderProps => (
+                <button
+                    className="socialButton"
+                    onClick={renderProps.onClick}
+                    disabled={renderProps.disabled}
+                >
+                    <img src={google} alt="Facebook"/>
+                </button>
+            )}
+            buttonText=""
+            onSuccess={(res) => successResponse(res as GoogleLoginResponse)}
+            onFailure={errorResponse}
+            cookiePolicy="single_host_origin"
+        />
     );
 };
 

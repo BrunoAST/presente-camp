@@ -11,7 +11,11 @@ const StudentSignUp: React.FC = () => {
 
     return (
         <>
-            {step === EStudentSignUpSteps.REGISTER_TYPE && <SignUpOptions/>}
+            {step === EStudentSignUpSteps.REGISTER_TYPE && <SignUpOptions onSelected={(data) => {
+                console.log(data);
+                // Pular etapa de login se Google/Facebook foram selecionados
+                setStep(EStudentSignUpSteps.LOGIN)
+            }}/>}
             {step === EStudentSignUpSteps.LOGIN && <StudentBasicInformation/>}
         </>
     );

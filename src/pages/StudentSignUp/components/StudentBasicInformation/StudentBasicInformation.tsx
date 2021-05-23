@@ -1,15 +1,15 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
 
-import style from './student-basic-information.module.css';
 import RegisterContainer from 'shared/components/RegisterContainer/RegisterContainer';
 import SignUpStepAction from 'shared/components/SignUpStepAction/SignUpStepAction';
-import {BrowserRoutes} from 'shared/constants/browser-route.const';
 import useForm from 'shared/hooks/useForm';
 import Form from 'shared/components/Form/Form';
 import StudentBasicInformationForm from './form/student-basic-information-form';
 import Input from 'shared/components/Input/Input';
 import RegisterHeader from 'shared/components/RegisterHeader/RegisterHeader';
+import emailValidators from 'shared/validators/inputs/email-validator';
+import passwordValidators from 'shared/validators/inputs/password-validator';
 
 const StudentBasicInformation: React.FC = () => {
     const navigate = useNavigate();
@@ -18,12 +18,12 @@ const StudentBasicInformation: React.FC = () => {
     return (
         <RegisterContainer>
             <div className="slideTopToCenter">
-                <RegisterHeader title="Informações básicas" />
+                <RegisterHeader title="Dados para conta"/>
 
                 <Form>
-                    <div className={`${style.formContainer}`}>
+                    <div className="formContainer">
                         <Input
-                            label="Nome"
+                            label="Qual seu nome?"
                             name="name"
                             required={true}
                             focused={true}
@@ -33,12 +33,22 @@ const StudentBasicInformation: React.FC = () => {
                         />
 
                         <Input
-                            label="Email"
+                            label="Qual o email para login?"
                             type="text"
                             name="email"
                             required={true}
                             value={values.email}
-                            error={StudentBasicInformationForm.emailValidators(values.email)}
+                            error={emailValidators(values.email)}
+                            onChange={handleInputChange}
+                        />
+
+                        <Input
+                            label="E a senha?"
+                            type="password"
+                            name="password"
+                            required={true}
+                            value={values.password}
+                            error={passwordValidators(values.password)}
                             onChange={handleInputChange}
                         />
                     </div>
@@ -48,7 +58,8 @@ const StudentBasicInformation: React.FC = () => {
             <SignUpStepAction
                 next={() => {
                 }}
-                previous={() => navigate(BrowserRoutes.SIGN_UP)}
+                previous={() => {
+                }}
                 isNextDisabled={false}
                 hasPreviousButton={true}
                 nextButtonLabel="Continuar"

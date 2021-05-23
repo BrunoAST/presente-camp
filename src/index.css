@@ -7,6 +7,7 @@
 @import './theme/SignUp/text.css';
 @import './theme/global/background.css';
 @import './theme/Social/social.css';
+@import './theme/global/flex.css';
 
 :root {
     --white: #fff;

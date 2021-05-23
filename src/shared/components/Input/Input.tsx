@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {TextField} from '@material-ui/core';
 
 const Input: React.FC<any> = ({
@@ -14,6 +14,18 @@ const Input: React.FC<any> = ({
 }) => {
     const [clicked, setClicked] = useState<boolean>(false);
 
+    useCallback(
+        () => {
+            message()
+        },
+        [type, error],
+    );
+
+    function message(): string {
+        if (type === 'password' && !error) return 'Ao menos 7 caracteres, 1 maiúsculo e 1 especial';
+        return '';
+    }
+
     return (
         <TextField
             variant="outlined"
@@ -27,6 +39,7 @@ const Input: React.FC<any> = ({
             name={name}
             value={value}
             onChange={onChange}
+            helperText={message()}
             onBlur={() => {
                 setClicked(true);
             }}
