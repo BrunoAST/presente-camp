@@ -8,7 +8,8 @@ const FacebookLoginButton = () => {
     const [data, setData] = useState<any>();
 
     const successResponse = (response: ReactFacebookLoginInfo) => {
-        setData({name: response.name, email: response.email, photo: response.picture?.data.url})
+        setData({name: response.name, email: response.email, photo: response.picture?.data.url});
+        console.log(response)
     }
 
     const errorResponse = (response: ReactFacebookFailureResponse) => {
