@@ -5,6 +5,7 @@
 @import './theme/global/padding.css';
 @import './theme/global/animation.css';
 @import './theme/SignUp/text.css';
+@import './theme/global/background.css';
 
 :root {
     --white: #fff;
