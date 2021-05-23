@@ -10,8 +10,9 @@ import Input from 'shared/components/Input/Input';
 import RegisterHeader from 'shared/components/RegisterHeader/RegisterHeader';
 import emailValidators from 'shared/validators/inputs/email-validator';
 import passwordValidators from 'shared/validators/inputs/password-validator';
+import IStudentBasicInformation from './interface/student-basic-information-interface';
 
-const StudentBasicInformation: React.FC = () => {
+const StudentBasicInformation: React.FC<{onSelected: (data: IStudentBasicInformation) => void}> = ({onSelected}) => {
     const navigate = useNavigate();
     const {values, handleInputChange} = useForm(StudentBasicInformationForm.initialValues());
 
@@ -56,8 +57,7 @@ const StudentBasicInformation: React.FC = () => {
             </div>
 
             <SignUpStepAction
-                next={() => {
-                }}
+                next={() => onSelected(values)}
                 previous={() => {
                 }}
                 isNextDisabled={false}
