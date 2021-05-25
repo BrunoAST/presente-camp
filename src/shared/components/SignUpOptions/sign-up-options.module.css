@@ -5,3 +5,9 @@
     justify-content: center;
     gap: 80px;
 }
+
+@media (max-width: 959px) {
+    .listContainer {
+        gap: 30px;
+    }
+}

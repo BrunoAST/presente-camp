@@ -1,6 +1,6 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
-import {LinearProgress} from '@material-ui/core';
+import {CustomLinearProgress} from '@material/Progress';
 
 import style from './sign-up-options.module.css';
 import email from 'assets/Icons/Email.svg';
@@ -11,7 +11,6 @@ import GoogleLoginButton from '../GoogleLoginButton/GoogleLoginButton';
 import SignUpStepAction from '../SignUpStepAction/SignUpStepAction';
 import {BrowserRoutes} from 'shared/constants/browser-route.const';
 import ISignUpOptions from './interface/sign-up-options.interface';
-import {CustomLinearProgress} from '../../../@material/Progress';
 
 const SignUpOptions: React.FC<ISignUpOptions> = ({onSelected, initialProgress}) => {
     const navigate = useNavigate();
