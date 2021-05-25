@@ -1,5 +1,6 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom';
+import {LinearProgress} from '@material-ui/core';
 
 import style from './sign-up-options.module.css';
 import email from 'assets/Icons/Email.svg';
@@ -10,8 +11,9 @@ import GoogleLoginButton from '../GoogleLoginButton/GoogleLoginButton';
 import SignUpStepAction from '../SignUpStepAction/SignUpStepAction';
 import {BrowserRoutes} from 'shared/constants/browser-route.const';
 import ISignUpOptions from './interface/sign-up-options.interface';
+import {CustomLinearProgress} from '../../../@material/Progress';
 
-const SignUpOptions: React.FC<ISignUpOptions> = ({onSelected}) => {
+const SignUpOptions: React.FC<ISignUpOptions> = ({onSelected, initialProgress}) => {
     const navigate = useNavigate();
 
     return (
@@ -35,6 +37,9 @@ const SignUpOptions: React.FC<ISignUpOptions> = ({onSelected}) => {
                         <GoogleLoginButton onUserSelected={(data) => onSelected(data)}/>
                     </li>
                 </ul>
+
+                <CustomLinearProgress variant="determinate" value={initialProgress} />
+
                 <SignUpStepAction hasNextButton={false} previous={() => navigate(BrowserRoutes.SIGN_UP)}/>
             </div>
         </RegisterContainer>

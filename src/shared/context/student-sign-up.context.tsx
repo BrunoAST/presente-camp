@@ -29,7 +29,7 @@ const UserDataProvider: React.FC<ReactNode> = ({children}) => {
 
 export default UserDataProvider;
 
-export function useUserDataProvider() {
+export function useStudentDataProvider() {
     const context = useContext(UserDataContext);
     const {userData, setUserData, step, setStep} = context;
 

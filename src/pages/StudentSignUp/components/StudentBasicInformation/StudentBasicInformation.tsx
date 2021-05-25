@@ -1,4 +1,5 @@
 import React from 'react';
+import {CustomLinearProgress} from '@material/Progress';
 
 import RegisterContainer from 'shared/components/RegisterContainer/RegisterContainer';
 import SignUpStepAction from 'shared/components/SignUpStepAction/SignUpStepAction';
@@ -9,12 +10,17 @@ import Input from 'shared/components/Input/Input';
 import RegisterHeader from 'shared/components/RegisterHeader/RegisterHeader';
 import emailValidators from 'shared/validators/inputs/email-validator';
 import passwordValidators from 'shared/validators/inputs/password-validator';
-import {useUserDataProvider} from 'shared/constants/student-sign-up.context';
+import {useStudentDataProvider} from 'shared/context/student-sign-up.context';
 import EStudentSignUpSteps from '../../enum/student-sign-up-steps.enum';
 
 const StudentBasicInformation: React.FC = () => {
-    const {userData, setUserData, setStep} = useUserDataProvider();
+    const {userData, setUserData, setStep} = useStudentDataProvider();
     const {values, handleInputChange} = useForm(StudentBasicInformationForm.initialValues());
+
+    function isInvalid(): boolean {
+        return StudentBasicInformationForm.nameValidators(values.name) != undefined ||
+            emailValidators(values.email) != undefined || passwordValidators(values.password) != undefined;
+    }
 
     function onBasicInformationFilled(): void {
         setUserData({
@@ -67,10 +73,12 @@ const StudentBasicInformation: React.FC = () => {
                 </Form>
             </div>
 
+            <CustomLinearProgress variant="determinate" value={40} />
+
             <SignUpStepAction
                 next={() => onBasicInformationFilled()}
                 previous={() => setStep(EStudentSignUpSteps.REGISTER_TYPE)}
-                isNextDisabled={false}
+                isNextDisabled={isInvalid()}
                 hasPreviousButton={true}
                 nextButtonLabel="Continuar"
             />

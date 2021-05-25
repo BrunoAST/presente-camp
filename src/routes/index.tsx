@@ -1,4 +1,4 @@
-import UserDataProvider from 'shared/constants/student-sign-up.context';
+import UserDataProvider from 'shared/context/student-sign-up.context';
 import React, {lazy, Suspense} from 'react';
 import {Route, Routes} from 'react-router-dom';
 import {BrowserRoutes} from 'shared/constants/browser-route.const';
