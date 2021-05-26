@@ -8,6 +8,7 @@
 @import './theme/global/background.css';
 @import './theme/Social/social.css';
 @import './theme/global/flex.css';
+@import './theme/global/typography.css';
 
 :root {
     --white: #fff;
@@ -26,7 +27,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-p {
+p, div {
     font-family: 'Roboto', sans-serif
 }
 

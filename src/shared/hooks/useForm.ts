@@ -1,9 +1,7 @@
 import {useState} from 'react';
-import {useStudentDataProvider} from '../context/student-sign-up.context';
 
 const useForm = () => {
-    const {userData} = useStudentDataProvider();
-    const [values, setValues] = useState(userData);
+    const [values, setValues] = useState({} as any);
 
     function handleInputChange(event: any): void {
         const {name, value} = event.target;
@@ -14,7 +12,7 @@ const useForm = () => {
         });
     }
 
-    return {userData, values, handleInputChange};
+    return {values, handleInputChange};
 };
 
 export default useForm;

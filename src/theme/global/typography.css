@@ -1,0 +1,11 @@
+.emphasis {
+    font-weight: bold;
+}
+
+.textCentered {
+    text-align: center;
+}
+
+.paragraph {
+    line-height: 1.5rem;
+}

@@ -24,7 +24,6 @@ export default function RoutesContainer() {
                         <Route path={BrowserRoutes.SIGN_UP_STUDENT} element={<StudentSignUp/>}/>
                     </UserDataProvider>
                     <Route path={BrowserRoutes.NOT_FOUND} element={<NotFound/>}/>
-                    {/*<Route path={BrowserRoutes.SIGN_UP} element={<SignUp/>}/>*/}
                 </Routes>
             </Routes>
         </Suspense>

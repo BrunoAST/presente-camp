@@ -14,7 +14,7 @@ const useIsMobile = (breakPoint: number = 959) => {
         return () => {
             window.removeEventListener('resize', onWindowResize);
         };
-    }, []);
+    }, [breakPoint]);
 
     return {isMobile}
 }

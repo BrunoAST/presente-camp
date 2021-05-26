@@ -14,6 +14,14 @@
     color: var(--purple);
 }
 
+.orange-fg {
+   color: var(--orange);
+}
+
+.green-fg {
+    color: var(--green);
+}
+
 .green-accent {
     background-color: var(--green-accent);
 }

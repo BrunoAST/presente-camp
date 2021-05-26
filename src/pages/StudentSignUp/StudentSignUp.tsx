@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 
-import StudentBasicInformation from './components/StudentBasicInformation/StudentBasicInformation';
 import SignUpOptions from 'shared/components/SignUpOptions/SignUpOptions';
 import EStudentSignUpSteps from './enum/student-sign-up-steps.enum';
 import {useStudentDataProvider} from 'shared/context/student-sign-up.context';
 import ISocialsUserData from 'shared/interfaces/socials-user-data.interface';
-import StudentAbout from './components/StudentAbout/StudentAbout';
+
+const StudentBasicInformation = React.lazy(() => import('./components/StudentBasicInformation/StudentBasicInformation'));
+const StudentAbout = React.lazy(() => import('./components/StudentAbout/StudentAbout'));
+const StudentInterests = React.lazy(() => import('./components/StudentInterests/StudentInterests'));
+const StudentWelcome = React.lazy(() => import('./components/StudentWelcome/StudentWelcome'));
 
 const StudentSignUp: React.FC = () => {
     const {userData, setUserData, step, setStep} = useStudentDataProvider();
@@ -34,8 +37,23 @@ const StudentSignUp: React.FC = () => {
                     onSignUpTypeSelected(data as ISocialsUserData);
                 }}/>}
 
-            {step === EStudentSignUpSteps.LOGIN && <StudentBasicInformation/>}
-            {<StudentAbout/>}
+            <Suspense fallback={<></>}>
+                <div hidden={step !== EStudentSignUpSteps.LOGIN}>
+                    <StudentBasicInformation/>
+                </div>
+
+                <div hidden={step !== EStudentSignUpSteps.ABOUT}>
+                    <StudentAbout/>
+                </div>
+
+                <div hidden={step !== EStudentSignUpSteps.LOCATION_INTERESTS}>
+                    <StudentInterests/>
+                </div>
+
+                <div hidden={step !== EStudentSignUpSteps.WELCOME}>
+                    <StudentWelcome/>
+                </div>
+            </Suspense>
         </>
     );
 };

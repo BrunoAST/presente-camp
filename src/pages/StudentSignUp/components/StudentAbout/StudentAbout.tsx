@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {CustomLinearProgress} from '@material/Progress';
 
 import RegisterContainer from 'shared/components/RegisterContainer/RegisterContainer';
@@ -15,11 +15,23 @@ import SexualOrientation from 'shared/constants/sexual-orientation.const';
 import Race from 'shared/constants/race.const';
 
 const StudentAbout: React.FC = () => {
-    const [gender] = useState<string[]>(Gender);
-    const [sexualOrientation] = useState<string[]>(SexualOrientation);
-    const [race] = useState<string[]>(Race);
     const {userData, setUserData, setStep} = useStudentDataProvider();
     const {handleInputChange, values} = useForm();
+
+    function isInvalid(): boolean {
+        return !values.race || !values.sexualOrientation || !values.gender;
+    }
+
+    function onFormFilled(): void {
+        setUserData({
+            ...userData,
+            race: values.race,
+            gender: values.gender,
+            sexualOrientation: values.sexualOrientation,
+        });
+
+        setStep(EStudentSignUpSteps.LOCATION_INTERESTS);
+    }
 
     return (
         <RegisterContainer>
@@ -31,7 +43,7 @@ const StudentAbout: React.FC = () => {
                         <CustomSelect
                             error={required(values.gender)}
                             isRequired={true}
-                            items={gender}
+                            items={Gender}
                             name="gender"
                             value={values.gender}
                             label="Qual o seu gênero?"
@@ -41,7 +53,7 @@ const StudentAbout: React.FC = () => {
                         <CustomSelect
                             error={required(values.sexualOrientation)}
                             isRequired={true}
-                            items={sexualOrientation}
+                            items={SexualOrientation}
                             name="sexualOrientation"
                             value={values.sexualOrientation}
                             label="Qual sua orientação sexual?"
@@ -64,10 +76,9 @@ const StudentAbout: React.FC = () => {
             </div>
 
             <SignUpStepAction
-                next={() => {
-                }}
+                next={() => onFormFilled()}
                 previous={() => setStep(EStudentSignUpSteps.LOGIN)}
-                isNextDisabled={false}
+                isNextDisabled={isInvalid()}
                 hasPreviousButton={true}
                 nextButtonLabel="Próximo"
             />

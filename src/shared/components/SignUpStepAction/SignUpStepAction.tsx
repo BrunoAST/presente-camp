@@ -4,13 +4,14 @@ import {ContainedButton, DefaultButton} from '@material/Button';
 import ISignUpStepAction from './interface/sign-up-step-action.interface';
 
 const SignUpStepAction: React.FC<ISignUpStepAction> = ({
-   previous,
-   hasPreviousButton = true,
-   next,
-   hasNextButton = true,
-   isNextDisabled,
-   nextButtonLabel
-}) => {
+                                                           previous,
+                                                           hasPreviousButton = true,
+                                                           next,
+                                                           hasNextButton = true,
+                                                           isNextDisabled,
+                                                           nextButtonLabel,
+                                                           previousButtonLabel
+                                                       }) => {
     return (
         <>
             {hasNextButton && <ContainedButton
@@ -26,7 +27,7 @@ const SignUpStepAction: React.FC<ISignUpStepAction> = ({
             {
                 hasPreviousButton &&
                 <DefaultButton type="button" onClick={previous}>
-                    Voltar
+                    {previousButtonLabel ? previousButtonLabel : 'Voltar'}
                 </DefaultButton>
             }
         </>

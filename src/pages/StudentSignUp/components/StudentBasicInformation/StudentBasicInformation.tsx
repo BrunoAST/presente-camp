@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react';
+import React from 'react';
 import {CustomLinearProgress} from '@material/Progress';
 
 import RegisterContainer from 'shared/components/RegisterContainer/RegisterContainer';
@@ -18,16 +18,16 @@ const StudentBasicInformation: React.FC = () => {
     const {values, handleInputChange} = useForm();
 
     function isInvalid(): boolean {
-        return StudentBasicInformationForm.nameValidators(values.name) != undefined ||
-            emailValidators(values.email) != undefined || passwordValidators(values.password) != undefined;
+        return StudentBasicInformationForm.nameValidators(values.name) !== undefined ||
+            emailValidators(values.email) !== undefined || passwordValidators(values.password) !== undefined;
     }
 
     function onBasicInformationFilled(): void {
         setUserData({
             ...userData,
-            email: userData.email,
-            password: userData.password,
-            name: userData.name
+            email: values.email,
+            password: values.password,
+            name: values.name
         });
 
         setStep(EStudentSignUpSteps.ABOUT);

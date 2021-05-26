@@ -3,7 +3,7 @@ enum EStudentSignUpSteps {
     LOGIN = 2,
     ABOUT = 3,
     LOCATION_INTERESTS = 4,
-    END = 5,
+    WELCOME = 5,
 }
 
 export default EStudentSignUpSteps;

@@ -1,0 +1,21 @@
+.chipContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chip {
+    cursor: pointer;
+    background-color: var(--gray-1);
+    padding: 8px 16px;
+    color: var(--white);
+    border-radius: 8px;
+    transition: 200ms ease;
+}
+
+.chip:hover {
+    box-shadow: 0 1px 9px 0 rgba(0, 0, 0, .2);
+}
+
+.selected {
+    background-color: var(--purple);
+}

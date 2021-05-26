@@ -1,5 +1,5 @@
 import IStudentBasicInformation from '../interface/student-basic-information-interface';
-import {emailPattern, required} from 'shared/validators/inputs/input-validator';
+import {required} from 'shared/validators/inputs/input-validator';
 
 export default class StudentBasicInformationForm {
     public static initialValues(): IStudentBasicInformation {

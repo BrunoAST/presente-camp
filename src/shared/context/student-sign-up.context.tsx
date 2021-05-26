@@ -17,7 +17,7 @@ const UserDataContext = createContext<UserDataContext>({
         gender: '',
         id: '',
         graduation: '',
-        interests: '',
+        interests: [] as string[],
         password: '',
         locationCity: '',
         locationState: ''
