@@ -1,9 +1,8 @@
-import React from 'react';
+import React, {useEffect, useState } from 'react';
 import {CustomLinearProgress} from '@material/Progress';
 
 import RegisterContainer from 'shared/components/RegisterContainer/RegisterContainer';
 import SignUpStepAction from 'shared/components/SignUpStepAction/SignUpStepAction';
-import useForm from 'shared/hooks/useForm';
 import Form from 'shared/components/Form/Form';
 import StudentBasicInformationForm from './form/student-basic-information-form';
 import Input from 'shared/components/Input/Input';
@@ -12,10 +11,11 @@ import emailValidators from 'shared/validators/inputs/email-validator';
 import passwordValidators from 'shared/validators/inputs/password-validator';
 import {useStudentDataProvider} from 'shared/context/student-sign-up.context';
 import EStudentSignUpSteps from '../../enum/student-sign-up-steps.enum';
+import useForm from 'shared/hooks/useForm';
 
 const StudentBasicInformation: React.FC = () => {
     const {userData, setUserData, setStep} = useStudentDataProvider();
-    const {values, handleInputChange} = useForm(StudentBasicInformationForm.initialValues());
+    const {values, handleInputChange} = useForm();
 
     function isInvalid(): boolean {
         return StudentBasicInformationForm.nameValidators(values.name) != undefined ||
@@ -25,9 +25,9 @@ const StudentBasicInformation: React.FC = () => {
     function onBasicInformationFilled(): void {
         setUserData({
             ...userData,
-            email: values.email,
-            password: values.password,
-            name: values.name
+            email: userData.email,
+            password: userData.password,
+            name: userData.name
         });
 
         setStep(EStudentSignUpSteps.ABOUT);
@@ -71,16 +71,15 @@ const StudentBasicInformation: React.FC = () => {
                         />
                     </div>
                 </Form>
+                <CustomLinearProgress variant="determinate" value={40} />
             </div>
-
-            <CustomLinearProgress variant="determinate" value={40} />
 
             <SignUpStepAction
                 next={() => onBasicInformationFilled()}
                 previous={() => setStep(EStudentSignUpSteps.REGISTER_TYPE)}
                 isNextDisabled={isInvalid()}
                 hasPreviousButton={true}
-                nextButtonLabel="Continuar"
+                nextButtonLabel="Próximo"
             />
         </RegisterContainer>
     );

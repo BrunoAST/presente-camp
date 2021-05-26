@@ -10,7 +10,18 @@ type UserDataContext = {
 }
 
 const UserDataContext = createContext<UserDataContext>({
-    userData: {} as IStudent,
+    userData: {
+        email: '',
+        name: '',
+        about: '',
+        gender: '',
+        id: '',
+        graduation: '',
+        interests: '',
+        password: '',
+        locationCity: '',
+        locationState: ''
+    } as IStudent,
     setUserData: userData => console.warn('no data provided'),
     step: EStudentSignUpSteps.REGISTER_TYPE,
     setStep: step => console.warn('no step provided'),
