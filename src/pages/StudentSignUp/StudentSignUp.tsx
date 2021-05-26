@@ -29,13 +29,13 @@ const StudentSignUp: React.FC = () => {
     return (
         <>
             {step === EStudentSignUpSteps.REGISTER_TYPE && <SignUpOptions
-                initialProgress={25}
+                initialProgress={20}
                 onSelected={(data) => {
                     onSignUpTypeSelected(data as ISocialsUserData);
                 }}/>}
 
             {step === EStudentSignUpSteps.LOGIN && <StudentBasicInformation/>}
-            {step === EStudentSignUpSteps.ABOUT && <StudentAbout/>}
+            {<StudentAbout/>}
         </>
     );
 };

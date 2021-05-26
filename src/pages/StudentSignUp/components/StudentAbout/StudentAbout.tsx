@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {CustomLinearProgress} from '@material/Progress';
 
 import RegisterContainer from 'shared/components/RegisterContainer/RegisterContainer';
@@ -6,20 +6,66 @@ import RegisterHeader from 'shared/components/RegisterHeader/RegisterHeader';
 import EStudentSignUpSteps from '../../enum/student-sign-up-steps.enum';
 import SignUpStepAction from 'shared/components/SignUpStepAction/SignUpStepAction';
 import {useStudentDataProvider} from 'shared/context/student-sign-up.context';
+import useForm from 'shared/hooks/useForm';
+import Form from 'shared/components/Form/Form';
+import CustomSelect from 'shared/components/Select/Select';
+import Gender from 'shared/constants/gender.const';
+import {required} from 'shared/validators/inputs/input-validator';
+import SexualOrientation from 'shared/constants/sexual-orientation.const';
+import Race from 'shared/constants/race.const';
 
 const StudentAbout: React.FC = () => {
+    const [gender] = useState<string[]>(Gender);
+    const [sexualOrientation] = useState<string[]>(SexualOrientation);
+    const [race] = useState<string[]>(Race);
     const {userData, setUserData, setStep} = useStudentDataProvider();
+    const {handleInputChange, values} = useForm();
 
     return (
         <RegisterContainer>
             <div className="slideTopToCenter">
                 <RegisterHeader title="Sobre você"/>
 
-                <CustomLinearProgress variant="determinate" value={75} />
+                <Form>
+                    <div className="formContainer">
+                        <CustomSelect
+                            error={required(values.gender)}
+                            isRequired={true}
+                            items={gender}
+                            name="gender"
+                            value={values.gender}
+                            label="Qual o seu gênero?"
+                            handleChange={handleInputChange}
+                        />
+
+                        <CustomSelect
+                            error={required(values.sexualOrientation)}
+                            isRequired={true}
+                            items={sexualOrientation}
+                            name="sexualOrientation"
+                            value={values.sexualOrientation}
+                            label="Qual sua orientação sexual?"
+                            handleChange={handleInputChange}
+                        />
+
+                        <CustomSelect
+                            error={required(values.race)}
+                            isRequired={true}
+                            items={Race}
+                            name="race"
+                            value={values.race}
+                            label="Qual a sua raça?"
+                            handleChange={handleInputChange}
+                        />
+                    </div>
+                </Form>
+
+                <CustomLinearProgress variant="determinate" value={60}/>
             </div>
 
             <SignUpStepAction
-                next={() => {}}
+                next={() => {
+                }}
                 previous={() => setStep(EStudentSignUpSteps.LOGIN)}
                 isNextDisabled={false}
                 hasPreviousButton={true}
