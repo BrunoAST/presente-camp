@@ -37,3 +37,11 @@
 .m-4 {
     margin: 4px !important;
 }
+
+.mr-32 {
+    margin-right: 32px !important;
+}
+
+.my-24 {
+    margin: 24px 0 !important;
+}

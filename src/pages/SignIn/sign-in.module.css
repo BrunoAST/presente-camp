@@ -1,0 +1,35 @@
+.listContainer {
+    /*margin-top: 100px;*/
+    /*margin-bottom: 140px;*/
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 959px) {
+    .listContainer {
+        gap: 30px;
+    }
+}
+
+.signInOptions {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signInOptions:after, .signInOptions:before {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 40%;
+    background-color: var(--gray-3);
+}
+
+.signInOptions:after {
+    margin-left: 1rem;
+}
+
+.signInOptions:before {
+    margin-right: 1rem;
+}

@@ -13,5 +13,5 @@ export function emailPattern(email: string): string {
 export function passwordPattern(password: string): string {
     if (passwordRegex.test(password)) return '';
 
-    return 'Senha inválida';
+    return 'Ao menos 7 caracteres, 1 maiúsculo e 1 especial';
 }

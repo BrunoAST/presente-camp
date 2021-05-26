@@ -17,13 +17,13 @@ const Input: React.FC<any> = ({
                               }) => {
     const [clicked, setClicked] = useState<boolean>(false);
 
-    const message = useCallback(
+    /*const message = useCallback(
         () => {
             if (type === 'password' && !error) return 'Ao menos 7 caracteres, 1 maiúsculo e 1 especial';
             return '';
         },
         [type, error],
-    );
+    );*/
 
     return (
         <>
@@ -39,7 +39,6 @@ const Input: React.FC<any> = ({
                 name={name}
                 value={value}
                 onChange={onChange}
-                helperText={message()}
                 onBlur={() => {
                     setClicked(true);
                 }}
