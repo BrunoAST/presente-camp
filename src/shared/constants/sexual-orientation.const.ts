@@ -1,4 +1,5 @@
 const SexualOrientation: string[] = [
+    'Heterosexual',
     'Lésbica',
     'Gay',
     'Travesti',

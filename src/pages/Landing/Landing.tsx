@@ -15,16 +15,17 @@ import AppSectionMobile from './components/AppSectionMobile/AppSectionMobile';
 import ToolsSection from './components/ToolsSection/ToolsSection';
 import ContentSection from './components/ContentSection/ContentSection';
 import StrategySection from './components/StrategySection/StrategySection';
+import PresenteSection from './components/PresenteSection/PresenteSection';
 
 const Landing = () => {
     const {isMobile} = useIsMobile()
 
     return (
         <section className={style.landingOverflow}>
-            {!isMobile && <img className={style.orangePattern} src={orangePattern} alt="Pattern"/>}
-            {isMobile && <img className={style.orangePattern} src={orangePatternMobile} alt="Pattern"/>}
-            {!isMobile && <img className={style.pinkPattern} src={pinkPattern} alt="Pattern"/>}
-            {isMobile && <img className={style.pinkPattern} src={pinkPatternMobile} alt="Pattern"/>}
+            {!isMobile && <img draggable={false} className={style.orangePattern} src={orangePattern} alt="Pattern"/>}
+            {isMobile && <img draggable={false} className={style.orangePattern} src={orangePatternMobile} alt="Pattern"/>}
+            {!isMobile && <img draggable={false} className={style.pinkPattern} src={pinkPattern} alt="Pattern"/>}
+            {isMobile && <img draggable={false} className={style.pinkPattern} src={pinkPatternMobile} alt="Pattern"/>}
 
             <section className={`${style.introductionSection} ${style.landingContainer}`}>
                 <div className={style.typewriter}>
@@ -54,14 +55,16 @@ const Landing = () => {
             {!isMobile && <AppSection/>}
             {isMobile && <AppSectionMobile/>}
 
-            {!isMobile && <img className={style.greenPattern} src={greenPattern} alt="Pattern"/>}
-            {isMobile && <img className={style.greenPattern} src={greenPatternMobile} alt="Pattern"/>}
+            {!isMobile && <img draggable={false} className={style.greenPattern} src={greenPattern} alt="Pattern"/>}
+            {isMobile && <img draggable={false} className={style.greenPattern} src={greenPatternMobile} alt="Pattern"/>}
 
             <ToolsSection/>
 
             <ContentSection/>
 
             <StrategySection/>
+
+            <PresenteSection/>
         </section>
     );
 };
