@@ -3,10 +3,10 @@ export default interface IStudent {
     birthday: Date;
     race: string;
     sexualOrientation: string;
-    graduation: string; // Criar ENUM
+    graduation: string;
     about: string; // Não é obrigatório
-    interests: string[]; // Criar ENUM
-    gender: string; // Criar ENUM
+    interests: string[];
+    gender: string;
     password: string;
     locationState: string;
     locationCity: string;
