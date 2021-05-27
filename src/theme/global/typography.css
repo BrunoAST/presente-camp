@@ -9,3 +9,18 @@
 .paragraph {
     line-height: 1.5rem;
 }
+
+.title {
+    color: var(--gray-4);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+@media(min-width: 960px) {
+    .title {
+        margin-bottom: 48px;
+        font-size: 40px;
+    }
+}
+

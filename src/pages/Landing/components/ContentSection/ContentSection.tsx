@@ -11,7 +11,7 @@ const ContentSection: React.FC = () => {
             </div>
 
             <div className={style.description}>
-                <h1 className={`${style.contentTitle}`}>Conteúdos produzidos e pensados para você</h1>
+                <h1 className={`title`}>Conteúdos produzidos e pensados para você</h1>
 
                 <p className={style.contentParagraph}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor amet netus neque nisl sit. Enim hac

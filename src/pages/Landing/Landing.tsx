@@ -14,6 +14,7 @@ import AppSection from './components/AppSection/AppSection';
 import AppSectionMobile from './components/AppSectionMobile/AppSectionMobile';
 import ToolsSection from './components/ToolsSection/ToolsSection';
 import ContentSection from './components/ContentSection/ContentSection';
+import StrategySection from './components/StrategySection/StrategySection';
 
 const Landing = () => {
     const {isMobile} = useIsMobile()
@@ -59,6 +60,8 @@ const Landing = () => {
             <ToolsSection/>
 
             <ContentSection/>
+
+            <StrategySection/>
         </section>
     );
 };
