@@ -16,6 +16,7 @@ import ToolsSection from './components/ToolsSection/ToolsSection';
 import ContentSection from './components/ContentSection/ContentSection';
 import StrategySection from './components/StrategySection/StrategySection';
 import PresenteSection from './components/PresenteSection/PresenteSection';
+import FooterSection from './components/FooterSection/FooterSection';
 
 const Landing = () => {
     const {isMobile} = useIsMobile()
@@ -65,6 +66,8 @@ const Landing = () => {
             <StrategySection/>
 
             <PresenteSection/>
+
+            <FooterSection/>
         </section>
     );
 };
