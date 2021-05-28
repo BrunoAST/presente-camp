@@ -1,6 +1,7 @@
 export const BrowserRoutes = {
     DEFAULT: '/',
     LANDING: '/',
+    HOME: '/inicio',
     SIGN_IN: '/acessar',
     SIGN_UP: '/cadastro',
     SIGN_UP_STUDENT: '/cadastro-aluno',
