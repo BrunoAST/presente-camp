@@ -1,0 +1,32 @@
+.topics {
+    font-weight: bolder;
+    color: var(--gray-4);
+}
+
+.links {
+    display: flex;
+    gap: 32px;
+}
+
+.courses, .blog, .opportunities {
+    transition: all 200ms ease;
+}
+
+.courses:hover {
+    color: var(--green);
+}
+
+.blog:hover {
+    color: var(--pink);
+}
+
+.opportunities:hover {
+    color: var(--purple);
+}
+
+@media (max-width: 959px) {
+    .links {
+        font-size: 1rem;
+        gap: 1rem;
+    }
+}

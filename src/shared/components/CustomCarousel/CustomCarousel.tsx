@@ -4,11 +4,13 @@ import {Carousel} from 'react-responsive-carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faChevronLeft, faChevronRight} from '@fortawesome/free-solid-svg-icons';
 
-import banner from 'assets/Banner/Banner.png';
+import banner1 from 'assets/Banner/Banner1.svg';
+import banner2 from 'assets/Banner/Banner2.svg';
+import banner3 from 'assets/Banner/Banner3.svg';
 import useIsMobile from 'shared/hooks/useIsMobile';
 
 const CustomCarousel: React.FC = () => {
-    const {isMobile} = useIsMobile();
+    const {isMobile} = useIsMobile(1100);
 
     const arrowStyles: CSSProperties = {
         position: 'absolute',
@@ -16,7 +18,7 @@ const CustomCarousel: React.FC = () => {
         border: 'none',
         color: '#fff',
         zIndex: 2,
-        top: 'calc(85% - 15px)',
+        top: isMobile ? 'calc(75% - 15px)' : 'calc(85% - 15px)',
         width: 30,
         height: 30,
         cursor: 'pointer',
@@ -24,42 +26,39 @@ const CustomCarousel: React.FC = () => {
 
     const indicatorStyles: CSSProperties = {
         background: 'rgba(1, 1, 1, .2)',
-        width: 8,
-        height: 8,
-        borderRadius: '4px',
+        width: isMobile ? 12 : 8,
+        height: isMobile ? 12 : 8,
+        borderRadius: isMobile ? '6px' : '4px',
         display: 'inline-block',
         margin: '0 8px',
     };
 
-    const images = [
-        banner
-        // 'https://randomwordgenerator.com/img/picture-generator/52e7d3464a52a414f1dc8460962e33791c3ad6e04e50744172297cd6944bc2_640.jpg',
-        // 'https://randomwordgenerator.com/img/picture-generator/texture-2613518_640.jpg',
-        // 'https://randomwordgenerator.com/img/picture-generator/5ee0d7434c5ab10ff3d8992cc12c30771037dbf85254794e702672dd9e48_640.jpg'
-    ]
+    const images = [banner1, banner2, banner3];
 
     const createCarouselItemImage = (index: number, options = {}) => (
         <div key={index}>
-            {!isMobile && <img height={400} width="100%" src={images[index]} alt="Imagem"/>}
-            {isMobile && <img width="100vw" src={images[index]} alt="Imagem"/>}
+            <img width="100vw" src={images[index]} alt="Imagem"/>
         </div>
     );
 
-    const baseChildren = <div>{[0].map(createCarouselItemImage)}</div>;
+    const baseChildren = <div>{[0, 1, 2].map(createCarouselItemImage)}</div>;
 
     return (
         <Carousel
+            autoPlay={true}
             renderArrowPrev={(onClickHandler, hasPrev, label) =>
                 hasPrev && (
-                    <button type="button" onClick={onClickHandler} title={label} style={{...arrowStyles, left: 60}}>
-                        <FontAwesomeIcon size="6x" icon={faChevronLeft} />
+                    <button type="button" onClick={onClickHandler} title={label} style={{...arrowStyles, left: isMobile ? 20 : 60}}>
+                        {!isMobile && <FontAwesomeIcon size="6x" icon={faChevronLeft}/>}
+                        {isMobile && <FontAwesomeIcon size="3x" icon={faChevronLeft}/>}
                     </button>
                 )
             }
             renderArrowNext={(onClickHandler, hasNext, label) =>
                 hasNext && (
-                    <button type="button" onClick={onClickHandler} title={label} style={{...arrowStyles, right: 60}}>
-                        <FontAwesomeIcon size="6x" icon={faChevronRight} />
+                    <button type="button" onClick={onClickHandler} title={label} style={{...arrowStyles, right: isMobile ? 20 : 60}}>
+                        {!isMobile && <FontAwesomeIcon size="6x" icon={faChevronRight}/>}
+                        {isMobile && <FontAwesomeIcon size="3x" icon={faChevronRight}/>}
                     </button>
                 )
             }
