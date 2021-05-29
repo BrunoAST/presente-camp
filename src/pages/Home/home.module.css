@@ -1,0 +1,13 @@
+.container {
+    margin: 0 160px;
+}
+
+.carousel {
+    margin: 0 160px;
+}
+
+@media(max-width: 959px) {
+    .carousel {
+        margin: 0;
+    }
+}

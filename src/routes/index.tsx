@@ -1,7 +1,7 @@
-import UserDataProvider from 'shared/context/student-sign-up.context';
 import React, {lazy, Suspense} from 'react';
 import {Route, Routes} from 'react-router-dom';
 
+import UserDataProvider from 'shared/context/student-sign-up.context';
 import {BrowserRoutes} from 'shared/constants/browser-route.const';
 import AuthProvider from '../shared/context/auth.context';
 import StudentWrapper from './StudentWrapper';
@@ -21,6 +21,7 @@ export default function RoutesContainer() {
                 <Routes>
                     <Route path={BrowserRoutes.DEFAULT} element={<Default/>}>
                         <Route path={BrowserRoutes.LANDING} element={<Landing/>}/>
+                        <StudentWrapper path={BrowserRoutes.HOME} element={<Home/>}/>
                     </Route>
                     <Routes>
                         <Route path={BrowserRoutes.SIGN_UP} element={<SignUp/>}/>
@@ -29,9 +30,6 @@ export default function RoutesContainer() {
                             <Route path={BrowserRoutes.SIGN_UP_STUDENT} element={<StudentSignUp/>}/>
                         </UserDataProvider>
                         <Route path={BrowserRoutes.NOT_FOUND} element={<NotFound/>}/>
-                    </Routes>
-                    <Routes>
-                        <StudentWrapper path={BrowserRoutes.HOME} element={<Home/>}/>
                     </Routes>
                 </Routes>
             </AuthProvider>

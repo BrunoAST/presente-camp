@@ -10,8 +10,6 @@ const StudentWrapper: React.FC<any> = ({element, path, ...rest}) => {
     //TODO: VERIFICAR SE SERÁ NECESSÁRIO ANALISAR O TIPO DE USUÁRIO
     const {isSigned} = useAuthProvider();
 
-    debugger;
-
     return (
         <>
             {isSigned && <Route {...rest} path={path} element={element} />}
