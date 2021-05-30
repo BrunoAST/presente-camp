@@ -2,7 +2,7 @@
     background: var(--white);
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05), 0 4px 9px rgba(0, 0, 0, 0.05);
-    min-width: 300px;
+    max-width: 300px;
     height: 100%;
     cursor: pointer;
 }
@@ -23,8 +23,8 @@
 
 .headerBanner {
     border-radius: 8px 8px 0 0;
-    min-width: 300px;
-    height: 150px;
+    max-width: 300px;
+    height: auto;
 }
 
 .content {

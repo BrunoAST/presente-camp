@@ -54,7 +54,6 @@
     gap: 50px;
 }
 
-
 .actions {
     color: var(--gray-1);
     transition: 200ms ease;
@@ -95,6 +94,15 @@
     display: block;
     opacity: 1;
     visibility: visible;
+}
+
+.optionsContainer {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    position: relative;
 }
 
 @media (max-width: 959px) {

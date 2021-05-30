@@ -1,7 +1,8 @@
 .container {
     min-height: 100vh;
-    max-width: 1250px;
     margin: 60px 165px 170px 165px;
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
@@ -14,11 +15,36 @@
     margin-top: 24px;
     display: flex;
     gap: 32px;
+    flex-wrap: wrap;
+}
+
+.notFoundContainer {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.notFoundTitle {
+    color: var(--gray-3);
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.notFoundParagraph {
+    color: var(--gray-2);
+    font-size: 16px;
 }
 
 @media(max-width: 959px) {
     .container {
         margin: 30px 20px 80px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .listContainer {

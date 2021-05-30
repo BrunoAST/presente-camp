@@ -2,6 +2,7 @@ import React from 'react';
 import {useNavigate} from 'react-router-dom';
 
 import style from './content-filter.module.css';
+import notFoundFilter from 'assets/Background/NotFoundFilter.svg';
 import useFilterContent from 'shared/hooks/useFilterContent';
 import ContentCard from 'shared/components/ContentCard/ContentCard';
 import ContentType from 'shared/type/content-type';
@@ -28,31 +29,39 @@ const ContentFilter: React.FC = () => {
     }
 
     return (
-        <section className={style.container}>
-            <div>
-                <h1 className={`${style.title} ${content.titleColor}`}>{content.title}</h1>
-                <p className={`paragraph font-3`}>{content.description}</p>
-            </div>
+        <>
+            {filteredContent.length <= 0 && <div className={style.notFoundContainer}>
+                <img width={120} height={144} className="mb-32" src={notFoundFilter} alt="Nada encontrado"/>
 
-            {filteredContent.length > 0 && <ul className={style.listContainer}>
-                {
-                    filteredContent.map((data, index) =>
-                        <li key={index}>
-                            <ContentCard
-                                onClick={() => navigateToContent(data)}
-                                type={data.type}
-                                description={data.description}
-                                image={data.banner}
-                                title={data.title}
-                                label={defineLabel(data.type)}
-                            />
-                        </li>
-                    )
-                }
-            </ul>}
+                <h1 className={style.notFoundTitle}>Nenhum resultado encontrado</h1>
+                <p className={style.notFoundParagraph}>Verifique o texto inserido</p>
+            </div>}
+            {filteredContent.length > 0 && <section className={style.container}>
+                <div>
+                    <h1 className={`${style.title} ${content.titleColor}`}>{content.title}</h1>
+                    <p className={`paragraph font-3`}>{content.description}</p>
+                </div>
 
-        </section>
+                <ul className={style.listContainer}>
+                    {
+                        filteredContent.map((data, index) =>
+                            <li key={index}>
+                                <ContentCard
+                                    onClick={() => navigateToContent(data)}
+                                    type={data.type}
+                                    description={data.description}
+                                    image={data.banner}
+                                    title={data.title}
+                                    label={defineLabel(data.type)}
+                                />
+                            </li>
+                        )
+                    }
+                </ul>
+            </section>}
+        </>
     );
-};
+}
+;
 
 export default ContentFilter;

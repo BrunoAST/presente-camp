@@ -58,8 +58,8 @@
 }
 
 .button {
-    width: 95%;
-    margin: 12px 12px 0 12px;
+    width: 95% !important;
+    margin: 12px 12px 0 12px !important;
 }
 
 @media(max-width: 959px) {
@@ -85,6 +85,6 @@
     }
 
     .button {
-        width: 90%;
+        width: 90% !important;
     }
 }

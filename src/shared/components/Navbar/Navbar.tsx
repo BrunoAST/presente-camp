@@ -36,36 +36,38 @@ const Navbar = () => {
                 {(isLogged()) && <>
                     <NavOptions/>
 
-                   <Filter/>
+                    {/*<div className={style.optionsContainer}>*/}
+                        <Filter/>
 
-                    <div className={style.actionsContainer}>
-                        <button
-                            onClick={() => {
-                                toggleMenu(notificationMenu.current, style.dropdownNotificationOptionsVisible);
-                                userMenu.current?.classList.remove(style.dropdownUserOptionsVisible);
-                            }}
-                            className={style.actions}
-                        >
-                            <FontAwesomeIcon icon={faBell}/>
-                            <ul ref={notificationMenu}
-                                className={`${style.dropdownNotificationOptions} ${style.dropdown}`}>
-                                <NotificationMenu/>
-                            </ul>
-                        </button>
+                        <div className={style.actionsContainer}>
+                            <button
+                                onClick={() => {
+                                    toggleMenu(notificationMenu.current, style.dropdownNotificationOptionsVisible);
+                                    userMenu.current?.classList.remove(style.dropdownUserOptionsVisible);
+                                }}
+                                className={style.actions}
+                            >
+                                <FontAwesomeIcon icon={faBell}/>
+                                <ul ref={notificationMenu}
+                                    className={`${style.dropdownNotificationOptions} ${style.dropdown}`}>
+                                    <NotificationMenu/>
+                                </ul>
+                            </button>
 
-                        <button
-                            onClick={() => {
-                                toggleMenu(userMenu.current, style.dropdownUserOptionsVisible);
-                                notificationMenu.current?.classList.remove(style.dropdownNotificationOptionsVisible);
-                            }}
-                            className={style.actions}
-                        >
-                            <FontAwesomeIcon icon={faUserCircle}/>
-                            <ul ref={userMenu} className={`${style.dropdownUserOptions} ${style.dropdown}`}>
-                                <UserMenu/>
-                            </ul>
-                        </button>
-                    </div>
+                            <button
+                                onClick={() => {
+                                    toggleMenu(userMenu.current, style.dropdownUserOptionsVisible);
+                                    notificationMenu.current?.classList.remove(style.dropdownNotificationOptionsVisible);
+                                }}
+                                className={style.actions}
+                            >
+                                <FontAwesomeIcon icon={faUserCircle}/>
+                                <ul ref={userMenu} className={`${style.dropdownUserOptions} ${style.dropdown}`}>
+                                    <UserMenu/>
+                                </ul>
+                            </button>
+                        </div>
+                    {/*</div>*/}
                 </>}
 
                 {!isLogged() && <ul>
