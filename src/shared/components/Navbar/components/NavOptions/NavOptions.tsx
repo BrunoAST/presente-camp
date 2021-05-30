@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 import style from './nav-options.module.css';
-import {BrowserRoutes} from '../../../../constants/browser-route.const';
 
 const NavOptions: React.FC = () => {
     return (
@@ -10,7 +9,7 @@ const NavOptions: React.FC = () => {
             <li>
                 <Link
                     className={`${style.topics} ${style.courses}`}
-                    to={BrowserRoutes.COURSES}
+                    to={'/conteudo/curso'}
                 >
                     Cursos
                 </Link>
@@ -19,7 +18,7 @@ const NavOptions: React.FC = () => {
             <li>
                 <Link
                     className={`${style.topics} ${style.blog}`}
-                    to={BrowserRoutes.BLOG}
+                    to={'/conteudo/blog'}
                 >
                     Blog
                 </Link>
@@ -28,7 +27,7 @@ const NavOptions: React.FC = () => {
             <li>
                 <Link
                     className={`${style.topics} ${style.opportunities}`}
-                    to={BrowserRoutes.OPPORTUNITIES}
+                    to={'/conteudo/vaga'}
                 >
                     Vagas
                 </Link>
