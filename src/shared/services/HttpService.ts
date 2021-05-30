@@ -1,4 +1,4 @@
-import axios, { AxiosResponse } from 'axios';
+import axios, {AxiosResponse} from 'axios';
 
 export class HttpService {
     static post(url: string, data: any): Promise<AxiosResponse> {

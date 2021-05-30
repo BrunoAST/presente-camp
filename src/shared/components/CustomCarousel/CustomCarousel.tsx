@@ -18,7 +18,7 @@ const CustomCarousel: React.FC = () => {
         border: 'none',
         color: '#fff',
         zIndex: 2,
-        top: isMobile ? 'calc(75% - 15px)' : 'calc(85% - 15px)',
+        top: isMobile ? 'calc(75% - 15px)' : 'calc(80% - 15px)',
         width: 30,
         height: 30,
         cursor: 'pointer',
@@ -37,7 +37,8 @@ const CustomCarousel: React.FC = () => {
 
     const createCarouselItemImage = (index: number, options = {}) => (
         <div key={index}>
-            <img width="100vw" src={images[index]} alt="Imagem"/>
+            {!isMobile && <img width="100%" height="100%" src={images[index]} alt="Imagem"/>}
+            {isMobile && <img width="100vw" src={images[index]} alt="Imagem"/>}
         </div>
     );
 

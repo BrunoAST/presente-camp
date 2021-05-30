@@ -3,10 +3,16 @@ import {Link} from 'react-router-dom';
 
 import style from './user-menu.module.css';
 import {BrowserRoutes} from '../../../../constants/browser-route.const';
+import {setItem} from 'shared/local-storage/user-local-storage';
+import {useAuthProvider} from '../../../../context/auth.context';
+import IUserData from '../../../../interfaces/user-data.interface';
 
 const UserMenu: React.FC = () => {
+    const {setUserData} = useAuthProvider();
+
     function logout(): void {
-        console.log('LOGOUT');
+        setItem({} as IUserData);
+        setUserData({email: '', name: '', token: ''});
     }
 
     return (
@@ -28,7 +34,7 @@ const UserMenu: React.FC = () => {
             </li>
 
             <li className={`${style.listItem} mb-24`}>
-                <button className={style.logout} onClick={logout}>Sair</button>
+                <Link onClick={logout} to={BrowserRoutes.LANDING}>Sair</Link>
             </li>
         </>
     );

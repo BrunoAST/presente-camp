@@ -1,0 +1,16 @@
+.cardContainer {
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05), 0 4px 9px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+    position: relative;
+}
+
+.label {
+    color: var(--white);
+    font-size: 12px;
+    border-radius: 8px;
+    padding: 4px 10px;
+}

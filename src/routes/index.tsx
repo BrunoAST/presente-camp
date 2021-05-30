@@ -5,6 +5,7 @@ import UserDataProvider from 'shared/context/student-sign-up.context';
 import {BrowserRoutes} from 'shared/constants/browser-route.const';
 import AuthProvider from '../shared/context/auth.context';
 import StudentWrapper from './StudentWrapper';
+import LandingWrapper from './LandingWrapper';
 
 const Default = lazy(() => import('pages/Default/Default'));
 const Landing = lazy(() => import('pages/Landing/Landing'));
@@ -20,17 +21,15 @@ export default function RoutesContainer() {
             <AuthProvider>
                 <Routes>
                     <Route path={BrowserRoutes.DEFAULT} element={<Default/>}>
-                        <Route path={BrowserRoutes.LANDING} element={<Landing/>}/>
+                        <LandingWrapper path={BrowserRoutes.LANDING} element={<Landing/>}/>
                         <StudentWrapper path={BrowserRoutes.HOME} element={<Home/>}/>
                     </Route>
-                    <Routes>
-                        <Route path={BrowserRoutes.SIGN_UP} element={<SignUp/>}/>
-                        <Route path={BrowserRoutes.SIGN_IN} element={<SignIn/>}/>
-                        <UserDataProvider>
-                            <Route path={BrowserRoutes.SIGN_UP_STUDENT} element={<StudentSignUp/>}/>
-                        </UserDataProvider>
-                        <Route path={BrowserRoutes.NOT_FOUND} element={<NotFound/>}/>
-                    </Routes>
+                    <Route path={BrowserRoutes.SIGN_UP} element={<SignUp/>}/>
+                    <Route path={BrowserRoutes.SIGN_IN} element={<SignIn/>}/>
+                    <UserDataProvider>
+                        <Route path={BrowserRoutes.SIGN_UP_STUDENT} element={<StudentSignUp/>}/>
+                    </UserDataProvider>
+                    <Route path={BrowserRoutes.NOT_FOUND} element={<NotFound/>}/>
                 </Routes>
             </AuthProvider>
         </Suspense>

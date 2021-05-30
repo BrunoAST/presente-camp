@@ -1,13 +1,9 @@
 const SexualOrientation: string[] = [
-    'Heterosexual',
-    'Lésbica',
-    'Gay',
-    'Travesti',
-    'Transexual',
-    'Homem trans',
-    'Mulher trans',
-    'Transgênero',
-    'Transformista',
+    'Heterossexual',
+    'Homossexual',
+    'Bissexual',
+    'Panssexual',
+    'Assexual',
 ];
 
 export default SexualOrientation;

@@ -33,3 +33,9 @@
 .signInOptions:before {
     margin-right: 1rem;
 }
+
+@media(max-width: 959px) {
+    .signInOptions:after, .signInOptions:before {
+        width: 30%;
+    }
+}

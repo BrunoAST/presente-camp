@@ -6,6 +6,15 @@
     margin: 0 160px;
 }
 
+.content {
+    margin: 0 160px;
+}
+
+.titles {
+    color: var(--gray-3);
+    font-weight: bold;
+}
+
 @media(max-width: 959px) {
     .carousel {
         margin: 0;

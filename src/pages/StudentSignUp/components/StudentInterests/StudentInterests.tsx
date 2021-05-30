@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react';
+import React, {useCallback, useState} from 'react';
 
 import style from './student-interests.module.css';
 import RegisterContainer from 'shared/components/RegisterContainer/RegisterContainer';
@@ -11,8 +11,11 @@ import Interests from 'shared/constants/interests.const';
 import SelectionChips from 'shared/components/SelectionChips/SelectionChips';
 import EStudentSignUpSteps from '../../enum/student-sign-up-steps.enum';
 import SignUpStepAction from 'shared/components/SignUpStepAction/SignUpStepAction';
+import {signUpHttp} from '../../services/sign-up-http';
+import {toast, ToastContainer} from 'react-toastify';
 
 const StudentInterests: React.FC = () => {
+    const [isLoading, setIsLoading] = useState(false);
     const {userData, setUserData, setStep} = useStudentDataProvider();
 
     const isInvalid = useCallback(
@@ -22,7 +25,7 @@ const StudentInterests: React.FC = () => {
         [userData],
     );
 
-    function onBasicInformationFilled(): void {
+    function signUp(): void {
         setUserData({
             ...userData,
             interests: userData.interests,
@@ -30,11 +33,43 @@ const StudentInterests: React.FC = () => {
             locationCity: userData.locationState,
         });
 
-        setStep(EStudentSignUpSteps.WELCOME);
+        setIsLoading(true);
+
+        signUpHttp(userData)
+            .then(res => {
+                console.log(res)
+                setStep(EStudentSignUpSteps.WELCOME);
+            })
+            .catch(err => onError(err.response.data))
+            .finally(() => setIsLoading(false))
+    }
+
+    function onError(message: string): void {
+        toast(message, {
+            position: 'bottom-left',
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            type: 'error'
+        });
     }
 
     return (
         <RegisterContainer>
+            <ToastContainer
+                closeButton={true}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
+            <ToastContainer/>
+
             <div className="slideTopToCenter">
                 <RegisterHeader title="Sobre você"/>
                 <Form>
@@ -65,9 +100,9 @@ const StudentInterests: React.FC = () => {
             </div>
 
             <SignUpStepAction
-                next={() => onBasicInformationFilled()}
+                next={() => signUp()}
                 previous={() => setStep(EStudentSignUpSteps.ABOUT)}
-                isNextDisabled={isInvalid()}
+                isNextDisabled={isInvalid() || isLoading}
                 hasPreviousButton={true}
                 nextButtonLabel="Próximo"
             />

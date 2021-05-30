@@ -7,13 +7,14 @@ import style from './navbar.module.css';
 import {BrowserRoutes} from '../../constants/browser-route.const';
 import LogoMobileDesktop from '../LogoMobileDesktop/LogoMobileDesktop';
 import {ELogoMobileDesktop} from '../LogoMobileDesktop/interface/logo-mobile-desktop.interface';
-import {useAuthProvider} from '../../context/auth.context';
 import UserMenu from './components/UserMenu/UserMenu';
 import NotificationMenu from './components/NotificationMenu/NotificationMenu';
 import NavOptions from './components/NavOptions/NavOptions';
+import {useAuthProvider} from '../../context/auth.context';
+import {isLogged} from '../../local-storage/user-local-storage';
 
 const Navbar = () => {
-    const {isSigned} = useAuthProvider();
+    const {userData} = useAuthProvider();
     const userMenu = useRef<HTMLUListElement>(null);
     const notificationMenu = useRef<HTMLUListElement>(null);
 
@@ -33,7 +34,7 @@ const Navbar = () => {
             <nav className={`${style.nav}`}>
                 <LogoMobileDesktop type={ELogoMobileDesktop.NORMAL}/>
 
-                {isSigned && <>
+                {(isLogged()) && <>
                     <NavOptions/>
 
                     <div className={style.actionsContainer}>
@@ -66,7 +67,7 @@ const Navbar = () => {
                     </div>
                 </>}
 
-                {!isSigned && <ul>
+                {!isLogged()  && <ul>
                     <li className={style.links}>
                         <Link
                             data-cy="nav-sign-in-link"

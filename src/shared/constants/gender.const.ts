@@ -1,14 +1,8 @@
 const Gender: string[] = [
-    'Masculino',
-    'Feminino',
-    'Homem transgênero',
-    'Mulher transgênero',
-    'Homem transexual',
-    'Mulher transexual',
-    'Cisgênero',
-    'Não sei responder',
-    'Prefiro não responder',
-    'Outros',
+    'Homem cis',
+    'Homem trans',
+    'Mulher cis',
+    'Mulher trans',
 ];
 
 export default Gender;

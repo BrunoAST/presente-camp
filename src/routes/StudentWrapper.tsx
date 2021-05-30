@@ -2,18 +2,15 @@ import React from 'react';
 
 import {Route} from 'react-router-dom';
 import {BrowserRoutes} from '../shared/constants/browser-route.const';
-import {useAuthProvider} from '../shared/context/auth.context';
+import {isLogged} from '../shared/local-storage/user-local-storage';
 
 const Landing = React.lazy(() => import('../pages/Landing/Landing'));
 
 const StudentWrapper: React.FC<any> = ({element, path, ...rest}) => {
-    //TODO: VERIFICAR SE SERÁ NECESSÁRIO ANALISAR O TIPO DE USUÁRIO
-    const {isSigned} = useAuthProvider();
-
     return (
         <>
-            {isSigned && <Route {...rest} path={path} element={element} />}
-            {!isSigned && <Route path={BrowserRoutes.LANDING} element={<Landing/>}/>}
+            {isLogged() && <Route {...rest} path={path} element={element} />}
+            {!isLogged() && <Route path={BrowserRoutes.LANDING} element={<Landing/>}/>}
         </>
     );
 };
