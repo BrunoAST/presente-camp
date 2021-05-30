@@ -1,0 +1,28 @@
+.form {
+    width: 20vw;
+    position: relative;
+}
+
+.filter {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--gray-1);
+    padding: 12px 16px 12px 52px;
+}
+
+.filter:focus {
+    border-color: var(--pink);
+    outline-color: var(--pink);
+}
+
+.filter::placeholder {
+    color: var(--gray-1);
+    font-size: 1rem;
+    padding: 14px 0;
+}
+
+.icon {
+    position: absolute;
+    top: .6rem;
+    left: 1rem;
+}

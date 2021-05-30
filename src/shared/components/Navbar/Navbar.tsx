@@ -10,11 +10,10 @@ import {ELogoMobileDesktop} from '../LogoMobileDesktop/interface/logo-mobile-des
 import UserMenu from './components/UserMenu/UserMenu';
 import NotificationMenu from './components/NotificationMenu/NotificationMenu';
 import NavOptions from './components/NavOptions/NavOptions';
-import {useAuthProvider} from '../../context/auth.context';
 import {isLogged} from '../../local-storage/user-local-storage';
+import Filter from './components/Filter/Filter';
 
 const Navbar = () => {
-    const {userData} = useAuthProvider();
     const userMenu = useRef<HTMLUListElement>(null);
     const notificationMenu = useRef<HTMLUListElement>(null);
 
@@ -36,6 +35,8 @@ const Navbar = () => {
 
                 {(isLogged()) && <>
                     <NavOptions/>
+
+                   <Filter/>
 
                     <div className={style.actionsContainer}>
                         <button
@@ -67,7 +68,7 @@ const Navbar = () => {
                     </div>
                 </>}
 
-                {!isLogged()  && <ul>
+                {!isLogged() && <ul>
                     <li className={style.links}>
                         <Link
                             data-cy="nav-sign-in-link"
