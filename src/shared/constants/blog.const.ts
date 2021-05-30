@@ -1,7 +1,7 @@
 import monthIndication from 'assets/Banner/Indicação do mês.svg';
-import IBlog from '../interfaces/blog.interface';
+import IContent from '../interfaces/content.interface';
 
-const Blogs: IBlog[] = [
+const Blogs: IContent[] = [
     {
         id: "indicacoes-do-mes",
         description: 'Recomendações',

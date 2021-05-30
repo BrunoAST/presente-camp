@@ -14,6 +14,7 @@ const SignUp = lazy(() => import('pages/SignUp/SignUp'));
 const StudentSignUp = lazy(() => import('pages/StudentSignUp/StudentSignUp'));
 const Blog = lazy(() => import('pages/Blog/Blog'));
 const Home = lazy(() => import('pages/Home/Home'));
+const ContentFilter = lazy(() => import('pages/ContentFilter/ContentFilter'));
 const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 
 export default function RoutesContainer() {
@@ -25,6 +26,7 @@ export default function RoutesContainer() {
                         <LandingWrapper path={BrowserRoutes.LANDING} element={<Landing/>}/>
                         <StudentWrapper path={BrowserRoutes.HOME} element={<Home/>}/>
                         <StudentWrapper path={BrowserRoutes.BLOG} element={<Blog/>}/>
+                        <StudentWrapper path={BrowserRoutes.CONTENT_FILTER} element={<ContentFilter/>}/>
                     </Route>
                     <Route path={BrowserRoutes.SIGN_UP} element={<SignUp/>}/>
                     <Route path={BrowserRoutes.SIGN_IN} element={<SignIn/>}/>

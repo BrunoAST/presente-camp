@@ -1,4 +1,4 @@
-export default interface IBlog {
+export default interface IContent {
     id: string;
     description: string;
     banner: string;

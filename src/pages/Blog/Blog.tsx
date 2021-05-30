@@ -3,16 +3,14 @@ import {useLocation} from 'react-router-dom';
 
 import style from './blog.module.css';
 import useGetRouteId from 'shared/hooks/useGetRouteId';
-import IBlog from 'shared/interfaces/blog.interface';
+import IContent from 'shared/interfaces/content.interface';
 import Blogs from 'shared/constants/blog.const';
-import useIsMobile from 'shared/hooks/useIsMobile';
 
 const Indication = lazy(() => import('./components/Indication/Indication'));
 const Impediments = lazy(() => import('./components/Impediments/Impediments'));
 
 const Blog: React.FC = () => {
-    const {isMobile} = useIsMobile()
-    const [content, setContent] = useState<IBlog>();
+    const [content, setContent] = useState<IContent>();
     const {id} = useGetRouteId(useLocation().pathname);
 
     useEffect(

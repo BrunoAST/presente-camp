@@ -2,6 +2,10 @@
     background-color: var(--pink);
 }
 
+.pink-fg {
+   color: var(--pink);
+}
+
 .orange-bg {
     background-color: var(--orange);
 }
@@ -18,6 +22,10 @@
    color: var(--orange);
 }
 
+.green {
+    background-color: var(--green);
+}
+
 .green-fg {
     color: var(--green);
 }
@@ -26,8 +34,8 @@
     background-color: var(--green-accent);
 }
 
-.green {
-    background-color: var(--green);
+.green-accent-fg {
+    color: var(--green-accent);
 }
 
 .font-1 {

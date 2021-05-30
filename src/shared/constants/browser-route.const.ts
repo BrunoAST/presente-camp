@@ -8,6 +8,7 @@ export const BrowserRoutes = {
     SIGN_UP_STUDENT: '/cadastro-aluno',
     SIGN_UP_COMPANY: '/cadastro-empresa',
     SIGN_UP_TUTOR: '/cadastro-tutor',
+    CONTENT_FILTER: '/conteudo/:filter',
     BLOG: '/blog/:id',
     OPPORTUNITIES: '/vaga/:id',
     COURSES: '/curso/:id',
