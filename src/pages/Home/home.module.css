@@ -1,7 +1,7 @@
 .container {
     min-height: 100vh;
-    max-width: 1250px;
-    margin: 0 auto;
+    max-width: 1350px;
+    margin: 0 auto 150px auto;
 }
 
 .carousel {
@@ -10,6 +10,11 @@
 
 .content {
     margin: 80px 160px;
+}
+
+.titleWrapper {
+    display: flex;
+    justify-content: space-between;
 }
 
 .titles {
@@ -21,6 +26,7 @@
 
 .publications {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     gap: 32px;
 }
@@ -28,7 +34,7 @@
 @media(max-width: 959px) {
     .container {
         max-width: 100%;
-        margin: 0 20px;
+        margin: 0 auto;
     }
 
     .carousel {
@@ -36,7 +42,8 @@
     }
 
     .titles {
-        font-size: 25px;
+        font-size: 18px;
+        margin-bottom: 8px;
     }
 
     .content {
@@ -46,5 +53,10 @@
     .publications {
         flex-direction: column;
         gap: 16px;
+    }
+
+    .titleWrapper {
+        flex-direction: column;
+        margin-bottom: 24px;
     }
 }
