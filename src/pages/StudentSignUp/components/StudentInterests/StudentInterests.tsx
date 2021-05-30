@@ -15,7 +15,7 @@ import {signUpHttp} from '../../services/sign-up-http';
 import {toast, ToastContainer} from 'react-toastify';
 
 const StudentInterests: React.FC = () => {
-    const [isLoading, setIsLoading] = useState(false);
+    let isLoading = false;
     const {userData, setUserData, setStep} = useStudentDataProvider();
 
     const isInvalid = useCallback(
@@ -33,15 +33,14 @@ const StudentInterests: React.FC = () => {
             locationCity: userData.locationState,
         });
 
-        setIsLoading(true);
+        isLoading = true;
 
         signUpHttp(userData)
-            .then(res => {
-                console.log(res)
+            .then(() => {
                 setStep(EStudentSignUpSteps.WELCOME);
             })
             .catch(err => onError(err.response.data))
-            .finally(() => setIsLoading(false))
+            .finally(() => isLoading = false);
     }
 
     function onError(message: string): void {

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useNavigate} from 'react-router-dom';
 
 import style from './sign-in.module.css';
@@ -19,7 +19,6 @@ import {toast, ToastContainer} from 'react-toastify';
 
 const SignIn = () => {
     let isLoading = false;
-    // const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const {values, handleInputChange} = useForm();
     const {setUserData} = useAuthProvider();
