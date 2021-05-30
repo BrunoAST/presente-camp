@@ -7,6 +7,7 @@ import ContentCard from 'shared/components/ContentCard/ContentCard';
 import Blogs from 'shared/constants/blog.const';
 import Opportunities from 'shared/constants/opportunities';
 import {BrowserRoutes} from 'shared/constants/browser-route.const';
+import CurrentCourse from './components/CurrentCourse/CurrentCourse';
 
 const Home: React.FC = () => {
     const navigate = useNavigate()
@@ -18,6 +19,12 @@ const Home: React.FC = () => {
             <div className={style.carousel}>
                 <CustomCarousel/>
             </div>
+
+            <section className={style.content}>
+                <h2 className={style.titles}>Continue o seu curso</h2>
+
+                <CurrentCourse/>
+            </section>
 
             <section className={style.content}>
                 <div className={style.titleWrapper}>
