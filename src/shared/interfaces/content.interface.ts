@@ -3,7 +3,8 @@ export default interface IContent {
     description: string;
     banner: string;
     title: string;
-    by: string;
-    publishDate: string;
-    content: 'Indication' | 'Design tips' | 'Impediments';
+    type: 'Course' | 'Opportunities' | 'Blog';
+    by?: string;
+    publishDate?: string;
+    content?: 'Indication' | 'Design tips' | 'Impediments';
 }

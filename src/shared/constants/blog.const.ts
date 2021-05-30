@@ -9,7 +9,8 @@ const Blogs: IContent[] = [
         title: 'Indicações do mês',
         by: 'Equipe Presente',
         publishDate: '27 de Maio de 2021',
-        content: 'Indication'
+        content: 'Indication',
+        type: 'Blog',
     },
     {
         id: "impedimentos-o-que-e-como-agir",
@@ -18,7 +19,8 @@ const Blogs: IContent[] = [
         title: 'Impedimento: o que é e como agir',
         by: 'Equipe Presente',
         publishDate: '24 de Maio de 2021',
-        content: 'Impediments'
+        content: 'Impediments',
+        type: 'Blog',
     }
 ];
 
