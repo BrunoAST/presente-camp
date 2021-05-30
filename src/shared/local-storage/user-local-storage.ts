@@ -4,8 +4,7 @@ import IUserData from '../interfaces/user-data.interface';
 const KEY = 'PRESENTE';
 
 export function isLogged(): boolean {
-    return true;
-    // return !!getItem()?.token;
+    return !!getItem()?.token;
 }
 
 export function setItem(item: IUserData): void {
