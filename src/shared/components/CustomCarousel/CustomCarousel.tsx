@@ -50,7 +50,7 @@ const CustomCarousel: React.FC = () => {
             renderArrowPrev={(onClickHandler, hasPrev, label) =>
                 hasPrev && (
                     <button type="button" onClick={onClickHandler} title={label} style={{...arrowStyles, left: isMobile ? 20 : 60}}>
-                        {!isMobile && <FontAwesomeIcon size="6x" icon={faChevronLeft}/>}
+                        {!isMobile && <FontAwesomeIcon size="4x" icon={faChevronLeft}/>}
                         {isMobile && <FontAwesomeIcon size="3x" icon={faChevronLeft}/>}
                     </button>
                 )
@@ -58,7 +58,7 @@ const CustomCarousel: React.FC = () => {
             renderArrowNext={(onClickHandler, hasNext, label) =>
                 hasNext && (
                     <button type="button" onClick={onClickHandler} title={label} style={{...arrowStyles, right: isMobile ? 20 : 60}}>
-                        {!isMobile && <FontAwesomeIcon size="6x" icon={faChevronRight}/>}
+                        {!isMobile && <FontAwesomeIcon size="4x" icon={faChevronRight}/>}
                         {isMobile && <FontAwesomeIcon size="3x" icon={faChevronRight}/>}
                     </button>
                 )

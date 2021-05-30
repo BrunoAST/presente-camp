@@ -1,5 +1,7 @@
 .container {
     min-height: 100vh;
+    max-width: 1250px;
+    margin: 0 auto;
 }
 
 .carousel {
@@ -7,16 +9,42 @@
 }
 
 .content {
-    margin: 0 160px;
+    margin: 80px 160px;
 }
 
 .titles {
+    font-size: 30px;
     color: var(--gray-3);
     font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.publications {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
 }
 
 @media(max-width: 959px) {
+    .container {
+        max-width: 100%;
+        margin: 0 20px;
+    }
+
     .carousel {
         margin: 0;
+    }
+
+    .titles {
+        font-size: 25px;
+    }
+
+    .content {
+        margin: 40px 20px;
+    }
+
+    .publications {
+        flex-direction: column;
+        gap: 16px;
     }
 }

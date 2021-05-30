@@ -2,7 +2,7 @@ import React from 'react';
 
 import arrow from 'assets/Icons/Arrow.svg';
 import style from './footer.module.css';
-import AppButton from '../AppButton/AppButton';
+import AppButton from '../../../pages/Landing/components/AppButton/AppButton';
 import useIsMobile from 'shared/hooks/useIsMobile';
 
 const FooterSection: React.FC = () => {

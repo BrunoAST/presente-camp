@@ -1,0 +1,9 @@
+.firstLevelList {
+    margin-left: 2rem;
+    list-style: decimal;
+}
+
+.secondLevelList {
+    margin-left: 3rem;
+    list-style: circle;
+}

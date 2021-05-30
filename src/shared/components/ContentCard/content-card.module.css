@@ -2,15 +2,56 @@
     background: var(--white);
     border-radius: 8px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05), 0 4px 9px rgba(0, 0, 0, 0.05);
+    width: 350px;
+    height: 100%;
+    cursor: pointer;
 }
 
 .header {
     position: relative;
 }
 
-.label {
+.headerLabel {
     color: var(--white);
     font-size: 12px;
     border-radius: 8px;
     padding: 4px 10px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+.headerBanner {
+    border-radius: 8px 8px 0 0;
+    width: 350px;
+    height: 150px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contentTitle {
+    color: var(--gray-3);
+    font-weight: bold;
+    font-size: 20px;
+    padding: 33px 16px 0 16px;
+}
+
+.contentDescription {
+    padding: 0 16px 16px 16px;
+    color: var(--gray-2);
+    font-size: 1rem;
+}
+
+@media(max-width: 959px) {
+    .cardContainer {
+        width: 100%;
+    }
+
+    .headerBanner {
+        width: 100%;
+    }
 }

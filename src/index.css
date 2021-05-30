@@ -9,6 +9,7 @@
 @import './theme/Social/social.css';
 @import './theme/global/flex.css';
 @import './theme/global/typography.css';
+@import './theme/global/blog.css';
 
 :root {
     --white: #fff;

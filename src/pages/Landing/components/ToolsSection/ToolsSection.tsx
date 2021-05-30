@@ -19,19 +19,18 @@ const ToolsSection: React.FC = () => {
 
             <article>
                 <p className={`${style.toolsDescription} mt-16`}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor amet netus neque nisl sit. Enim hac
-                    sit
-                    fusce eu tempus. Ante duis amet eget tellus dapibus velit. Enim pellentesque pulvinar auctor
-                    convallis.
-                    Tincidunt molestie ut morbi consequat, sed morbi ipsum quam.
+                    Atualmente no Brasil existem mais de 14,4 milhões de pessoas desempregadas, onde o desemprego tem
+                    como principal fomentador a falta de mão-de-obra qualificada e o custo elevado do nível de educação
+                    exigido pelo mercado de trabalho. Pensando nisso surge o Presente, um projeto com foco na
+                    qualificação educacional de minorias – o grupo mais afetado pelo desemprego – e conexões que buscam
+                    inserí-las em empresas que lutam pelos mesmos principal.
                 </p>
                 <br/>
                 <p className={style.toolsDescription}>
-                    Tortor facilisis blandit vestibulum fermentum quis eget mauris velit lacus. Dis mi quam amet tempus
-                    rhoncus volutpat eu, eu. Viverra fringilla sit tortor imperdiet magna. Pharetra dictum hac dapibus
-                    viverra sit est. Scelerisque vitae fusce ornare sed. Eu lectus venenatis sollicitudin pellentesque
-                    odio
-                    at magna sed. Tristique ultrices id sit imperdiet fusce lacus ut sapien.
+                    Graças a empresas incríveis nos tornamos uma comunidade cada vez maior e autossuficiente. Através
+                    dessas empresas novos conteúdos desejados pelo mercado de trabalho tecnológico são detectados e
+                    juntos formulamos meios para trazê-los até você! desde materiais de leitura em nosso blog à cursos
+                    de soft skills e dos softwares mais utilizados.
                 </p>
             </article>
         </section>

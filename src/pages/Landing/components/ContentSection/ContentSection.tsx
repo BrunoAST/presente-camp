@@ -14,12 +14,9 @@ const ContentSection: React.FC = () => {
                 <h1 className={`title`}>Conteúdos produzidos e pensados para você</h1>
 
                 <p className={style.contentParagraph}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor amet netus neque nisl sit. Enim hac
-                    sit
-                    fusce eu tempus. Ante duis amet eget tellus dapibus velit. Enim pellentesque pulvinar auctor
-                    convallis.
-                    Tincidunt molestie ut morbi consequat, sed morbi ipsum quam. Tortor facilisis blandit vestibulum
-                    fermentum quis eget
+                    Além do conteúdo formal propriamente dito, o Presente visa estruturar materiais de estudo e
+                    capacitação tendo em mente as particularidades enfrentadas por mulheres, pessoas lgbtqia+ e negras,
+                    juntos nos faremos mais presentes
                 </p>
             </div>
         </section>
