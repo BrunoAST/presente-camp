@@ -9,21 +9,21 @@ const Opportunities: IContent[] = [
         description: 'Apperture Science',
         banner: opportunity1,
         title: 'Designer de produtos',
-        type: 'Course'
+        type: 'Opportunities'
     },
     {
         id: "ux-writer-jr",
         description: 'Orwell',
         banner: opportunity2,
         title: 'UX Writer Jr.',
-        type: 'Course'
+        type: 'Opportunities'
     },
     {
         id: "designer-de-interfaces-pleno",
         description: 'Abstergo Industries',
         banner: opportunity3,
         title: 'Designer de Interface Pleno',
-        type: 'Course'
+        type: 'Opportunities'
     },
 ];
 

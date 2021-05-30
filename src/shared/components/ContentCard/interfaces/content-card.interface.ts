@@ -1,6 +1,8 @@
+import ContentType from 'shared/type/content-type';
+
 export default interface IContentCard {
     label: string;
-    type: 'Blog' | 'Opportunities';
+    type: ContentType;
     image: string;
     title: string;
     description: string;

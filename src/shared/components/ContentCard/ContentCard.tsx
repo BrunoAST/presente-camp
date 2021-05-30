@@ -6,7 +6,9 @@ import IContentCard from './interfaces/content-card.interface';
 const ContentCard: React.FC<IContentCard> = ({label, type, image, title, onClick, description}) => {
     const defineLabelColor = useCallback(
         () => {
-            return type === 'Blog' ? 'pink-bg' : 'purple';
+            if (type === 'Blog') return 'pink-bg';
+            if (type === 'Opportunities') return 'purple';
+            return 'green-accent';
         },
         [type],
     );
@@ -15,7 +17,7 @@ const ContentCard: React.FC<IContentCard> = ({label, type, image, title, onClick
         <article className={style.cardContainer} onClick={onClick}>
             <div className={style.header}>
                 <span className={`${style.headerLabel} ${defineLabelColor()}`}>{label}</span>
-                <img className={style.headerBanner} src={image} alt="Banner"/>
+                <img draggable={false} className={style.headerBanner} src={image} alt="Banner"/>
             </div>
             <div className={style.content}>
                 <h2 className={style.contentTitle}>{title}</h2>

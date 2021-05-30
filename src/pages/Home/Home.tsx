@@ -24,9 +24,8 @@ const Home: React.FC = () => {
                     <ul className={style.publications}>
                         {
                             blog.map((item, index) =>
-                                <li>
+                                <li key={index}>
                                     <ContentCard
-                                        key={index}
                                         label="Blog"
                                         type="Blog"
                                         image={item.banner}

@@ -1,8 +1,15 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
+
 import IContentFilter from '../interfaces/content-filter.interface';
+import Blogs from '../constants/blog.const';
+import Courses from '../constants/courses.const';
+import Opportunities from '../constants/opportunities';
+import IContent from '../interfaces/content.interface';
 
 const useFilterContent = () => {
+    const [filteredContent, setFilteredContent] = useState<IContent[]>([]);
+    const [allContent] = useState([...Blogs, ...Courses, ...Opportunities]);
     const [content, setContent] = useState<IContentFilter>({} as IContentFilter);
     const {filter} = useParams();
 
@@ -10,6 +17,8 @@ const useFilterContent = () => {
         function filterContent(): void {
             if (filter.trim().includes('blog')) {
                 setContent({...content, title: 'Blog', description: 'Leituras complementares', titleColor: 'pink-fg'});
+                const blogs = allContent.filter(data => data.type === 'Blog');
+                setFilteredContent(blogs);
                 return;
             }
 
@@ -20,6 +29,9 @@ const useFilterContent = () => {
                     description: 'Oportunidades para você',
                     titleColor: 'purple-fg'
                 });
+                const opportunities = allContent.filter(data => data.type === 'Opportunities');
+                setFilteredContent(opportunities);
+
                 return;
             }
 
@@ -30,6 +42,9 @@ const useFilterContent = () => {
                     description: 'Confira cursos livres e temporários',
                     titleColor: 'green-accent-fg'
                 });
+                const courses = allContent.filter(data => data.type === 'Course');
+                setFilteredContent(courses);
+
                 return;
             }
 
@@ -39,12 +54,14 @@ const useFilterContent = () => {
                 description: `Resultados para a pequisa: ${filter}`,
                 titleColor: 'orange-fg'
             });
+            const filteredData = allContent.filter(data => data.title.includes(filter) || data.description.includes(filter));
+            setFilteredContent(filteredData);
         }
 
         filterContent();
     }, [filter]);
 
-    return {content};
+    return {content, filteredContent};
 };
 
 export default useFilterContent;
