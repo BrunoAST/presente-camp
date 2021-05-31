@@ -1,6 +1,6 @@
 import ux from 'assets/Content/Courses/Course1.png';
 
-interface Course {
+export interface Course {
     banner: string;
     title: string;
     subtitle: string;

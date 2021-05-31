@@ -9,7 +9,6 @@ import Opportunities from 'shared/constants/opportunities';
 import {BrowserRoutes} from 'shared/constants/browser-route.const';
 import CurrentCourse from './components/CurrentCourse/CurrentCourse';
 import {getItem} from '../../shared/local-storage/user-local-storage';
-import ContentType from '../../shared/type/content-type';
 
 const Home: React.FC = () => {
     const navigate = useNavigate()
@@ -30,7 +29,7 @@ const Home: React.FC = () => {
     const opportunitiesByInterests = useCallback(
         () => {
             if (!getItem().interests) return [];
-            
+
             return opportunities.filter(data =>
                 getItem().interests.includes(data.interests)
             );

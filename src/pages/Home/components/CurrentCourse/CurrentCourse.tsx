@@ -6,7 +6,7 @@ import style from './current-course.module.css';
 import {CustomLinearProgress} from '@material/Progress';
 import {ContainedButton} from '@material/Button';
 import {BrowserRoutes} from 'shared/constants/browser-route.const';
-import CurrentCourseConst from './constants/current-course.const';
+import CurrentCourseConst, {Course} from './constants/current-course.const';
 import {getItem} from 'shared/local-storage/user-local-storage';
 
 const CurrentCourse: React.FC = () => {
@@ -15,6 +15,7 @@ const CurrentCourse: React.FC = () => {
 
     const currentCourseByInterests = useCallback(
         () => {
+            if (!getItem().interests) return {} as Course;
             return courses.find(data => getItem().interests.includes(data.interest));
         },
         [courses],

@@ -1,16 +1,18 @@
 import React from 'react';
 
-import {Route} from 'react-router-dom';
+import {Route, Navigate} from 'react-router-dom';
 import {BrowserRoutes} from '../shared/constants/browser-route.const';
-import {isLogged} from '../shared/local-storage/user-local-storage';
-
-const Landing = React.lazy(() => import('../pages/Landing/Landing'));
+import {useAuthProvider} from '../shared/context/auth.context';
 
 const StudentWrapper: React.FC<any> = ({element, path, ...rest}) => {
+    const {isSigned} = useAuthProvider();
+
+    if (!isSigned)
+        return <Navigate to={BrowserRoutes.LANDING} {...rest}/>;
+
     return (
         <>
-            {isLogged() && <Route {...rest} path={path} element={element} />}
-            {!isLogged() && <Route path={BrowserRoutes.LANDING} element={<Landing/>}/>}
+            {isSigned && <Route {...rest} path={path} element={element} />}
         </>
     );
 };
