@@ -9,5 +9,5 @@ export default interface IContent {
     type: ContentType;
     by?: string;
     publishDate?: string;
-    content?: 'Indication' | 'Design tips' | 'Impediments';
+    content?: 'Indication' | 'Design tips' | 'Impediments' | 'First API';
 }

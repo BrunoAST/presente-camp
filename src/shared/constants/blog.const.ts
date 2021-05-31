@@ -24,6 +24,17 @@ const Blogs: IContent[] = [
         content: 'Impediments',
         type: 'Blog',
         interests: 'Gestão de projetos'
+    },
+    {
+        id: "criando-primeira-api-rest-com-node-js",
+        description: 'Primeiros passos',
+        banner: 'https://res.cloudinary.com/practicaldev/image/fetch/s--_QMQU86---/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/6dnng3pre04xxdebia1g.png',
+        title: 'Criando minha primeira API REST com Node.js',
+        by: 'Equipe Presente',
+        publishDate: '31 de Maio de 2021',
+        content: 'First API',
+        type: 'Blog',
+        interests: 'Backend'
     }
 ];
 
