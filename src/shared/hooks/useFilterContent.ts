@@ -70,7 +70,7 @@ const useFilterContent = () => {
         }
 
         filterContent();
-    }, [filter, allContent, content]);
+    }, [filter, allContent]);
 
     return {content, filteredContent};
 };
