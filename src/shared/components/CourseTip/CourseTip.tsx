@@ -3,8 +3,6 @@ import React, {useRef} from 'react';
 import style from './course-tip.module.css';
 import {faInfoCircle} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {Link} from 'react-router-dom';
-import {BrowserRoutes} from '../../constants/browser-route.const';
 
 const CourseTip: React.FC = () => {
     const tooltipRef = useRef<HTMLDivElement>(null);

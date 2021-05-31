@@ -18,7 +18,7 @@ const Filter: React.FC = () => {
         () => {
             showSearchInput(false);
         },
-        [isMobile],
+        [isMobile, showSearchInput],
     );
 
     function showSearchInput(show: boolean): void {

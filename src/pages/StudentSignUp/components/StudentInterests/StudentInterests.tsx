@@ -1,4 +1,4 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback} from 'react';
 
 import style from './student-interests.module.css';
 import RegisterContainer from 'shared/components/RegisterContainer/RegisterContainer';

@@ -4,8 +4,6 @@ import arrow from 'assets/Icons/Arrow.svg';
 import style from './footer.module.css';
 import AppButton from '../../../pages/Landing/components/AppButton/AppButton';
 import useIsMobile from 'shared/hooks/useIsMobile';
-import bgMobile from 'assets/Background/Landing/FooterMobileVector.png';
-import bgDesktop from 'assets/Background/Landing/FooterDesktopVector.svg';
 import bg from 'assets/Background/Footer.svg';
 import {useLocation} from 'react-router-dom';
 import {BrowserRoutes} from '../../constants/browser-route.const';
