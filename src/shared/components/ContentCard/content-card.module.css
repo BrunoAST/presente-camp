@@ -23,8 +23,8 @@
 
 .headerBanner {
     border-radius: 8px 8px 0 0;
-    max-width: 300px;
-    height: auto;
+    width: 300px;
+    height: 200px;
 }
 
 .content {
