@@ -46,7 +46,7 @@ const FooterSection: React.FC = () => {
             {(!isLanding) && <img draggable={false} className={style.footerImage} src={bg} alt="Imagem de rodapé"/>}
 
             <section className={style.footerContainer}>
-                <div>
+                <div className={style.container}>
                     <span
                         id="about"
                         className={style.titleContainer}
