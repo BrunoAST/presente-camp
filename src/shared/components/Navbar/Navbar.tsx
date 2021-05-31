@@ -14,6 +14,7 @@ import Filter from './components/Filter/Filter';
 import {useAuthProvider} from '../../context/auth.context';
 import useIsMobile from '../../hooks/useIsMobile';
 import {setItem} from '../../local-storage/user-local-storage';
+import IUserData from '../../interfaces/user-data.interface';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -71,7 +72,7 @@ const Navbar = () => {
 
                         {isMobile && <button
                             onClick={() => {
-                                setItem({token: '', name: '', email: ''});
+                                setItem({} as IUserData);
                                 setIsSigned(false);
                                 navigate(BrowserRoutes.LANDING);
                             }}
