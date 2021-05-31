@@ -1,3 +1,4 @@
+import BlogContent from 'shared/type/blog-content';
 import ContentType from 'shared/type/content-type';
 
 export default interface IContent {
@@ -9,5 +10,5 @@ export default interface IContent {
     type: ContentType;
     by?: string;
     publishDate?: string;
-    content?: 'Indication' | 'Design tips' | 'Impediments' | 'First API';
+    content?: BlogContent;
 }

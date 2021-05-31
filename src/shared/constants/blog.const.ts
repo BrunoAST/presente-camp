@@ -35,6 +35,17 @@ const Blogs: IContent[] = [
         content: 'First API',
         type: 'Blog',
         interests: 'Backend'
+    },
+    {
+        id: "docker-fundamentals",
+        description: 'Entendendo o que são containers e primeiros comandos Docker!',
+        banner: 'https://www.mundodocker.com.br/wp-content/uploads/2015/06/docker-filesystems-busyboxrw.png',
+        title: 'Primeiros passos com o Docker',
+        by: 'Equipe Presente',
+        publishDate: '18 de Maio de 2021',
+        content: 'Docker',
+        type: 'Blog',
+        interests: 'Backend'
     }
 ];
 
