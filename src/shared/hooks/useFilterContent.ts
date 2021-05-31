@@ -19,7 +19,7 @@ const useFilterContent = () => {
         function filterContent(): void {
             if (filter.trim().includes('blog')) {
                 setContent({...content, title: 'Blog', description: 'Leituras complementares', titleColor: 'pink-fg'});
-                const blogs = allContent.filter(data => data.type === 'Blog' && getItem().interests.includes(data.interests as ContentType));
+                const blogs = allContent.filter(data => data.type === 'Blog' && getItem().interests.includes(data.interests));
                 setFilteredContent(blogs);
                 return;
             }
@@ -31,7 +31,7 @@ const useFilterContent = () => {
                     description: 'Oportunidades para você',
                     titleColor: 'purple-fg'
                 });
-                const opportunities = allContent.filter(data => data.type === 'Opportunities' && getItem().interests.includes(data.interests as ContentType));
+                const opportunities = allContent.filter(data => data.type === 'Opportunities' && getItem().interests.includes(data.interests));
                 setFilteredContent(opportunities);
 
                 return;
@@ -44,7 +44,7 @@ const useFilterContent = () => {
                     description: 'Confira cursos livres e temporários',
                     titleColor: 'green-accent-fg'
                 });
-                const courses = allContent.filter(data => data.type === 'Course' && getItem().interests.includes(data.interests as ContentType));
+                const courses = allContent.filter(data => data.type === 'Course' && getItem().interests.includes(data.interests));
                 setFilteredContent(courses);
 
                 return;
@@ -59,7 +59,7 @@ const useFilterContent = () => {
             const filteredData = allContent.filter(data =>
                 (data.title.toLocaleLowerCase().includes(filter.trim().toLocaleLowerCase()) ||
                 data.description.toLocaleLowerCase().includes(filter.toLocaleLowerCase())) &&
-                getItem().interests.includes(data.interests as ContentType)
+                getItem().interests.includes(data.interests)
             );
             setFilteredContent(filteredData);
         }

@@ -8,8 +8,8 @@ import ContentCard from 'shared/components/ContentCard/ContentCard';
 import ContentType from 'shared/type/content-type';
 import IContent from 'shared/interfaces/content.interface';
 import {BrowserRoutes} from 'shared/constants/browser-route.const';
-import CourseTip from '../../shared/components/CourseTip/CourseTip';
-import useIsMobile from '../../shared/hooks/useIsMobile';
+import CourseTip from 'shared/components/CourseTip/CourseTip';
+import useIsMobile from 'shared/hooks/useIsMobile';
 
 const ContentFilter: React.FC = () => {
     const {isMobile} = useIsMobile();

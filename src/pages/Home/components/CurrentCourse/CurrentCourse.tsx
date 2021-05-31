@@ -1,31 +1,41 @@
-import React from 'react';
+import React, {useCallback, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
 import style from './current-course.module.css';
-import course from 'assets/Content/Courses/Course1.png';
+
 import {CustomLinearProgress} from '@material/Progress';
 import {ContainedButton} from '@material/Button';
 import {BrowserRoutes} from 'shared/constants/browser-route.const';
+import CurrentCourseConst from './constants/current-course.const';
+import {getItem} from 'shared/local-storage/user-local-storage';
 
 const CurrentCourse: React.FC = () => {
+    const [courses] = useState(CurrentCourseConst);
     const navigate = useNavigate();
+
+    const currentCourseByInterests = useCallback(
+        () => {
+            return courses.find(data => getItem().interests.includes(data.interest));
+        },
+        [courses],
+    );
 
     return (
         <article className={style.container}>
-            <img draggable={false} className={style.courseImage} src={course} alt="Curso em andamento"/>
+            <img draggable={false} className={style.courseImage} src={currentCourseByInterests()?.banner} alt="Curso em andamento"/>
 
             <div className={style.courseDescription}>
-                <h1 className={style.title}>Como montar um briefing de UX Writing</h1>
+                <h1 className={style.title}>{currentCourseByInterests()?.title}</h1>
 
                 <span className={style.courseName}>
-                    <p>Por: UX Writing</p>
+                    <p>{currentCourseByInterests()?.subtitle}</p>
                     <div className={style.divider}/>
-                    <p>UX/UI</p>
+                    <p>{currentCourseByInterests()?.interest}</p>
                 </span>
 
                 <div className={style.progress}>
-                    <CustomLinearProgress variant="determinate" value={10}/>
-                    <span className={`${style.currentProgress} font-1`}>10%</span>
+                    <CustomLinearProgress variant="determinate" value={currentCourseByInterests()?.progress}/>
+                    <span className={`${style.currentProgress} font-1`}>{currentCourseByInterests()?.progress}%</span>
                 </div>
 
                 <ContainedButton

@@ -19,7 +19,7 @@ const Home: React.FC = () => {
     const blogsByInterests = useCallback(
         () => {
             return blogs.filter(data =>
-                getItem().interests.includes(data.interests as ContentType)
+                getItem().interests.includes(data.interests)
             );
         },
         [blogs],
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
     const opportunitiesByInterests = useCallback(
         () => {
             return opportunities.filter(data =>
-                getItem().interests.includes(data.interests as ContentType)
+                getItem().interests.includes(data.interests)
             );
         },
         [opportunities],
