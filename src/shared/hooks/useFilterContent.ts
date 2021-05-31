@@ -7,7 +7,6 @@ import Courses from '../constants/courses.const';
 import Opportunities from '../constants/opportunities';
 import IContent from '../interfaces/content.interface';
 import {getItem} from '../local-storage/user-local-storage';
-import ContentType from '../type/content-type';
 
 const useFilterContent = () => {
     const [filteredContent, setFilteredContent] = useState<IContent[]>([]);
@@ -17,6 +16,11 @@ const useFilterContent = () => {
 
     useEffect(() => {
         function filterContent(): void {
+            if (getItem().interests.length <= 0) {
+                setFilteredContent([])
+                return;
+            }
+
             if (filter.trim().includes('blog')) {
                 setContent({...content, title: 'Blog', description: 'Leituras complementares', titleColor: 'pink-fg'});
                 const blogs = allContent.filter(data => data.type === 'Blog' && getItem().interests.includes(data.interests));
@@ -44,6 +48,7 @@ const useFilterContent = () => {
                     description: 'Confira cursos livres e temporários',
                     titleColor: 'green-accent-fg'
                 });
+
                 const courses = allContent.filter(data => data.type === 'Course' && getItem().interests.includes(data.interests));
                 setFilteredContent(courses);
 
