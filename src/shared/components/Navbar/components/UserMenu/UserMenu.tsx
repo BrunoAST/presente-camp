@@ -8,10 +8,11 @@ import {useAuthProvider} from '../../../../context/auth.context';
 import IUserData from '../../../../interfaces/user-data.interface';
 
 const UserMenu: React.FC = () => {
-    const {setUserData} = useAuthProvider();
+    const {setUserData, setIsSigned} = useAuthProvider();
 
     function logout(): void {
         setItem({} as IUserData);
+        setIsSigned(false);
         setUserData({email: '', name: '', token: ''});
     }
 

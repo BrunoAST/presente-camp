@@ -10,12 +10,13 @@ import {ELogoMobileDesktop} from '../LogoMobileDesktop/interface/logo-mobile-des
 import UserMenu from './components/UserMenu/UserMenu';
 import NotificationMenu from './components/NotificationMenu/NotificationMenu';
 import NavOptions from './components/NavOptions/NavOptions';
-import {isLogged} from '../../local-storage/user-local-storage';
 import Filter from './components/Filter/Filter';
+import {useAuthProvider} from '../../context/auth.context';
 
 const Navbar = () => {
     const userMenu = useRef<HTMLUListElement>(null);
     const notificationMenu = useRef<HTMLUListElement>(null);
+    const {isSigned} = useAuthProvider();
 
     function toggleMenu(element: HTMLUListElement | null, toggleClass: string): void {
         if (element?.classList.contains(toggleClass)) {
@@ -31,7 +32,7 @@ const Navbar = () => {
             <nav className={`${style.nav}`}>
                 <LogoMobileDesktop type={ELogoMobileDesktop.NORMAL}/>
 
-                {(isLogged()) && <>
+                {(isSigned) && <>
                     <NavOptions/>
 
                     {/*<div className={style.optionsContainer}>*/}
@@ -68,7 +69,7 @@ const Navbar = () => {
                     {/*</div>*/}
                 </>}
 
-                {!isLogged() && <ul>
+                {!isSigned && <ul>
                     <li className={style.links}>
                         <Link
                             data-cy="nav-sign-in-link"

@@ -21,7 +21,7 @@ const SignIn = () => {
     let isLoading = false;
     const navigate = useNavigate();
     const {values, handleInputChange} = useForm();
-    const {setUserData} = useAuthProvider();
+    const {setUserData, setIsSigned} = useAuthProvider();
 
     function isInvalid(): boolean {
         return !values.email || !values.password;
@@ -38,6 +38,7 @@ const SignIn = () => {
             .then(res => {
                 setUserData(res.data);
                 setItem({token: res.data.token, name: res.data.name, email: res.data.email});
+                setIsSigned(false);
                 navigate(BrowserRoutes.HOME);
             })
             .catch(err => onError(err.response.data))
