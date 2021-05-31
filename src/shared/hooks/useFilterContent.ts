@@ -54,7 +54,10 @@ const useFilterContent = () => {
                 description: `Resultados para a pequisa: ${filter}`,
                 titleColor: 'orange-fg'
             });
-            const filteredData = allContent.filter(data => data.title.includes(filter) || data.description.includes(filter));
+            const filteredData = allContent.filter(data =>
+                data.title.toLocaleLowerCase().includes(filter.trim().toLocaleLowerCase()) ||
+                data.description.toLocaleLowerCase().includes(filter.toLocaleLowerCase())
+            );
             setFilteredContent(filteredData);
         }
 

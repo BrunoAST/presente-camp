@@ -1,12 +1,29 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 import arrow from 'assets/Icons/Arrow.svg';
 import style from './footer.module.css';
 import AppButton from '../../../pages/Landing/components/AppButton/AppButton';
 import useIsMobile from 'shared/hooks/useIsMobile';
+import bgMobile from 'assets/Background/Landing/FooterMobileVector.png';
+import bgDesktop from 'assets/Background/Landing/FooterDesktopVector.svg';
+import bg from 'assets/Background/Footer.svg';
+import {useLocation} from 'react-router-dom';
+import {BrowserRoutes} from '../../constants/browser-route.const';
 
 const FooterSection: React.FC = () => {
-    const {isMobile} = useIsMobile()
+    const {isMobile} = useIsMobile();
+    const {pathname} = useLocation();
+    const [isLanding, setIsLanding] = useState(false);
+
+    useEffect(() => {
+        function defineBg(): void {
+            setIsLanding(pathname === BrowserRoutes.LANDING);
+
+            console.log(isLanding);
+        }
+
+        defineBg();
+    }, [pathname]);
 
     function toggleLinksVisibility(idIcon: string, idLinks: string): void {
         const icon = document.getElementById(idIcon) as HTMLElement;
@@ -29,26 +46,30 @@ const FooterSection: React.FC = () => {
     }
 
     return (
-        <section className={style.footerContainer}>
-            <div>
-                <span
-                    id="about"
-                    className={style.titleContainer}
-                    onClick={() => toggleLinksVisibility('aboutIcon', 'aboutLinks')}
-                >
-                    <h1 className={style.title}>Sobre nós</h1>
-                    {isMobile && <img id="aboutIcon" src={arrow} alt="Expandir"/>}
-                </span>
-                {isMobile && <hr/>}
+        <>
+            {(!isLanding) && <img draggable={false} className={style.footerImage} src={bg} alt="Imagem de rodapé"/>}
 
-                <ul id="aboutLinks" className={style.linksContainer}>
-                    <li className={style.links}>Valores e história</li>
-                    <li className={style.links}>Nossa equipe</li>
-                    <li>Trabalhe conosco</li>
-                </ul>
-            </div>
+            <section className={style.footerContainer}>
+                <div>
+                    <span
+                        id="about"
+                        className={style.titleContainer}
+                        onClick={() => toggleLinksVisibility('aboutIcon', 'aboutLinks')}
+                    >
+                        <h1 className={style.title}>Sobre nós</h1>
+                        {isMobile && <img id="aboutIcon" src={arrow} alt="Expandir"/>}
+                    </span>
 
-            <div className={style.container}>
+                    {isMobile && <hr/>}
+
+                    <ul id="aboutLinks" className={style.linksContainer}>
+                        <li className={style.links}>Valores e história</li>
+                        <li className={style.links}>Nossa equipe</li>
+                        <li>Trabalhe conosco</li>
+                    </ul>
+                </div>
+
+                <div className={style.container}>
                 <span
                     id="contact"
                     className={style.titleContainer}
@@ -57,16 +78,16 @@ const FooterSection: React.FC = () => {
                     <h1 className={style.title}>Contato</h1>
                     {isMobile && <img id="contactIcon" src={arrow} alt="Expandir"/>}
                 </span>
-                {isMobile && <hr/>}
+                    {isMobile && <hr/>}
 
-                <ul id="contactLinks" className={style.linksContainer}>
-                    <li className={style.links}>Enviar mensagem</li>
-                    <li className={style.links}>Tenho um feedback</li>
-                    <li>F.A.Q</li>
-                </ul>
-            </div>
+                    <ul id="contactLinks" className={style.linksContainer}>
+                        <li className={style.links}>Enviar mensagem</li>
+                        <li className={style.links}>Tenho um feedback</li>
+                        <li>F.A.Q</li>
+                    </ul>
+                </div>
 
-            <div className={style.container}>
+                <div className={style.container}>
                 <span
                     id="content"
                     className={style.titleContainer}
@@ -75,26 +96,27 @@ const FooterSection: React.FC = () => {
                     <h1 className={style.title}>Conteúdo</h1>
                     {isMobile && <img id="contentIcon" src={arrow} alt="Expandir"/>}
                 </span>
-                {isMobile && <hr/>}
+                    {isMobile && <hr/>}
 
-                <ul id="contentLinks" className={style.linksContainer}>
-                    <li className={style.links}>Cursos on Demand</li>
-                    <li className={style.links}>Cursos sazonais</li>
-                    <li>Tem uma ideia? manda pra gente!</li>
-                </ul>
-            </div>
+                    <ul id="contentLinks" className={style.linksContainer}>
+                        <li className={style.links}>Cursos on Demand</li>
+                        <li className={style.links}>Cursos sazonais</li>
+                        <li>Tem uma ideia? manda pra gente!</li>
+                    </ul>
+                </div>
 
-            <div className={style.store}>
-                <AppButton direction="column"/>
+                <div className={style.store}>
+                    <AppButton direction="column"/>
 
-                <p className={style.brasil}>Brasil</p>
+                    <p className={style.brasil}>Brasil</p>
 
-                <p className={style.rights}>Termos de Uso e Privacidade
-                    <br/>
-                    © 2021 Presente ✋
-                </p>
-            </div>
-        </section>
+                    <p className={style.rights}>Termos de Uso e Privacidade
+                        <br/>
+                        © 2021 Presente ✋
+                    </p>
+                </div>
+            </section>
+        </>
     );
 };
 

@@ -37,7 +37,7 @@ const Indication: React.FC = () => {
 
             <div className={`${style.indicationColumn} mt-24`}>
                 <div>
-                    <h2 className={`${style.indicationTitleSection} font-3 emphasis`}>Podcast e livro</h2>
+                    <h2 className={`blogSubTitle font-3 emphasis`}>Podcast e livro</h2>
                     <p className={`paragraph font-3`}>
                         Prefere outro meio de consumir conteúdos? não se preocupe!
                         Separamos aqui também duas indicações super legais para você! O podcast da Startup
@@ -54,7 +54,7 @@ const Indication: React.FC = () => {
                 {!isMobile && <img width={300} src={indication3} alt=" Bancos de imagens e representatividade"/>}
 
                 <div>
-                    <h2 className={`${style.indicationTitleSection} font-3 emphasis`}>
+                    <h2 className={`blogSubTitle font-3 emphasis`}>
                         Bancos de imagens e representatividade
                     </h2>
                     <p className={`paragraph font-3`}>

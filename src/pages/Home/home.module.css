@@ -48,6 +48,10 @@
 
     .content {
         margin: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .publications {
