@@ -13,8 +13,7 @@ import NavOptions from './components/NavOptions/NavOptions';
 import Filter from './components/Filter/Filter';
 import {useAuthProvider} from '../../context/auth.context';
 import useIsMobile from '../../hooks/useIsMobile';
-import {setItem} from '../../local-storage/user-local-storage';
-import IUserData from '../../interfaces/user-data.interface';
+import Logout from '../../helpers/logout';
 
 const Navbar = () => {
     const navigate = useNavigate();
@@ -72,16 +71,16 @@ const Navbar = () => {
 
                         {isMobile && <button
                             onClick={() => {
-                                setItem({} as IUserData);
-                                setIsSigned(false);
-                                navigate(BrowserRoutes.LANDING);
+                                Logout(() => {
+                                    setIsSigned(false);
+                                    navigate(BrowserRoutes.LANDING);
+                                });
                             }}
                             className={style.actions}
                         >
                             <FontAwesomeIcon className={`orange-fg`} icon={faSignOutAlt}/>
                         </button>}
                     </div>
-
                 </>}
 
                 {!isSigned && <ul>

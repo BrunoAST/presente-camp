@@ -1,9 +1,9 @@
 import React from 'react';
 
 import style from './indication.module.css';
-import indication1 from 'assets/Blog/Indication/Indication1.svg';
-import indication2 from 'assets/Blog/Indication/Indication2.svg';
-import indication3 from 'assets/Blog/Indication/Indication3.svg';
+import indication1 from 'assets/Content/Blog/Indication/Indication1.svg';
+import indication2 from 'assets/Content/Blog/Indication/Indication2.svg';
+import indication3 from 'assets/Content/Blog/Indication/Indication3.svg';
 import useIsMobile from 'shared/hooks/useIsMobile';
 
 const Indication: React.FC = () => {

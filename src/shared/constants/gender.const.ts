@@ -3,11 +3,10 @@ const Gender: string[] = [
     'Homem trans',
     'Mulher cis',
     'Mulher trans',
+    'Travesti',
     'Não binário',
-    'Prefiro não responder',
     'Outros',
     'Prefiro não responder',
-    'Outros',
 ];
 
 export default Gender;

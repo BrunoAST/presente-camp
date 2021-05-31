@@ -1,20 +1,14 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 
 import style from './user-menu.module.css';
 import {BrowserRoutes} from '../../../../constants/browser-route.const';
-import {setItem} from 'shared/local-storage/user-local-storage';
+import Logout from '../../../../helpers/logout';
 import {useAuthProvider} from '../../../../context/auth.context';
-import IUserData from '../../../../interfaces/user-data.interface';
 
 const UserMenu: React.FC = () => {
+    const navigate = useNavigate();
     const {setUserData, setIsSigned} = useAuthProvider();
-
-    function logout(): void {
-        setItem({} as IUserData);
-        setIsSigned(false);
-        setUserData({} as IUserData);
-    }
 
     return (
         <>
@@ -35,7 +29,14 @@ const UserMenu: React.FC = () => {
             </li>
 
             <li className={`${style.listItem} mb-24`}>
-                <Link onClick={logout} to={BrowserRoutes.LANDING}>Sair</Link>
+                <Link onClick={(event) => {
+                    event.preventDefault();
+                    Logout(() => {
+                        setIsSigned(false);
+                        setUserData({interests: [], email: '', name: '', token: ''});
+                        navigate(BrowserRoutes.LANDING);
+                    });
+                }} to={BrowserRoutes.LANDING}>Sair</Link>
             </li>
         </>
     );

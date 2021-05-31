@@ -36,9 +36,11 @@ const SignIn = () => {
 
         signInHttp(values.email, values.password)
             .then(res => {
+                if (!res) return;
+
                 setUserData(res.data);
                 setItem({...res.data});
-                setIsSigned(false);
+                setIsSigned(true);
                 navigate(BrowserRoutes.HOME);
             })
             .catch(err => onError(err.response.data))

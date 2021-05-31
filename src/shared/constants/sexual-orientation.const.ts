@@ -4,6 +4,8 @@ const SexualOrientation: string[] = [
     'Bissexual',
     'Panssexual',
     'Assexual',
+    'Outros',
+    'Prefiro não responder',
 ];
 
 export default SexualOrientation;
