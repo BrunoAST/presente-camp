@@ -11,6 +11,7 @@ const Blogs: IContent[] = [
         publishDate: '27 de Maio de 2021',
         content: 'Indication',
         type: 'Blog',
+        interests: 'UI/UX'
     },
     {
         id: "impedimentos-o-que-e-como-agir",
@@ -21,6 +22,7 @@ const Blogs: IContent[] = [
         publishDate: '24 de Maio de 2021',
         content: 'Impediments',
         type: 'Blog',
+        interests: 'Gestão de projetos'
     }
 ];
 

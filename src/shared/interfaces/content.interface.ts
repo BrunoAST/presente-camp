@@ -5,6 +5,7 @@ export default interface IContent {
     description: string;
     banner: string;
     title: string;
+    interests: string;
     type: ContentType;
     by?: string;
     publishDate?: string;

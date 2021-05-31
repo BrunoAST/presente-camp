@@ -8,14 +8,16 @@ const Courses: IContent[] = [
         description: 'Teoria do Design',
         banner: course1,
         title: 'Teoria das cores',
-        type: 'Course'
+        type: 'Course',
+        interests: 'UI/UX'
     },
     {
         id: "teoria-das-cores",
         description: 'UX Writing',
         banner: course2,
         title: 'Como montar um briefing de UX Writing',
-        type: 'Course'
+        type: 'Course',
+        interests: 'UI/UX',
     },
 ];
 
