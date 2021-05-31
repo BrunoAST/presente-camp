@@ -13,7 +13,7 @@ const UserMenu: React.FC = () => {
     function logout(): void {
         setItem({} as IUserData);
         setIsSigned(false);
-        setUserData({email: '', name: '', token: ''});
+        setUserData({} as IUserData);
     }
 
     return (

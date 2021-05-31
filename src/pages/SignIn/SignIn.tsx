@@ -37,7 +37,7 @@ const SignIn = () => {
         signInHttp(values.email, values.password)
             .then(res => {
                 setUserData(res.data);
-                setItem({token: res.data.token, name: res.data.name, email: res.data.email});
+                setItem({...res.data});
                 setIsSigned(false);
                 navigate(BrowserRoutes.HOME);
             })
