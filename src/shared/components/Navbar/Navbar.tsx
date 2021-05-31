@@ -18,8 +18,6 @@ const Navbar = () => {
     const notificationMenu = useRef<HTMLUListElement>(null);
 
     function toggleMenu(element: HTMLUListElement | null, toggleClass: string): void {
-        notificationMenu.current?.classList.remove(style.dropdownNotificationOptionsVisible);
-
         if (element?.classList.contains(toggleClass)) {
             element?.classList.remove(toggleClass);
             return;
