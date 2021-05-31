@@ -15,6 +15,17 @@ const Blogs: IContent[] = [
         interests: 'UI/UX'
     },
     {
+        id: "dicas-para-designers-que-procuram-trabalhar-no-exterior",
+        description: 'O mundo está entrando numa era remota e democratizando oportunidades — veja como aproveitá-las.',
+        banner: 'https://miro.medium.com/max/3200/1*5rHHan0Zd71LWdzNMCmGUg.jpeg',
+        title: 'Dicas para designers que buscam trabalhar no exterior',
+        by: 'Equipe Presente',
+        publishDate: '21 de Maio de 2021',
+        content: 'Designer Tips',
+        type: 'Blog',
+        interests: 'UI/UX'
+    },
+    {
         id: "impedimentos-o-que-e-como-agir",
         description: 'Como agir nessas situações',
         banner: impediment,

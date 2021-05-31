@@ -7,6 +7,7 @@ import IContent from 'shared/interfaces/content.interface';
 import Blogs from 'shared/constants/blog.const';
 
 const Indication = lazy(() => import('./components/Indication/Indication'));
+const DesignerTips = lazy(() => import('./components/DesignerTips/DesignerTips'));
 const Impediments = lazy(() => import('./components/Impediments/Impediments'));
 const FirstAPI = lazy(() => import('./components/FirstAPI/FirstAPI'));
 const DockerFundamentals = lazy(() => import('./components/DockerFundamentals/DockerFundamentals'));
@@ -45,6 +46,7 @@ const Blog: React.FC = () => {
                     </span>
 
                     {content?.content === 'Indication' && <Indication/>}
+                    {content?.content === 'Designer Tips' && <DesignerTips/>}
                     {content?.content === 'Impediments' && <Impediments/>}
                     {content?.content === 'First API' && <FirstAPI/>}
                     {content?.content === 'Docker' && <DockerFundamentals/>}
