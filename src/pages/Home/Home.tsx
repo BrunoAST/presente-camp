@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 
 import style from './home.module.css';
@@ -8,11 +8,31 @@ import Blogs from 'shared/constants/blog.const';
 import Opportunities from 'shared/constants/opportunities';
 import {BrowserRoutes} from 'shared/constants/browser-route.const';
 import CurrentCourse from './components/CurrentCourse/CurrentCourse';
+import {getItem} from '../../shared/local-storage/user-local-storage';
+import ContentType from '../../shared/type/content-type';
 
 const Home: React.FC = () => {
     const navigate = useNavigate()
     const [blogs] = useState(Blogs);
     const [opportunities] = useState(Opportunities);
+
+    const blogsByInterests = useCallback(
+        () => {
+            return blogs.filter(data =>
+                getItem().interests.includes(data.interests as ContentType)
+            );
+        },
+        [blogs],
+    );
+
+    const opportunitiesByInterests = useCallback(
+        () => {
+            return opportunities.filter(data =>
+                getItem().interests.includes(data.interests as ContentType)
+            );
+        },
+        [opportunities],
+    );
 
     return (
         <div className={style.container}>
@@ -34,7 +54,7 @@ const Home: React.FC = () => {
 
                 <ul className={style.publications}>
                     {
-                        blogs.map((item, index) =>
+                        blogsByInterests().map((item, index) =>
                             <li key={index}>
                                 <ContentCard
                                     label="Blog"
@@ -58,7 +78,7 @@ const Home: React.FC = () => {
 
                 <ul className={style.publications}>
                     {
-                        opportunities.map((item, index) =>
+                        opportunitiesByInterests().map((item, index) =>
                             <li key={index}>
                                 <ContentCard
                                     label="Vaga"
