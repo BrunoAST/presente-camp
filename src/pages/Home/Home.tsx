@@ -57,7 +57,7 @@ const Home: React.FC = () => {
 
                 <ul className={style.publications}>
                     {
-                        blogsByInterests().map((item, index) =>
+                        blogsByInterests().splice(0, 3).map((item, index) =>
                             <li key={index}>
                                 <ContentCard
                                     label="Blog"
@@ -81,7 +81,7 @@ const Home: React.FC = () => {
 
                 <ul className={style.publications}>
                     {
-                        opportunitiesByInterests().map((item, index) =>
+                        opportunitiesByInterests().splice(0, 3).map((item, index) =>
                             <li key={index}>
                                 <ContentCard
                                     label="Vaga"

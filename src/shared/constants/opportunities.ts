@@ -52,6 +52,30 @@ const Opportunities: IContent[] = [
         title: 'Desenvolvedor Angular Pleno',
         type: 'Opportunities',
         interests: 'Frontend'
+    },
+    {
+        id: "node-js-junior",
+        description: 'ioasys',
+        banner: 'https://ioasys.com.br/static/og-image-7578fe3bd736621f7d9d987908812ee0.jpg',
+        title: 'Desenvolvedor NodeJs Júnior',
+        type: 'Opportunities',
+        interests: 'Backend'
+    },
+    {
+        id: "node-csharp-senior",
+        description: 'ioasys',
+        banner: 'https://ioasys.com.br/static/og-image-7578fe3bd736621f7d9d987908812ee0.jpg',
+        title: 'Desenvolvedor C# Sênior',
+        type: 'Opportunities',
+        interests: 'Backend'
+    },
+    {
+        id: "node-csharp-pleno",
+        description: 'ioasys',
+        banner: 'https://ioasys.com.br/static/og-image-7578fe3bd736621f7d9d987908812ee0.jpg',
+        title: 'Desenvolvedor C# Pleno',
+        type: 'Opportunities',
+        interests: 'Backend'
     }
 ];
 
