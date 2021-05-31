@@ -18,8 +18,6 @@ const FooterSection: React.FC = () => {
     useEffect(() => {
         function defineBg(): void {
             setIsLanding(pathname === BrowserRoutes.LANDING);
-
-            console.log(isLanding);
         }
 
         defineBg();

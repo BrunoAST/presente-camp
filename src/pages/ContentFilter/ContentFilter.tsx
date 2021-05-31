@@ -36,6 +36,7 @@ const ContentFilter: React.FC = () => {
                 <h1 className={style.notFoundTitle}>Nenhum resultado encontrado</h1>
                 <p className={style.notFoundParagraph}>Verifique o texto inserido</p>
             </div>}
+
             {filteredContent.length > 0 && <section className={style.container}>
                 <div>
                     <h1 className={`${style.title} ${content.titleColor}`}>{content.title}</h1>

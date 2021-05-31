@@ -1,6 +1,6 @@
-import React, {memo, useRef} from 'react';
-import {Link} from 'react-router-dom';
-import {faBell, faUserCircle} from '@fortawesome/free-solid-svg-icons';
+import React, {useRef} from 'react';
+import {Link, useNavigate} from 'react-router-dom';
+import {faBell, faSignOutAlt, faUserCircle} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 import style from './navbar.module.css';
@@ -12,11 +12,15 @@ import NotificationMenu from './components/NotificationMenu/NotificationMenu';
 import NavOptions from './components/NavOptions/NavOptions';
 import Filter from './components/Filter/Filter';
 import {useAuthProvider} from '../../context/auth.context';
+import useIsMobile from '../../hooks/useIsMobile';
+import {setItem} from '../../local-storage/user-local-storage';
 
 const Navbar = () => {
+    const navigate = useNavigate();
+    const {isMobile} = useIsMobile();
     const userMenu = useRef<HTMLUListElement>(null);
     const notificationMenu = useRef<HTMLUListElement>(null);
-    const {isSigned} = useAuthProvider();
+    const {isSigned, setIsSigned} = useAuthProvider();
 
     function toggleMenu(element: HTMLUListElement | null, toggleClass: string): void {
         if (element?.classList.contains(toggleClass)) {
@@ -35,38 +39,48 @@ const Navbar = () => {
                 {(isSigned) && <>
                     <NavOptions/>
 
-                    {/*<div className={style.optionsContainer}>*/}
-                        <Filter/>
+                    <Filter/>
 
-                        <div className={style.actionsContainer}>
-                            <button
-                                onClick={() => {
-                                    toggleMenu(notificationMenu.current, style.dropdownNotificationOptionsVisible);
-                                    userMenu.current?.classList.remove(style.dropdownUserOptionsVisible);
-                                }}
-                                className={style.actions}
-                            >
-                                <FontAwesomeIcon icon={faBell}/>
-                                <ul ref={notificationMenu}
-                                    className={`${style.dropdownNotificationOptions} ${style.dropdown}`}>
-                                    <NotificationMenu/>
-                                </ul>
-                            </button>
+                    <div className={style.actionsContainer}>
+                        {!isMobile && <button
+                            onClick={() => {
+                                toggleMenu(notificationMenu.current, style.dropdownNotificationOptionsVisible);
+                                userMenu.current?.classList.remove(style.dropdownUserOptionsVisible);
+                            }}
+                            className={style.actions}
+                        >
+                            <FontAwesomeIcon icon={faBell}/>
+                            <ul ref={notificationMenu}
+                                className={`${style.dropdownNotificationOptions} ${style.dropdown}`}>
+                                <NotificationMenu/>
+                            </ul>
+                        </button>}
 
-                            <button
-                                onClick={() => {
-                                    toggleMenu(userMenu.current, style.dropdownUserOptionsVisible);
-                                    notificationMenu.current?.classList.remove(style.dropdownNotificationOptionsVisible);
-                                }}
-                                className={style.actions}
-                            >
-                                <FontAwesomeIcon icon={faUserCircle}/>
-                                <ul ref={userMenu} className={`${style.dropdownUserOptions} ${style.dropdown}`}>
-                                    <UserMenu/>
-                                </ul>
-                            </button>
-                        </div>
-                    {/*</div>*/}
+                        {!isMobile && <button
+                            onClick={() => {
+                                toggleMenu(userMenu.current, style.dropdownUserOptionsVisible);
+                                notificationMenu.current?.classList.remove(style.dropdownNotificationOptionsVisible);
+                            }}
+                            className={style.actions}
+                        >
+                            <FontAwesomeIcon icon={faUserCircle}/>
+                            <ul ref={userMenu} className={`${style.dropdownUserOptions} ${style.dropdown}`}>
+                                <UserMenu/>
+                            </ul>
+                        </button>}
+
+                        {isMobile && <button
+                            onClick={() => {
+                                setItem({token: '', name: '', email: ''});
+                                setIsSigned(false);
+                                navigate(BrowserRoutes.LANDING);
+                            }}
+                            className={style.actions}
+                        >
+                            <FontAwesomeIcon className={`orange-fg`} icon={faSignOutAlt}/>
+                        </button>}
+                    </div>
+
                 </>}
 
                 {!isSigned && <ul>
@@ -92,4 +106,4 @@ const Navbar = () => {
     );
 };
 
-export default memo(Navbar);
+export default Navbar;
