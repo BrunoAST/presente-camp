@@ -29,6 +29,16 @@
     background-color: rgba(0, 0, 0, .1);
 }
 
+.firstLevelList {
+    margin-left: 2rem;
+    list-style: decimal;
+}
+
+.secondLevelList {
+    margin-left: 3rem;
+    list-style: circle;
+}
+
 @media (max-width: 959px) {
     .banner {
         max-width: 100%;

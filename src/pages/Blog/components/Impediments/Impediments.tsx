@@ -1,7 +1,5 @@
 import React from 'react';
 
-import style from './impediments.module.css';
-
 const Impediments: React.FC = () => {
     return (
         <>
@@ -83,11 +81,11 @@ const Impediments: React.FC = () => {
                 Após identificar um impedimento, existem alguns passos que ajudarão na sua resolução:
             </p>
 
-            <ol className={style.firstLevelList}>
+            <ol className={"firstLevelList"}>
                 <li className={`paragraph font-3`}>
                     Dê visibilidade ao impedimento:
 
-                    <ul className={style.secondLevelList}>
+                    <ul className={"secondLevelList"}>
                         <li className={`paragraph font-3`}>
                             Caso seja um problema já conhecido e você tenha autonomia para saná-lo, faça-o. Não espere
                             pelo Agile Master;
@@ -102,7 +100,7 @@ const Impediments: React.FC = () => {
                 <li className={`paragraph font-3`}>
                     Não espere para agir:
 
-                    <ul className={style.secondLevelList}>
+                    <ul className={"secondLevelList"}>
                         <li className={`paragraph font-3`}>
                             Analise a situação e o impacto desse impedimento. Será que você não deve tomar uma ação
                             agora? Aguardar a daily no dia seguinte pode ser ruim, pois uma bola de neve pode se formar;
@@ -114,7 +112,7 @@ const Impediments: React.FC = () => {
                     Enquanto as ações para solucionar o impedimento estiverem sendo realizadas, execute a próxima
                     atividade conforme a prioridade:
 
-                    <ul className={style.secondLevelList}>
+                    <ul className={"secondLevelList"}>
                         <li className={`paragraph font-3`}>
                             Antecipar as atividades que não foram impactadas pelo impedimento compensará o tempo extra
                             gerado para a resolução dele;
@@ -140,7 +138,7 @@ const Impediments: React.FC = () => {
                 Veja mais algumas dicas que podem ajudar na identificação e resolução rápida dos impedimentos:
             </p>
 
-            <ol className={style.firstLevelList}>
+            <ol className={"firstLevelList"}>
                 <li className={`paragraph font-3`}>
                     Dê atenção as dailies: Preste atenção ao que o time está expondo. As vezes a dificuldade para
                     resolver um caso, a falta de uma conversa com o Product Owner, retrabalhos ou atrasos podem estar
@@ -165,7 +163,7 @@ const Impediments: React.FC = () => {
                     Usar ferramentas que ajudem o time na hora de uma decisão pode auxiliar no empoderamento e na
                     delegação de responsabilidade para o time.
 
-                    <ul className={style.secondLevelList}>
+                    <ul className={"secondLevelList"}>
                         <li className={`paragraph font-3`}>
                             O Delegation Poker é um bom exemplo de ferramenta, assim como o gráfico burndown que auxilia
                             na identificação dos impedimentos, já que os desvios apresentados pelo gráfico podem ser

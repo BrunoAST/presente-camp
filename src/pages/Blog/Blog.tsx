@@ -10,6 +10,7 @@ const Indication = lazy(() => import('./components/Indication/Indication'));
 const Impediments = lazy(() => import('./components/Impediments/Impediments'));
 const FirstAPI = lazy(() => import('./components/FirstAPI/FirstAPI'));
 const DockerFundamentals = lazy(() => import('./components/DockerFundamentals/DockerFundamentals'));
+const CORS = lazy(() => import('./components/CORS/CORS'));
 
 const Blog: React.FC = () => {
     const [content, setContent] = useState<IContent>();
@@ -47,6 +48,7 @@ const Blog: React.FC = () => {
                     {content?.content === 'Impediments' && <Impediments/>}
                     {content?.content === 'First API' && <FirstAPI/>}
                     {content?.content === 'Docker' && <DockerFundamentals/>}
+                    {content?.content === 'CORS' && <CORS/>}
                 </div>
             </section>
         </div>

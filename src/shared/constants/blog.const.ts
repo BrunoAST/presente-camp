@@ -46,6 +46,17 @@ const Blogs: IContent[] = [
         content: 'Docker',
         type: 'Blog',
         interests: 'Backend'
+    },
+    {
+        id: "cors",
+        description: 'Aqui vamos ver o que é CORS, quais os principais erros relacionados com ele, suas principais causas e como resolve-los corretamente.',
+        banner: 'http://nexusinno.com/wp-content/uploads/cors_thumbnail-1024x538-2.jpg',
+        title: 'O que é CORS e como resolver os principias erros',
+        by: 'Equipe Presente',
+        publishDate: '17 de Maio de 2021',
+        content: 'CORS',
+        type: 'Blog',
+        interests: 'Backend'
     }
 ];
 
