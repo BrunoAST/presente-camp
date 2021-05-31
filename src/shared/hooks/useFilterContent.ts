@@ -16,7 +16,7 @@ const useFilterContent = () => {
 
     useEffect(() => {
         function filterContent(): void {
-            if (getItem().interests.length <= 0) {
+            if (!getItem().interests && getItem().interests?.length <= 0) {
                 setFilteredContent([])
                 return;
             }
