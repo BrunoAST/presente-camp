@@ -5,7 +5,6 @@ import style from './filter.module.css';
 import useIsMobile from 'shared/hooks/useIsMobile';
 import {faSearch} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {useCallback} from 'react';
 
 const Filter: React.FC = () => {
     const formRef = useRef<HTMLFormElement>(null);
