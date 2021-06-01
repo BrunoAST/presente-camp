@@ -12,68 +12,74 @@ import CourseTip from 'shared/components/CourseTip/CourseTip';
 import useIsMobile from 'shared/hooks/useIsMobile';
 
 const ContentFilter: React.FC = () => {
-    const {isMobile} = useIsMobile();
-    const navigate = useNavigate();
-    const {content, filteredContent} = useFilterContent();
+        const {isMobile} = useIsMobile();
+        const navigate = useNavigate();
+        const {content, filteredContent} = useFilterContent();
 
-    function hasOnlyCourses(): boolean {
-        return filteredContent.every(item => item.type === 'Course');
-    }
-
-    function defineLabel(type: ContentType): string {
-        if (type === 'Opportunities') return 'Vagas';
-        if (type === 'Blog') return 'Blog';
-        return 'Cursos';
-    }
-
-    function navigateToContent(data: IContent): void {
-        if (data.type === 'Opportunities' || data.type === 'Course') {
-            navigate(BrowserRoutes.NOT_FOUND);
-            return;
+        function hasOnlyCourses(): boolean {
+            return filteredContent.every(item => item.type === 'Course');
         }
 
-        navigate(`/blog/${data.id}`);
-    }
+        function defineLabel(type: ContentType): string {
+            if (type === 'Opportunities') return 'Vagas';
+            if (type === 'Blog') return 'Blog';
+            return 'Cursos';
+        }
 
-    return (
-        <>
-            {filteredContent.length <= 0 && <div className={style.notFoundContainer}>
-                <img width={120} height={144} className="mb-32" src={notFoundFilter} alt="Nada encontrado"/>
+        function navigateToContent(data: IContent): void {
+            if (data.type === 'Opportunities' || data.type === 'Course') {
+                navigate(BrowserRoutes.NOT_FOUND);
+                return;
+            }
 
-                <h1 className={style.notFoundTitle}>Nenhum resultado encontrado</h1>
-                <p className={style.notFoundParagraph}>Verifique o texto inserido</p>
-            </div>}
+            navigate(`/blog/${data.id}`);
+        }
 
-            {filteredContent.length > 0 && <section className={style.container}>
-                <div className={style.headerWrapper}>
-                    <div>
-                        <h1 className={`${style.title} ${content.titleColor}`}>{content.title}</h1>
-                        <p className={`paragraph font-3`}>{content.description}</p>
+        return (
+            <>
+                {filteredContent.length <= 0 && <div className={style.notFoundContainer}>
+                    <img width={120} height={144} className="mb-32" src={notFoundFilter} alt="Nada encontrado"/>
+
+                    <h1 className={style.notFoundTitle}>Nenhum resultado encontrado</h1>
+                    <p className={style.notFoundParagraph}>Verifique o texto inserido</p>
+                </div>}
+
+                {filteredContent.length > 0 && <section className={style.container}>
+                    <div className={style.headerWrapper}>
+                        <div>
+                            <h1 className={`${style.title} ${content.titleColor}`}>{content.title}</h1>
+                            <p className={`paragraph font-3`}>{content.description}</p>
+                        </div>
+
+                        {(hasOnlyCourses() && !isMobile) && <CourseTip/>}
                     </div>
 
-                    {(hasOnlyCourses() && !isMobile) && <CourseTip/>}
-                </div>
+                    <ul className={style.listContainer}>
+                        {
+                            filteredContent.map((data, index) =>
+                                <li key={index}>
+                                    <ContentCard
+                                        onClick={() => navigateToContent(data)}
+                                        type={data.type}
+                                        description={data.description}
+                                        image={data.banner}
+                                        title={data.title}
+                                        label={defineLabel(data.type)}
+                                    />
+                                </li>
+                            )
+                        }
+                    </ul>
+                </section>}
 
-                <ul className={style.listContainer}>
-                    {
-                        filteredContent.map((data, index) =>
-                            <li key={index}>
-                                <ContentCard
-                                    onClick={() => navigateToContent(data)}
-                                    type={data.type}
-                                    description={data.description}
-                                    image={data.banner}
-                                    title={data.title}
-                                    label={defineLabel(data.type)}
-                                />
-                            </li>
-                        )
-                    }
-                </ul>
-            </section>}
-        </>
-    );
-}
+                {(hasOnlyCourses()) &&
+                <p className={`${style.courseMessage} paragraph px-20`}>
+                    Em breve mais cursos feitos por empresas pensando nas necessidades reais
+                    do mercado de trabalho
+                </p>}
+            </>
+        );
+    }
 ;
 
 export default ContentFilter;

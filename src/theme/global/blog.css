@@ -19,7 +19,7 @@
 
 .codeImg {
     max-height: 300px;
-    height: 220px;
+    height: auto;
     display: block;
     margin: 0 auto;
 }
@@ -42,5 +42,9 @@
 @media (max-width: 959px) {
     .banner {
         max-width: 100%;
+    }
+
+    .codeImg {
+        width: 100%;
     }
 }

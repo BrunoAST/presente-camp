@@ -52,7 +52,7 @@ const Home: React.FC = () => {
             <section className={style.content}>
                 <div className={style.titleWrapper}>
                     <h2 className={style.titles}>Publicações mais recentes do blog</h2>
-                    <Link className="emphasis orange-fg" to={'/conteudo/blog'}>Ver mais</Link>
+                    {blogsByInterests.length > 3 && <Link className="emphasis orange-fg" to={'/conteudo/blog'}>Ver mais</Link>}
                 </div>
 
                 <ul className={style.publications}>
@@ -76,7 +76,7 @@ const Home: React.FC = () => {
             <section className={style.content}>
                 <div className={style.titleWrapper}>
                     <h2 className={style.titles}>Vagas disponíveis para você</h2>
-                    <Link className="emphasis orange-fg" to={BrowserRoutes.NOT_FOUND}>Ver mais</Link>
+                    {opportunitiesByInterests.length > 3 && <Link className="emphasis orange-fg" to={BrowserRoutes.NOT_FOUND}>Ver mais</Link>}
                 </div>
 
                 <ul className={style.publications}>

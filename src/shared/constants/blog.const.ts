@@ -91,6 +91,17 @@ const Blogs: IContent[] = [
         content: 'CORS',
         type: 'Blog',
         interests: 'Backend'
+    },
+    {
+        id: "android-intents",
+        description: 'O que é e como usar',
+        banner: 'https://miro.medium.com/max/1334/1*VdzFXBMfw9oSI2SuWVIMZQ.jpeg',
+        title: 'Builder Inference annotation',
+        by: 'Equipe Presente',
+        publishDate: '22 de Maio de 2021',
+        content: 'Build inference',
+        type: 'Blog',
+        interests: 'Android'
     }
 ];
 

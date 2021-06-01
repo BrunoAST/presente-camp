@@ -92,6 +92,14 @@ const Opportunities: IContent[] = [
         title: 'Scrum Master',
         type: 'Opportunities',
         interests: 'Gestão de projetos'
+    },
+    {
+        id: "android",
+        description: 'ioasys',
+        banner: 'https://ioasys.com.br/static/og-image-7578fe3bd736621f7d9d987908812ee0.jpg',
+        title: 'Pessoa Desenvolvedora Android',
+        type: 'Opportunities',
+        interests: 'Android'
     }
 ];
 
