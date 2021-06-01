@@ -102,6 +102,17 @@ const Blogs: IContent[] = [
         content: 'Build inference',
         type: 'Blog',
         interests: 'Android'
+    },
+    {
+        id: "web-accessibility",
+        description: 'Falando um pouco sobre, teoria, como implementar e algumas dicas',
+        banner: 'https://miro.medium.com/max/3224/1*-MlUHTFPrgKXOQCRvY0Xfw.png',
+        title: 'Frontenders, bora falar de acessibilidade?',
+        by: 'Equipe Presente',
+        publishDate: '5 de Maio de 2021',
+        content: 'Accessibility',
+        type: 'Blog',
+        interests: 'Frontend'
     }
 ];
 
