@@ -35,6 +35,22 @@ const Courses: IContent[] = [
         type: 'Course',
         interests: 'Backend',
     },
+    {
+        id: "node-js-criando-uma-aplicacao-baseada-no-padrao-de-projeto-cqrs",
+        description: 'Turbinando a abstração de sua aplicação backend',
+        banner: 'https://www.cognizantsoftvision.com/wp-content/uploads/2019/11/04201101/CQRS-1000x561.png',
+        title: 'NodeJs: Criando uma aplicação utilizando o pattern CQRS',
+        type: 'Course',
+        interests: 'Backend',
+    },
+    {
+        id: "agilidade-em-seu-projeto",
+        description: 'Curso scrum',
+        banner: 'https://blog.trello.com/hs-fs/Imported_Blog_Media/scrum_agile_feature-1024x512-2.jpg',
+        title: 'Agilidade em seu projeto',
+        type: 'Course',
+        interests: 'Gestão de projetos',
+    }
 ];
 
 export default Courses;

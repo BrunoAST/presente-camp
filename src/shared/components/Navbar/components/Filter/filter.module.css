@@ -23,9 +23,8 @@
 
 .icon {
     position: absolute;
-    top: .6rem;
+    top: .8rem;
     left: 1rem;
-    cursor: pointer;
 }
 
 .overForm {
@@ -39,6 +38,7 @@
 }
 
 .overIcon {
+    cursor: pointer;
     top: .8rem !important;
     left: 1rem !important;
 }
@@ -49,8 +49,7 @@
     }
 
     .icon {
-        top: -0.7rem;
+        top: -.5rem;
         left: -.5rem;
     }
 }
-

@@ -1,5 +1,6 @@
 import monthIndication from 'assets/Banner/Indicação do mês.svg';
 import impediment from 'assets/Content/Blog/Impediment/Impedimento.png';
+import management from 'assets/Content/Blog/BestPracticesProjectManagement/Banner.jpg';
 import IContent from '../interfaces/content.interface';
 
 const Blogs: IContent[] = [
@@ -50,7 +51,7 @@ const Blogs: IContent[] = [
     {
         id: "boas-praticas-de-gestao-de-projetos",
         description: 'Boas práticas de gestão de projetos',
-        banner: 'https://blog.smartconsulting.com.br/wp-content/uploads/2020/01/original-8862b4fcfe1862235f270c239baf78ec-925x308.jpg',
+        banner: management,
         title: '10 dicas aprofundadas para aplicar boas práticas de gestão de projetos',
         by: 'Equipe Presente',
         publishDate: '04 de Maio de 2021',
