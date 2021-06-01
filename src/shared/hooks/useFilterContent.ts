@@ -16,6 +16,17 @@ const useFilterContent = () => {
 
     useEffect(() => {
         function filterContent(): void {
+            if (!filter) {
+                setContent({
+                    ...content,
+                    title: 'Conteúdo',
+                    description: `Todo nosso conteúdo`,
+                    titleColor: 'orange-fg'
+                });
+                setFilteredContent(allContent);
+                return;
+            }
+
             if (!getItem().interests && getItem().interests?.length <= 0) {
                 setFilteredContent([])
                 return;

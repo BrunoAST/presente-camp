@@ -27,6 +27,7 @@ export default function RoutesContainer() {
                         <StudentWrapper path={BrowserRoutes.HOME} element={<Home/>}/>
                         <StudentWrapper path={BrowserRoutes.BLOG} element={<Blog/>}/>
                         <StudentWrapper path={BrowserRoutes.CONTENT_FILTER} element={<ContentFilter/>}/>
+                        <StudentWrapper path={BrowserRoutes.CONTENT} element={<ContentFilter/>}/>
                     </Route>
                     <Route path={BrowserRoutes.SIGN_UP} element={<SignUp/>}/>
                     <Route path={BrowserRoutes.SIGN_IN} element={<SignIn/>}/>

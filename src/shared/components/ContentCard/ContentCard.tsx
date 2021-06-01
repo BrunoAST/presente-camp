@@ -20,8 +20,14 @@ const ContentCard: React.FC<IContentCard> = ({label, type, image, title, onClick
                 <img draggable={false} className={style.headerBanner} src={image} alt="Banner"/>
             </div>
             <div className={style.content}>
-                <h2 className={style.contentTitle}>{title}</h2>
-                <span className={style.contentDescription}>{description}</span>
+                <h2 className={style.contentTitle}>
+                    {title.length > 30 ? `${title.slice(0, 45)}...` : title}
+                </h2>
+                <span
+                    className={style.contentDescription}
+                >
+                    {description.length > 30 ? `${description.slice(0, 40)}...` : description}
+                </span>
             </div>
         </article>
     );
