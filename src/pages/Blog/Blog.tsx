@@ -10,6 +10,7 @@ const Indication = lazy(() => import('./components/Indication/Indication'));
 const DesignerTips = lazy(() => import('./components/DesignerTips/DesignerTips'));
 const DesignAndCommunication = lazy(() => import('./components/DesignAndCommunication/DesignAndCommunication'));
 const Impediments = lazy(() => import('./components/Impediments/Impediments'));
+const ProjectManagementBestPractices = lazy(() => import('./components/ProjectManagementBestPractices/ProjectManagementBestPractices'));
 const FirstAPI = lazy(() => import('./components/FirstAPI/FirstAPI'));
 const DockerFundamentals = lazy(() => import('./components/DockerFundamentals/DockerFundamentals'));
 const CORS = lazy(() => import('./components/CORS/CORS'));
@@ -50,6 +51,7 @@ const Blog: React.FC = () => {
                     {content?.content === 'Designer Tips' && <DesignerTips/>}
                     {content?.content === 'Design and communication' && <DesignAndCommunication/>}
                     {content?.content === 'Impediments' && <Impediments/>}
+                    {content?.content === 'Best practices project management' && <ProjectManagementBestPractices/>}
                     {content?.content === 'First API' && <FirstAPI/>}
                     {content?.content === 'Docker' && <DockerFundamentals/>}
                     {content?.content === 'CORS' && <CORS/>}

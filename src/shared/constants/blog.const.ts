@@ -48,6 +48,17 @@ const Blogs: IContent[] = [
         interests: 'Gestão de projetos'
     },
     {
+        id: "boas-praticas-de-gestao-de-projetos",
+        description: 'Boas práticas de gestão de projetos',
+        banner: 'https://blog.smartconsulting.com.br/wp-content/uploads/2020/01/original-8862b4fcfe1862235f270c239baf78ec-925x308.jpg',
+        title: '10 dicas aprofundadas para aplicar boas práticas de gestão de projetos',
+        by: 'Equipe Presente',
+        publishDate: '04 de Maio de 2021',
+        content: 'Best practices project management',
+        type: 'Blog',
+        interests: 'Gestão de projetos'
+    },
+    {
         id: "criando-primeira-api-rest-com-node-js",
         description: 'Primeiros passos',
         banner: 'https://res.cloudinary.com/practicaldev/image/fetch/s--_QMQU86---/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/i/6dnng3pre04xxdebia1g.png',
