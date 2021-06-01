@@ -21,6 +21,7 @@ const FacebookLoginButton: React.FC<IFacebookLoginButton> = ({onUserSelected}) =
     return (
         <>
             <FacebookLogin
+                isDisabled={true}
                 appId={environment.FACEBOOK_APP_ID}
                 fields="name,email,picture"
                 callback={successResponse}

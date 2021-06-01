@@ -24,6 +24,7 @@ const SignUpOptions: React.FC<ISignUpOptions> = ({onSelected, initialProgress}) 
                     <li>
                         <img
                             className="socialButton"
+                            style={{filter: 'grayscale(0%)', cursor: 'pointer'}}
                             src={email}
                             alt="Email"
                             onClick={() => onSelected()}

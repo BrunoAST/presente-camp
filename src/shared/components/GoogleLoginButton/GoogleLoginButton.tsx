@@ -22,6 +22,7 @@ const GoogleLoginButton: React.FC<IGoogleLoginButton> = ({onUserSelected}) => {
 
     return (
         <GoogleLogin
+            disabled={true}
             clientId={environment.GOOGLE_CLIENT_ID}
             render={renderProps => (
                 <button
