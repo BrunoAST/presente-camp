@@ -26,6 +26,17 @@ const Blogs: IContent[] = [
         interests: 'UI/UX'
     },
     {
+        id: "ux-design-e-comunicacao",
+        description: 'A importância da empatia, compaixão e comunicação para o desenvolvimento de soluções centradas no usuário.',
+        banner: 'https://miro.medium.com/max/7200/1*dG1lzqSNOqzlKqWPfGvzhQ.jpeg',
+        title: 'UX Design e Comunicação',
+        by: 'Equipe Presente',
+        publishDate: '14 de Maio de 2021',
+        content: 'Design and communication',
+        type: 'Blog',
+        interests: 'UI/UX'
+    },
+    {
         id: "impedimentos-o-que-e-como-agir",
         description: 'Como agir nessas situações',
         banner: impediment,

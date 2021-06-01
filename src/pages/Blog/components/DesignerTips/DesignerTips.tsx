@@ -11,7 +11,7 @@ const DesignerTips: React.FC = () => {
                 semelhantes para problemas.
             </p>
 
-            <p className={`blogIntroduction paragraph font-3`}>
+            <p className={`paragraph font-3`}>
                 Em meus mais de 10 anos de vai-e-volta morando no Brasil e no Reino Unido, eu venho colecionando
                 insights sobre tipos de entrevista na área de tecnologia. Aqui vão alguns exemplos de diferentes partes
                 de entrevista em empresas grandes para Designers.
@@ -19,7 +19,7 @@ const DesignerTips: React.FC = () => {
 
             <h2 className={`blogSubTitle font-3 emphasis`}>Revisão de portfolio</h2>
 
-            <p className={`blogIntroduction paragraph font-3`}>
+            <p className={`paragraph font-3`}>
                 Essa parte é comum no Brasil também, mas por aqui tem bastante foco em processo, não resultados e
                 quantidade. Prepare de 2 a 3 case studies, e vamos lá!
             </p>
@@ -51,7 +51,7 @@ const DesignerTips: React.FC = () => {
 
             <h2 className={`blogSubTitle font-3 emphasis`}>Design challenge (desafio de design)</h2>
 
-            <p className={`blogIntroduction paragraph font-3`}>
+            <p className={`paragraph font-3`}>
                 Normalmente serão você e mais 2 designers da empresa. Você tem em média 1 hora para demonstrar seu
                 processo, desde receber um brief até mostrar wireframes básicas.
             </p>
@@ -86,7 +86,7 @@ const DesignerTips: React.FC = () => {
 
             <h2 className={`blogSubTitle font-3 emphasis`}>App critique (crítica de aplicativo)</h2>
 
-            <p className={`blogIntroduction paragraph font-3`}>
+            <p className={`paragraph font-3`}>
                 Nem todas as empresas tem essa fase, mas é bem interessante. Você é convidada a escolher um app/site
                 para criticar em tempo real com outras pessoas na sala.
             </p>
@@ -113,7 +113,7 @@ const DesignerTips: React.FC = () => {
 
             <h2 className={`blogSubTitle font-3 emphasis`}>Tem mais?</h2>
 
-            <p className={`blogIntroduction paragraph font-3`}>
+            <p className={`paragraph font-3`}>
                 Dependendo do tamanho da empresa, você pode se deparar com algumas ou todas essas fases, sem contar
                 entrevistas 1 a 1 com alguém do time de design, produto, engenharia, head de produto… a lista pode ser
                 comprida. Essas entrevistas focam mais em entender como você gosta de trabalhar, se seria um bom fit pro
@@ -121,7 +121,7 @@ const DesignerTips: React.FC = () => {
                 como você lidou?).
             </p>
 
-            <p className={`blogIntroduction paragraph font-3`}>
+            <p className={`paragraph font-3`}>
                 Lembro também que entrevistar é uma skill, e quanto mais você fizer, mais confortável você vai ficando!
                 Após entrevistas, indo bem ou não, não esqueça de pedir feedback e de avaliar como você pode melhorar.
             </p>

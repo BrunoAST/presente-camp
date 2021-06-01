@@ -9,6 +9,8 @@
 }
 
 .listItem {
+    display: flex;
+    flex-direction: column;
     text-align: start;
     padding: 0 16px;
     font-size: 16px;

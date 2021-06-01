@@ -36,7 +36,7 @@ const UserMenu: React.FC = () => {
                         setUserData({interests: [], email: '', name: '', token: ''});
                         navigate(BrowserRoutes.LANDING);
                     });
-                }} to={BrowserRoutes.LANDING}>Sair</Link>
+                }} style={{width: '100%'}} to={BrowserRoutes.LANDING}>Sair</Link>
             </li>
         </>
     );
